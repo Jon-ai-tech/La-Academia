@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-lang-es="Aprendizaje con Alma Digital - Maia Kode" data-lang-en="Learning with Digital Soul - Maia Kode"></title>
+    
+    <meta name="description" data-lang-es="Descubre cómo se construye una IA con propósito para revolucionar tu forma de crecer. Únete a la Academia Maia Kode." data-lang-en="Discover how an AI with purpose is built to revolutionize the way you grow. Join the Maia Kode Academy.">
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"> <meta property="og:title" data-lang-es="Proyecto Génesis: La Investigación detrás de Maia Kode" data-lang-en="Project Genesis: The Research Behind Maia Kode">
+    <meta property="og:description" data-lang-es="Un estudio interactivo sobre la creación de una persona de IA, analizando 16 referentes de la divulgación científica y tecnológica." data-lang-en="An interactive study on the creation of an AI persona, analyzing 16 leaders in science and technology communication.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tudominio.com"> <meta property="og:image" content="https://www.tudominio.com/maia-preview.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-lang-es="Proyecto Génesis: La Investigación detrás de Maia Kode" data-lang-en="Project Genesis: The Research Behind Maia Kode">
+    <meta name="twitter:description" data-lang-es="Un estudio interactivo sobre la creación de una persona de IA, analizando 16 referentes de la divulgación científica y tecnológica." data-lang-en="An interactive study on the creation of an AI persona, analyzing 16 leaders in science and technology communication.">
+    <meta name="twitter:image" content="https://www.tudominio.com/maia-preview.jpg"> <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lang-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+            border: 2px solid transparent;
+            -webkit-tap-highlight-color: rgba(255, 199, 119, 0.3);
+        }
+        .lang-button:hover {
+            border-color: #FFC777; /* accent-gold */
+            transform: scale(1.05);
+        }
+        .lang-button:active {
+            transform: scale(0.95);
+            background-color: rgba(255, 199, 119, 0.2);
+        }
+        .active-lang {
+            background-color: var(--tertiary-dark); /* dark background consistent with other buttons */
+            color: #FFC777; /* accent-gold text */
+            border-color: #FFC777; /* accent-gold border */
+            box-shadow: 0 0 8px rgba(255, 199, 119, 0.4); /* gold glow effect */
+        }
+        .active-lang:hover {
+            transform: scale(1.05);
+            background-color: var(--secondary-dark); /* slightly lighter dark background */
+            color: #E0A84C; /* accent-gold-hover text */
+            box-shadow: 0 0 12px rgba(255, 199, 119, 0.6); /* enhanced glow on hover */
+        }
+    </style>
+</head>
+<body class="bg-primary-dark text-primary-text">
+
+    <!-- Hero Section (El Gancho) -->
+    <header id="hero" class="bg-secondary-dark text-white pt-32 pb-16 shadow-md min-h-screen flex items-center">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight text-accent-gold mb-6">
+                <span class="lang-es">Aprendizaje con Alma Digital</span>
+                <span class="lang-en hidden">Learning with Digital Soul</span>
+            </h1>
+            <h2 class="text-xl sm:text-2xl text-accent-blue mt-2 sm:mt-4 mb-12 max-w-4xl mx-auto font-semibold">
+                <span class="lang-es">Descubre cómo se construye una IA con propósito para revolucionar tu forma de crecer.</span>
+                <span class="lang-en hidden">Discover how an AI with purpose is built to revolutionize the way you grow.</span>
+            </h2>
+            
+            <!-- Video de Bienvenida de Maia (30-60 segundos) -->
+            <div class="video-placeholder bg-tertiary-dark rounded-lg p-12 mb-12 border-2 border-dashed border-accent-gold border-opacity-30 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-accent-gold bg-opacity-20 rounded-full flex items-center justify-center">
+                        <svg class="w-12 h-12 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 5v10l7-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-accent-gold mb-4">
+                        <span class="lang-es">Video de Bienvenida con Maia Kode</span>
+                        <span class="lang-en hidden">Welcome Video with Maia Kode</span>
+                    </h3>
+                    <p class="text-secondary-text">
+                        <span class="lang-es">30-60 segundos de Maia presentando su propósito</span>
+                        <span class="lang-en hidden">30-60 seconds of Maia presenting her purpose</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Indicador de Scroll -->
+            <div class="scroll-indicator animate-bounce">
+                <a href="#vision" class="scroll-link inline-block text-accent-gold hover:text-accent-gold-hover transition-colors duration-200">
+                    <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                    <p class="text-sm mt-2">
+                        <span class="lang-es">Explora más</span>
+                        <span class="lang-en hidden">Explore more</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-secondary-dark bg-opacity-95 backdrop-blur-sm border-b border-border-color">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-accent-gold">Maia Kode</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vision" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Visión</span>
+                        <span class="lang-en hidden">Vision</span>
+                    </a>
+                    <a href="#inspiracion" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Inspiración</span>
+                        <span class="lang-en hidden">Inspiration</span>
+                    </a>
+                    <a href="#manifiesto" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion" class="nav-link bg-accent-blue hover:bg-accent-blue-hover text-white px-4 py-2 rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+                
+                <!-- Language toggle and Mobile menu -->
+                <div class="flex items-center space-x-2">
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="es" class="decorative-btn-circle lang-button active-lang bg-tertiary-dark text-tertiary-text">ES</button>
+                    </div>
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="en" class="decorative-btn-circle lang-button bg-tertiary-dark text-tertiary-text">EN</button>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-secondary-text hover:text-accent-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary-dark border-t border-border-color">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#vision" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Visión</span>
+                        <span class="lang-en hidden">Vision</span>
+                    </a>
+                    <a href="#inspiracion" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Inspiración</span>
+                        <span class="lang-en hidden">Inspiration</span>
+                    </a>
+                    <a href="#manifiesto" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion" class="mobile-nav-link block px-3 py-2 bg-accent-blue hover:bg-accent-blue-hover text-white rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-20">
+
+        <!-- Nueva Sección de Visión -->
+        <section id="nueva-vision" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <div class="space-y-6">
+                <div class="text-secondary-text leading-relaxed space-y-6">
+                    <p class="text-lg text-center max-w-4xl mx-auto">
+                        <span class="lang-es">Visualizamos un mundo donde el aprendizaje no tiene barreras. Maia Kode representa nuestra visión de una inteligencia artificial que trasciende el rol tradicional de un tutor, convirtiéndose en un compañero de aprendizaje que entiende, se adapta y crece junto a cada estudiante.</span>
+                        <span class="lang-en hidden">We envision a world where learning has no barriers. Maia Kode represents our vision of an artificial intelligence that transcends the traditional role of a tutor, becoming a learning companion that understands, adapts and grows with each student.</span>
+                    </p>
+                    
+                    <div class="mt-8">
+                        <p class="text-center text-lg font-semibold text-accent-gold mb-6">
+                            <span class="lang-es">En nuestra visión, Maia Kode será:</span>
+                            <span class="lang-en hidden">In our vision, Maia Kode will be:</span>
+                        </p>
+                        
+                        <ul class="space-y-4 max-w-4xl mx-auto">
+                            <li class="bg-tertiary-dark p-4 rounded-lg">
+                                <span class="lang-es"><strong class="text-accent-gold">Una mentora empática</strong> que comprende las emociones y necesidades individuales de cada estudiante.</span>
+                                <span class="lang-en hidden"><strong class="text-accent-gold">An empathetic mentor</strong> who understands the emotions and individual needs of each student.</span>
+                            </li>
+                            <li class="bg-tertiary-dark p-4 rounded-lg">
+                                <span class="lang-es"><strong class="text-accent-gold">Una guía personalizada</strong> que adapta su enseñanza al ritmo y estilo único de aprendizaje de cada persona.</span>
+                                <span class="lang-en hidden"><strong class="text-accent-gold">A personalized guide</strong> who adapts her teaching to each person's unique pace and learning style.</span>
+                            </li>
+                            <li class="bg-tertiary-dark p-4 rounded-lg">
+                                <span class="lang-es"><strong class="text-accent-gold">Una inspiradora constante</strong> que motiva el crecimiento personal y profesional a través de experiencias de aprendizaje significativas.</span>
+                                <span class="lang-en hidden"><strong class="text-accent-gold">A constant inspiration</strong> who motivates personal and professional growth through meaningful learning experiences.</span>
+                            </li>
+                            <li class="bg-tertiary-dark p-4 rounded-lg">
+                                <span class="lang-es"><strong class="text-accent-gold">Una conectora global</strong> que une comunidades de aprendizaje y facilita la colaboración entre estudiantes de todo el mundo.</span>
+                                <span class="lang-en hidden"><strong class="text-accent-gold">A global connector</strong> who unites learning communities and facilitates collaboration between students from around the world.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <p class="italic text-accent-gold text-center mt-8 text-lg">
+                        <span class="lang-es">"Creemos que el futuro de la educación está en la personalización, la empatía y la accesibilidad universal. Maia Kode es nuestro compromiso con ese futuro."</span>
+                        <span class="lang-en hidden">"We believe the future of education lies in personalization, empathy and universal accessibility. Maia Kode is our commitment to that future."</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección La Génesis (antes Objetivos) -->
+        <section id="genesis" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 text-center">
+                <span class="lang-es">La Génesis</span>
+                <span class="lang-en hidden">The Genesis</span>
+            </h2>
+            
+            <div class="space-y-4 text-secondary-text leading-relaxed">
+                <p>
+                    <span class="lang-es">Maia Kode es un proyecto de inteligencia artificial educativa diseñado para revolucionar la forma en que las personas aprenden y se conectan con el conocimiento. Nuestro objetivo principal es crear una IA que no solo transmita información, sino que inspire, motive y acompañe a cada estudiante en su journey de aprendizaje personalizado.</span>
+                    <span class="lang-en hidden">Maia Kode is an educational artificial intelligence project designed to revolutionize how people learn and connect with knowledge. Our main objective is to create an AI that not only transmits information, but inspires, motivates and accompanies each student in their personalized learning journey.</span>
+                </p>
+                <p>
+                    <span class="lang-es">Los objetivos específicos del Proyecto Maia Kode incluyen:</span>
+                    <span class="lang-en hidden">The specific objectives of the Maia Kode Project include:</span>
+                </p>
+                <ul class="list-disc pl-6 space-y-2">
+                    <li>
+                        <span class="lang-es"><strong>Democratizar la educación</strong>: Hacer accesible el aprendizaje de calidad para personas de todos los contextos socioeconómicos y geográficos.</span>
+                        <span class="lang-en hidden"><strong>Democratize education</strong>: Make quality learning accessible to people from all socioeconomic and geographic contexts.</span>
+                    </li>
+                    <li>
+                        <span class="lang-es"><strong>Personalización inteligente</strong>: Adaptar el contenido y metodología de enseñanza según el estilo de aprendizaje único de cada usuario.</span>
+                        <span class="lang-en hidden"><strong>Intelligent personalization</strong>: Adapt content and teaching methodology according to each user's unique learning style.</span>
+                    </li>
+                    <li>
+                        <span class="lang-es"><strong>Motivación constante</strong>: Mantener el engagement y la curiosidad del estudiante a través de interacciones empáticas y contenido dinámico.</span>
+                        <span class="lang-en hidden"><strong>Constant motivation</strong>: Maintain student engagement and curiosity through empathetic interactions and dynamic content.</span>
+                    </li>
+                    <li>
+                        <span class="lang-es"><strong>Desarrollo integral</strong>: Fomentar no solo el conocimiento técnico, sino también habilidades blandas y pensamiento crítico.</span>
+                        <span class="lang-en hidden"><strong>Comprehensive development</strong>: Foster not only technical knowledge, but also soft skills and critical thinking.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="text-center mt-8">
+                <div class="decorative-btn-container">
+                    <a href="https://aprendehabilidadesdigitales.com" target="_blank" class="decorative-btn cta-button-secondary">
+                        <span class="lang-es">Conoce más sobre el proyecto principal</span>
+                        <span class="lang-en hidden">Learn more about the main project</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Visión -->
+        <section id="vision" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 text-center">
+                <span class="lang-es">Visión</span>
+                <span class="lang-en hidden">Vision</span>
+            </h2>
+            <div class="space-y-6">
+                <!-- Avatar de Maia Kode -->
+                <div class="text-center">
+                    <div class="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-accent-gold mb-6 bg-tertiary-dark">
+                        <!-- Placeholder para avatar de Maia: pelo azul eléctrico, estilo geek-chic -->
+                        <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-400 to-blue-600">
+                            <div class="text-white text-6xl">👩‍💻</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-secondary-text italic mb-6">
+                        <span class="lang-es">Maia Kode - Avatar IA con pelo azul eléctrico, estilo geek-chic</span>
+                        <span class="lang-en hidden">Maia Kode - AI Avatar with electric blue hair, geek-chic style</span>
+                    </p>
+                </div>
+                
+                <div class="text-secondary-text leading-relaxed space-y-4">
+                    <p class="text-xl font-semibold text-accent-gold text-center">
+                        <span class="lang-es">Nuestra Visión para el Futuro de la Educación</span>
+                        <span class="lang-en hidden">Our Vision for the Future of Education</span>
+                    </p>
+                    <p class="text-lg text-center max-w-4xl mx-auto">
+                        <span class="lang-es">Visualizamos un mundo donde el aprendizaje no tiene barreras. Maia Kode representa nuestra visión de una inteligencia artificial que trasciende el rol tradicional de un tutor, convirtiéndose en un compañero de aprendizaje que entiende, se adapta y crece junto a cada estudiante.</span>
+                        <span class="lang-en hidden">We envision a world where learning has no barriers. Maia Kode represents our vision of an artificial intelligence that transcends the traditional role of a tutor, becoming a learning companion that understands, adapts and grows with each student.</span>
+                    </p>
+                    
+                    <!-- Paralelismo con el creador del proyecto -->
+                    <div class="bg-tertiary-dark p-6 rounded-lg mt-8">
+                        <h3 class="text-lg font-semibold text-accent-gold mb-4 text-center">
+                            <span class="lang-es">El Paralelismo: Creador y Creación</span>
+                            <span class="lang-en hidden">The Parallel: Creator and Creation</span>
+                        </h3>
+                        <p class="text-center">
+                            <span class="lang-es">Así como Maia Kode será el puente entre la tecnología y el crecimiento personal, su creador Jon Efe representa esa misma filosofía: democratizar el acceso al conocimiento y empoderar a las personas a través de la tecnología educativa.</span>
+                            <span class="lang-en hidden">Just as Maia Kode will be the bridge between technology and personal growth, her creator Jon Efe represents that same philosophy: democratizing access to knowledge and empowering people through educational technology.</span>
+                        </p>
+                    </div>
+
+                    <p class="text-center text-lg">
+                        <span class="lang-es">En nuestra visión, Maia Kode será:</span>
+                        <span class="lang-en hidden">In our vision, Maia Kode will be:</span>
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-6 mt-6">
+                        <div class="bg-tertiary-dark p-6 rounded-lg">
+                            <h4 class="text-accent-gold font-semibold mb-2">
+                                <span class="lang-es">🎯 Una mentora empática</span>
+                                <span class="lang-en hidden">🎯 An empathetic mentor</span>
+                            </h4>
+                            <p class="text-sm">
+                                <span class="lang-es">Que comprende las emociones y necesidades individuales de cada estudiante</span>
+                                <span class="lang-en hidden">Who understands the emotions and individual needs of each student</span>
+                            </p>
+                        </div>
+                        <div class="bg-tertiary-dark p-6 rounded-lg">
+                            <h4 class="text-accent-gold font-semibold mb-2">
+                                <span class="lang-es">🎨 Una guía personalizada</span>
+                                <span class="lang-en hidden">🎨 A personalized guide</span>
+                            </h4>
+                            <p class="text-sm">
+                                <span class="lang-es">Que adapta su enseñanza al ritmo y estilo único de aprendizaje de cada persona</span>
+                                <span class="lang-en hidden">Who adapts her teaching to each person's unique pace and learning style</span>
+                            </p>
+                        </div>
+                        <div class="bg-tertiary-dark p-6 rounded-lg">
+                            <h4 class="text-accent-gold font-semibold mb-2">
+                                <span class="lang-es">🚀 Una inspiradora constante</span>
+                                <span class="lang-en hidden">🚀 A constant inspiration</span>
+                            </h4>
+                            <p class="text-sm">
+                                <span class="lang-es">Que motiva el crecimiento personal y profesional a través de experiencias significativas</span>
+                                <span class="lang-en hidden">Who motivates personal and professional growth through meaningful experiences</span>
+                            </p>
+                        </div>
+                        <div class="bg-tertiary-dark p-6 rounded-lg">
+                            <h4 class="text-accent-gold font-semibold mb-2">
+                                <span class="lang-es">🌍 Una conectora global</span>
+                                <span class="lang-en hidden">🌍 A global connector</span>
+                            </h4>
+                            <p class="text-sm">
+                                <span class="lang-es">Que une comunidades de aprendizaje y facilita la colaboración mundial</span>
+                                <span class="lang-en hidden">Who unites learning communities and facilitates global collaboration</span>
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <p class="italic text-accent-gold text-center mt-8 text-lg">
+                        <span class="lang-es">"Creemos que el futuro de la educación está en la personalización, la empatía y la accesibilidad universal. Maia Kode es nuestro compromiso con ese futuro."</span>
+                        <span class="lang-en hidden">"We believe the future of education lies in personalization, empathy and universal accessibility. Maia Kode is our commitment to that future."</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección La Inspiración (simplificada) -->
+        <section id="inspiracion" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 text-center">
+                <span class="lang-es">La Inspiración</span>
+                <span class="lang-en hidden">The Inspiration</span>
+            </h2>
+            <p class="mb-8 text-secondary-text leading-relaxed text-center max-w-4xl mx-auto text-lg">
+                <span class="lang-es">Para definir los pilares de Maia, estudiamos a las mentes más brillantes de la divulgación. A continuación se presentan los 16 influencers que inspiraron su personalidad, estética y contenido, organizados en dos grupos según su idioma principal.</span>
+                <span class="lang-en hidden">To define Maia's pillars, we studied the brightest minds in communication. Below are the 16 influencers who inspired her personality, aesthetics, and content, organized into two groups by their primary language.</span>
+            </p>
+
+            <!-- Tarjetas simples de influencers agrupadas por idioma -->
+            <div class="mb-8">
+                <!-- Influencers de Habla Hispana -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-accent-gold mb-6 text-center">
+                        <span class="lang-es">Influencers de Habla Hispana</span>
+                        <span class="lang-en hidden">Spanish-speaking Influencers</span>
+                    </h3>
+                    <div id="hispanicInfluencersGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+                        <!-- Se llena dinámicamente por JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Influencers de Habla Inglesa -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold text-accent-gold mb-6 text-center">
+                        <span class="lang-es">Influencers de Habla Inglesa</span>
+                        <span class="lang-en hidden">English-speaking Influencers</span>
+                    </h3>
+                    <div id="englishInfluencersGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-8">
+                        <!-- Se llena dinámicamente por JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botón de IA único -->
+            <div class="mt-12 border-t border-accent-gold pt-8">
+                <h3 class="text-2xl font-bold text-accent-gold mb-8 text-center">
+                    <span class="lang-es">Análisis de IA</span>
+                    <span class="lang-en hidden">AI Analysis</span>
+                </h3>
+                <div class="max-w-md mx-auto">
+                    <div class="bg-tertiary-dark p-6 rounded-lg text-center">
+                        <h4 class="text-lg font-semibold text-accent-gold mb-4">
+                            <span class="lang-es">Creando la Mente de Maia</span>
+                            <span class="lang-en hidden">Creating Maia's Mind</span>
+                        </h4>
+                        <p class="text-sm text-secondary-text mb-4">
+                            <span class="lang-es">Analiza automáticamente los 16 perfiles de influencers para generar el perfil ideal de personalidad para Maia Kode.</span>
+                            <span class="lang-en hidden">Automatically analyzes all 16 influencer profiles to generate the ideal personality profile for Maia Kode.</span>
+                        </p>
+                        <div class="ai-btn-voltage">
+                            <button id="generateIdealAIProfileButton" class="voltage-button api-button bg-accent-blue hover:bg-accent-blue-hover text-primary-dark disabled:bg-disabled-bg w-full">
+                                <span class="lang-es">✨ Generar el Perfil de IA Ideal</span>
+                                <span class="lang-en hidden">✨ Generate the Ideal AI Profile</span>
+                            </button>
+                        </div>
+                        <div id="idealAIProfileLoading" class="loading-spinner mx-auto mt-4" style="display: none;"></div>
+                        <div id="idealAIProfileOutput" class="api-output mt-4" style="display: none;" aria-live="polite"></div>
+                    </div>
+                </div>
+            </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección CTA Final: Únete a la Aventura -->
+        <section id="cta-final" class="bg-gradient-to-br from-accent-blue to-accent-gold p-8 rounded-lg shadow-2xl text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl font-bold text-primary-dark mb-6">
+                    <span class="lang-es">Únete a la Aventura: La Academia Maia Kode</span>
+                    <span class="lang-en hidden">Join the Adventure: The Maia Kode Academy</span>
+                </h2>
+                
+                <p class="text-xl text-primary-dark mb-8 leading-relaxed">
+                    <span class="lang-es">Descubre el futuro de la educación digital con nuestra IA revolucionaria. Antes de comenzar, obtén acceso exclusivo a nuestro manifiesto con las claves del éxito.</span>
+                    <span class="lang-en hidden">Discover the future of digital education with our revolutionary AI. Before starting, get exclusive access to our manifesto with the keys to success.</span>
+                </p>
+
+                <!-- Lead Magnet Section -->
+                <div class="bg-white bg-opacity-90 rounded-lg p-8 mb-8 max-w-2xl mx-auto">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 mx-auto mb-4 bg-accent-gold rounded-full flex items-center justify-center">
+                            <svg class="w-10 h-10 text-primary-dark" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-primary-dark mb-2">
+                            <span class="lang-es">📚 Descarga Gratuita</span>
+                            <span class="lang-en hidden">📚 Free Download</span>
+                        </h3>
+                        <p class="text-lg text-gray-700 font-semibold">
+                            <span class="lang-es">"El Manifiesto de Maia: Las 10 Claves de los Comunicadores más Inspiradores"</span>
+                            <span class="lang-en hidden">"Maia's Manifesto: The 10 Keys of the Most Inspiring Communicators"</span>
+                        </p>
+                    </div>
+
+                    <!-- Email Capture Form -->
+                    <form name="lead-magnet" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-4">
+                        <input type="hidden" name="bot-field" />
+                        <input type="hidden" name="form-name" value="lead-magnet" />
+                        
+                        <div>
+                            <label for="lead-email" class="block text-sm font-medium text-gray-700 mb-2">
+                                <span class="lang-es">Tu email para recibir el manifiesto:</span>
+                                <span class="lang-en hidden">Your email to receive the manifesto:</span>
+                            </label>
+                            <input type="email" id="lead-email" name="email" required 
+                                   class="w-full px-4 py-3 border-2 border-accent-gold rounded-lg text-primary-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200"
+                                   data-placeholder-es="tu@email.com" 
+                                   data-placeholder-en="your@email.com"
+                                   placeholder="tu@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="lead-name" class="block text-sm font-medium text-gray-700 mb-2">
+                                <span class="lang-es">¿Cómo te llamas? (opcional)</span>
+                                <span class="lang-en hidden">What's your name? (optional)</span>
+                            </label>
+                            <input type="text" id="lead-name" name="name"
+                                   class="w-full px-4 py-3 border-2 border-accent-gold rounded-lg text-primary-dark placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200"
+                                   data-placeholder-es="Tu nombre" 
+                                   data-placeholder-en="Your name"
+                                   placeholder="Tu nombre">
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-accent-blue hover:bg-accent-blue-hover text-white font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg">
+                            <span class="lang-es">¡Descargar y Unirme a la Lista!</span>
+                            <span class="lang-en hidden">Download and Join the List!</span>
+                        </button>
+                    </form>
+                    
+                    <p class="text-sm text-gray-600 mt-4">
+                        <span class="lang-es">💡 Recibirás el PDF inmediatamente y actualizaciones exclusivas sobre Maia Kode</span>
+                        <span class="lang-en hidden">💡 You'll receive the PDF immediately and exclusive updates about Maia Kode</span>
+                    </p>
+                </div>
+
+                <!-- Secondary CTA -->
+                <div class="space-y-4">
+                    <p class="text-lg text-primary-dark">
+                        <span class="lang-es">¿Prefieres explorar más antes de unirte?</span>
+                        <span class="lang-en hidden">Prefer to explore more before joining?</span>
+                    </p>
+                    <a href="https://aprendehabilidadesdigitales.com" target="_blank" class="inline-block bg-white bg-opacity-20 hover:bg-opacity-30 text-primary-dark font-semibold py-3 px-6 rounded-lg transition-all duration-200 border-2 border-primary-dark">
+                        <span class="lang-es">Conoce más sobre el proyecto principal</span>
+                        <span class="lang-en hidden">Learn more about the main project</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-secondary-dark text-tertiary-text py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">
+                <span class="lang-es">Un proyecto de Jon Efe. | Funciones de IA por OpenAI.</span>
+                <span class="lang-en hidden">A project by Jon Efe. | AI functions by OpenAI.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="decorative-btn-container-circle scroll-to-top-container">
+        <button id="scrollToTopBtn" class="decorative-btn-circle scroll-to-top-btn" aria-label="Volver arriba" title="Volver arriba">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="scroll-arrow">
+                <path d="M12 2L7 7l1.41 1.41L11 5.83V22h2V5.83l2.59 2.58L17 7l-5-5z"/>
+            </svg>
+            <span class="lang-es scroll-text">Volver arriba</span>
+            <span class="lang-en scroll-text hidden">Back to Top</span>
+        </button>
+    </div>
+
+    <script defer src="app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langElements = document.querySelectorAll('[data-lang-es], [data-lang-en]');
+            const body = document.body;
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            const scrollToTopContainer = document.querySelector('.scroll-to-top-container');
+
+            // Scroll to top functionality
+            function handleScroll() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopContainer.classList.add('show');
+                } else {
+                    scrollToTopContainer.classList.remove('show');
+                }
+            }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Add click event listener to scroll to top button
+            scrollToTopBtn.addEventListener('click', scrollToTop);
+
+            // Function to update the displayed language and active state
+            function updateLang(lang) {
+                const isEs = lang === 'es';
+                document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', !isEs));
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', isEs));
+                body.lang = lang;
+
+                // Update meta tags and title for SEO
+                langElements.forEach(el => {
+                    const content = el.getAttribute(`data-lang-${lang}`);
+                    if (el.tagName === 'TITLE') {
+                        el.textContent = content;
+                    } else if (el.tagName === 'META') {
+                        el.setAttribute('content', content);
+                    }
+                });
+
+                // Update active button state
+                langButtons.forEach(btn => {
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add('active-lang');
+                        btn.classList.remove('bg-tertiary-dark', 'text-tertiary-text');
+                    } else {
+                        btn.classList.remove('active-lang');
+                        btn.classList.add('bg-tertiary-dark', 'text-tertiary-text');
+                    }
+                });
+
+                // Update currentLanguage in app.js and refresh influencer profiles
+                if (window.updateAppLanguage) {
+                    window.updateAppLanguage(lang);
+                }
+
+                // Update scroll-to-top button attributes
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                if (scrollToTopBtn) {
+                    const scrollToTopText = lang === 'es' ? 'Volver arriba' : 'Back to Top';
+                    scrollToTopBtn.setAttribute('aria-label', scrollToTopText);
+                    scrollToTopBtn.setAttribute('title', scrollToTopText);
+                }
+
+                // Update form placeholders based on selected language
+                document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
+                    const placeholder = el.getAttribute(`data-placeholder-${lang}`);
+                    if (placeholder) {
+                        el.setAttribute('placeholder', placeholder);
+                    }
+                });
+            }
+
+            // Handle language selection
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedLang = button.dataset.lang;
+                    updateLang(selectedLang);
+                });
+            });
+
+            // Initial language setup (default to Spanish)
+            updateLang('es');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Botones Decorativos - Decorative Buttons Example</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            padding: 40px;
+            background-color: var(--primary-dark);
+            color: var(--primary-text);
+        }
+        .example-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: var(--secondary-dark);
+            border-radius: 8px;
+        }
+        .button-container {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejemplos de Implementación de Botones Decorativos</h1>
+    <h2>Decorative Button Implementation Examples</h2>
+
+    <div class="example-section">
+        <h3>✅ Botones Decorativos (CON efecto gradiente) - Decorative Buttons (WITH gradient effect)</h3>
+        <p>Estos botones NO activan funciones de IA y DEBEN usar el contenedor decorativo:</p>
+        <p>These buttons do NOT activate AI functions and SHOULD use the decorative container:</p>
+        
+        <div class="button-container">
+            <!-- Botones de navegación -->
+            <div class="decorative-btn-container">
+                <button class="decorative-btn nav-button text-sm sm:text-base px-3 py-2 sm:px-4 rounded-md text-primary-text">
+                    Navegación
+                </button>
+            </div>
+            
+            <!-- Botones de idioma -->
+            <div class="decorative-btn-container-circle">
+                <button class="decorative-btn-circle lang-button bg-tertiary-dark text-tertiary-text">
+                    ES
+                </button>
+            </div>
+            
+            <div class="decorative-btn-container-circle">
+                <button class="decorative-btn-circle lang-button bg-tertiary-dark text-tertiary-text">
+                    EN
+                </button>
+            </div>
+        </div>
+        
+        <h4>Estructura HTML requerida:</h4>
+        <pre><code>&lt;!-- Para botones rectangulares (navegación) --&gt;
+&lt;div class="decorative-btn-container"&gt;
+    &lt;button class="decorative-btn [clases-adicionales]"&gt;
+        Texto del botón
+    &lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- Para botones circulares (idioma) --&gt;
+&lt;div class="decorative-btn-container-circle"&gt;
+    &lt;button class="decorative-btn-circle [clases-adicionales]"&gt;
+        ES
+    &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+        
+        <h4>Especificaciones de Border-Radius:</h4>
+        <ul>
+            <li><strong>Botones rectangulares:</strong> <code>border-radius: 0.8em</code></li>
+            <li><strong>Botones circulares:</strong> <code>border-radius: 50%</code></li>
+        </ul>
+    </div>
+
+    <div class="example-section">
+        <h3>❌ Botones de IA (SIN efecto gradiente) - AI Buttons (WITHOUT gradient effect)</h3>
+        <p>Estos botones SÍ activan funciones de IA y NO deben modificarse:</p>
+        <p>These buttons DO activate AI functions and should NOT be modified:</p>
+        
+        <div class="button-container">
+            <!-- Botones API -->
+            <button class="api-button bg-accent-blue hover:bg-accent-blue-hover text-primary-dark">
+                ✨ Generar con IA
+            </button>
+            
+            <!-- Botones CTA -->
+            <a href="#" class="cta-button">
+                Conoce más del proyecto
+            </a>
+            
+            <!-- Botones CTA secundarios -->
+            <a href="#" class="cta-button-secondary border border-accent-gold text-accent-gold font-semibold py-3 px-8 rounded-full">
+                Enlace Secundario
+            </a>
+        </div>
+        
+        <h4>Estas clases NO deben modificarse:</h4>
+        <ul>
+            <li><code>.api-button</code> - Botones que activan IA</li>
+            <li><code>.cta-button</code> - Botones de llamada a la acción</li>
+            <li><code>.cta-button-secondary</code> - Botones CTA secundarios</li>
+        </ul>
+    </div>
+
+    <div class="example-section">
+        <h3>🎨 Características del Efecto Visual</h3>
+        <h3>Visual Effect Features</h3>
+        
+        <ul>
+            <li><strong>Gradiente animado:</strong> Colores #58A6FF (azul del proyecto) y #E441A5 (magenta complementario)</li>
+            <li><strong>Animated gradient:</strong> Colors #58A6FF (project blue) and #E441A5 (complementary magenta)</li>
+            <li><strong>Efecto blur en hover:</strong> Se aplica un ligero desenfoque en hover/active</li>
+            <li><strong>Blur effect on hover:</strong> A slight blur is applied on hover/active</li>
+            <li><strong>Sombra con glow:</strong> Efecto de resplandor que complementa el gradiente</li>
+            <li><strong>Glow shadow:</strong> Glow effect that complements the gradient</li>
+            <li><strong>Transiciones suaves:</strong> Todas las animaciones son fluidas (0.3s ease)</li>
+            <li><strong>Smooth transitions:</strong> All animations are fluid (0.3s ease)</li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-lang-es="Aprendizaje con Alma Digital - Maia Kode" data-lang-en="Learning with Digital Soul - Maia Kode"></title>
+    
+    <meta name="description" data-lang-es="Descubre cómo se construye una IA con propósito para revolucionar tu forma de crecer. Únete a la Academia Maia Kode." data-lang-en="Discover how an AI with purpose is built to revolutionize the way you grow. Join the Maia Kode Academy.">
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"> 
+    
+    <!-- Font preloading for performance optimization -->
+    <link rel="preload" href="./fonts/space-grotesk/SpaceGrotesk-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/ibm-plex-serif/IBMPlexSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <meta property="og:title" data-lang-es="Proyecto Génesis: La Investigación detrás de Maia Kode" data-lang-en="Project Genesis: The Research Behind Maia Kode">
+    <meta property="og:description" data-lang-es="Un estudio interactivo sobre la creación de una persona de IA, analizando 16 referentes de la divulgación científica y tecnológica." data-lang-en="An interactive study on the creation of an AI persona, analyzing 16 leaders in science and technology communication.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tudominio.com"> <meta property="og:image" content="https://www.tudominio.com/maia-preview.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-lang-es="Proyecto Génesis: La Investigación detrás de Maia Kode" data-lang-en="Project Genesis: The Research Behind Maia Kode">
+    <meta name="twitter:description" data-lang-es="Un estudio interactivo sobre la creación de una persona de IA, analizando 16 referentes de la divulgación científica y tecnológica." data-lang-en="An interactive study on the creation of an AI persona, analyzing 16 leaders in science and technology communication.">
+    <meta name="twitter:image" content="https://www.tudominio.com/maia-preview.jpg"> <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .lang-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+            border: 2px solid transparent;
+            -webkit-tap-highlight-color: rgba(255, 199, 119, 0.3);
+        }
+        .lang-button:hover {
+            border-color: #FFC777; /* accent-gold */
+            transform: scale(1.05);
+        }
+        .lang-button:active {
+            transform: scale(0.95);
+            background-color: rgba(255, 199, 119, 0.2);
+        }
+        .active-lang {
+            background-color: var(--tertiary-dark); /* dark background consistent with other buttons */
+            color: #FFC777; /* accent-gold text */
+            border-color: #FFC777; /* accent-gold border */
+            box-shadow: 0 0 8px rgba(255, 199, 119, 0.4); /* gold glow effect */
+        }
+        .active-lang:hover {
+            transform: scale(1.05);
+            background-color: var(--secondary-dark); /* slightly lighter dark background */
+            color: #E0A84C; /* accent-gold-hover text */
+            box-shadow: 0 0 12px rgba(255, 199, 119, 0.6); /* enhanced glow on hover */
+        }
+    </style>
+</head>
+<body class="bg-primary-dark text-primary-text">
+
+    <!-- Hero Section (El Gancho) -->
+    <header id="hero" class="bg-secondary-dark text-white pt-32 pb-16 shadow-md min-h-screen flex items-center data-stream enhanced-glow">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight title-gradient mb-6">
+                <span class="lang-es">Aprendizaje con Alma Digital</span>
+                <span class="lang-en hidden">Learning with Digital Soul</span>
+            </h1>
+            <h2 class="text-xl sm:text-2xl text-accent-blue mt-2 sm:mt-4 mb-12 max-w-4xl mx-auto font-semibold">
+                <span class="lang-es">Descubre cómo se construye una IA con propósito para revolucionar tu forma de crecer.</span>
+                <span class="lang-en hidden">Discover how an AI with purpose is built to revolutionize the way you grow.</span>
+            </h2>
+            
+
+            
+            <!-- Video de Bienvenida de Maia (30-60 segundos) -->
+            <div class="video-placeholder bg-tertiary-dark rounded-lg p-12 mb-12 border-2 border-dashed border-accent-gold border-opacity-30 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-accent-gold bg-opacity-20 rounded-full flex items-center justify-center">
+                        <svg class="w-12 h-12 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M8 5v10l7-5z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-accent-gold mb-4">
+                        <span class="lang-es">Video de Bienvenida con Maia Kode</span>
+                        <span class="lang-en hidden">Welcome Video with Maia Kode</span>
+                    </h3>
+                    <p class="text-secondary-text">
+                        <span class="lang-es">30-60 segundos de Maia presentando su propósito</span>
+                        <span class="lang-en hidden">30-60 seconds of Maia presenting her purpose</span>
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Indicador de Scroll -->
+            <div class="scroll-indicator animate-bounce">
+                <a href="#vision" class="scroll-link inline-block text-accent-gold hover:text-accent-gold-hover transition-colors duration-200">
+                    <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                    <p class="text-sm mt-2">
+                        <span class="lang-es">Explora más</span>
+                        <span class="lang-en hidden">Explore more</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sticky Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-secondary-dark bg-opacity-95 backdrop-blur-sm border-b border-border-color">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-accent-gold">Maia Kode</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#vision" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Visión</span>
+                        <span class="lang-en hidden">Vision</span>
+                    </a>
+                    <a href="#inspiracion" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Inspiración</span>
+                        <span class="lang-en hidden">Inspiration</span>
+                    </a>
+                    <a href="#manifiesto" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion" class="nav-link bg-accent-blue hover:bg-accent-blue-hover text-white px-4 py-2 rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+                
+                <!-- Language toggle and Mobile menu -->
+                <div class="flex items-center space-x-2">
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="es" class="decorative-btn-circle lang-button active-lang bg-tertiary-dark text-tertiary-text">ES</button>
+                    </div>
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="en" class="decorative-btn-circle lang-button bg-tertiary-dark text-tertiary-text">EN</button>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-secondary-text hover:text-accent-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary-dark border-t border-border-color">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#vision" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Visión</span>
+                        <span class="lang-en hidden">Vision</span>
+                    </a>
+                    <a href="#inspiracion" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Inspiración</span>
+                        <span class="lang-en hidden">Inspiration</span>
+                    </a>
+                    <a href="#manifiesto" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion" class="mobile-nav-link block px-3 py-2 bg-accent-blue hover:bg-accent-blue-hover text-white rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-20">
+        <!-- Sección La Visión -->
+        <section id="vision" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-4xl font-bold title-gradient mb-8 text-center">
+                <span class="lang-es">Nuestra Visión para el Futuro de la Educación</span>
+                <span class="lang-en hidden">Our Vision for the Future of Education</span>
+            </h2>
+            
+            <div class="space-y-12">
+                <!-- Maia Kode (Centro, destacada) -->
+                <div class="text-center">
+                    <h3 class="text-3xl font-bold text-accent-gold mb-6">Maia Kode</h3>
+                    <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-6 border-accent-gold mb-6 bg-tertiary-dark shadow-2xl">
+                        <img src="images/Maia Kode.png" alt="Maia Kode Avatar" class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-lg text-secondary-text">
+                        <span class="lang-es">Tu compañera de aprendizaje con IA</span>
+                        <span class="lang-en hidden">Your AI learning companion</span>
+                    </p>
+                </div>
+                
+                <!-- Creadores (layout horizontal) -->
+                <div class="flex flex-row items-center justify-center space-x-8 sm:space-x-16">
+                    <!-- Jon Efe (Primero) -->
+                    <div class="text-center">
+                        <h4 class="text-lg font-bold text-accent-blue mb-4">Jon Efe</h4>
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-accent-blue mb-4 bg-tertiary-dark">
+                            <img src="images/Jon-Efe.png" alt="Jon Efe" class="w-full h-full object-cover">
+                        </div>
+                        <p class="text-sm text-secondary-text">Co-creador</p>
+                    </div>
+                    
+                    <!-- José Aluz (Segundo) -->
+                    <div class="text-center">
+                        <h4 class="text-lg font-bold text-accent-blue mb-4">José Aluz</h4>
+                        <div class="w-24 h-24 mx-auto rounded-full overflow-hidden border-4 border-accent-blue mb-4 bg-tertiary-dark">
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-600 to-gray-800">
+                                <div class="text-white text-3xl">👨‍🔬</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-secondary-text">Co-creador</p>
+                    </div>
+                </div>
+
+                <!-- Texto Principal -->
+                <div class="text-center max-w-4xl mx-auto">
+                    <p class="text-xl text-secondary-text leading-relaxed mb-8">
+                        <span class="lang-es">Visualizamos un mundo donde el aprendizaje no tiene barreras. Maia Kode es un compañero que entiende, se adapta y crece contigo.</span>
+                        <span class="lang-en hidden">We envision a world where learning has no barriers. Maia Kode is a companion who understands, adapts and grows with you.</span>
+                    </p>
+                    
+                    <blockquote class="text-2xl italic text-accent-gold text-center font-medium">
+                        <span class="lang-es">"Creemos que el futuro de la educación está en la personalización, la empatía y la accesibilidad universal. Maia Kode es nuestro compromiso con ese futuro."</span>
+                        <span class="lang-en hidden">"We believe the future of education lies in personalization, empathy and universal accessibility. Maia Kode is our commitment to that future."</span>
+                    </blockquote>
+                </div>
+                
+                <!-- CTA de Transición -->
+                <div class="text-center mt-12">
+                    <a href="#inspiracion" class="inline-block electric-cta text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg">
+                        <span class="lang-es">Ver la inspiración detrás de la visión</span>
+                        <span class="lang-en hidden">See the inspiration behind the vision</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección La Inspiración (La Prueba) -->
+        <section id="inspiracion" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-4xl font-bold title-gradient mb-8 text-center">
+                <span class="lang-es">Inspirada en los Arquetipos de la Comunicación Efectiva</span>
+                <span class="lang-en hidden">Inspired by the Archetypes of Effective Communication</span>
+            </h2>
+            
+            <div class="space-y-12">
+                <p class="text-xl text-center max-w-4xl mx-auto text-secondary-text leading-relaxed">
+                    <span class="lang-es">La personalidad de Maia no es una creación arbitraria, sino el resultado de un análisis profundo de 16 figuras líderes en la divulgación científica y tecnológica. Para construir los cimientos de una IA verdaderamente humana, estudiamos cómo estos comunicadores combinan la capacidad de enseñar con claridad con una conexión empática. El resultado es una IA con una personalidad modelada a partir de los principios de comunicación A.C.T.I.V.E.: una combinación de autenticidad, creatividad, empatía y rigor técnico.</span>
+                    <span class="lang-en hidden">Maia's personality is not an arbitrary creation, but the result of deep analysis of 16 leading figures in scientific and technological communication. To build the foundations of a truly human AI, we studied how these communicators combine the ability to teach with clarity with empathetic connection. The result is an AI with a personality modeled on A.C.T.I.V.E. communication principles: a combination of authenticity, creativity, empathy and technical rigor.</span>
+                </p>
+                
+                <!-- Cuadrícula de Influencers (16 perfiles) -->
+                <div id="inspirationInfluencersGrid" class="asymmetric-grid max-w-6xl mx-auto" style="display: grid !important; grid-template-columns: repeat(3, 1fr); gap: 2rem; align-items: center; justify-items: center;">
+                    <!-- Los 16 influencers reales se cargarán dinámicamente desde influencers_data.json -->
+                </div>
+                
+                <!-- CTA de Transición -->
+                <div class="text-center space-y-6">
+                    <p class="text-xl text-secondary-text">
+                        <span class="lang-es">Hemos destilado las claves del éxito de estos 16 comunicadores en una guía exclusiva.</span>
+                        <span class="lang-en hidden">We have distilled the keys to success of these 16 communicators into an exclusive guide.</span>
+                    </p>
+<a href="#manifiesto" class="inline-block bg-accent-gold hover:bg-accent-gold-hover text-primary-dark font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg text-center">
+    <span class="lang-es">Descargar "El Manifiesto de Maia"</span>
+    <span class="lang-en hidden">Download "Maia's Manifesto"</span>
+</a>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección La Oferta (El Lead Magnet) -->
+        <section id="manifiesto" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-4xl font-bold title-gradient mb-8 text-center">
+                <span class="lang-es">Descarga tu Guía para una Comunicación de Impacto</span>
+                <span class="lang-en hidden">Download your Guide for Impactful Communication</span>
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Imagen del PDF -->
+                <div class="text-center">
+                    <div class="w-72 h-96 mx-auto bg-tertiary-dark rounded-lg shadow-2xl border-4 border-accent-gold border-opacity-50 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 overflow-hidden electric-cta">
+                        <img src="images/Libro-Maia-Kode.png" alt="Libro Maia Kode - Guía para una Comunicación de Impacto" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+                
+                <!-- Descripción -->
+                <div class="space-y-8">
+                    <p class="text-xl text-secondary-text leading-relaxed">
+                        <span class="lang-es">"El Manifiesto de Maia" es nuestro informe exclusivo en PDF donde descubrirás las 10 claves que usan los comunicadores más inspiradores para cautivar a sus audiencias. Es tu primer paso para aprender a comunicar tus ideas con la misma claridad y poder.</span>
+                        <span class="lang-en hidden">"Maia's Manifesto" is our exclusive PDF report where you'll discover the 10 keys that the most inspiring communicators use to captivate their audiences. It's your first step to learning how to communicate your ideas with the same clarity and power.</span>
+                    </p>
+                    
+                    <div class="bg-tertiary-dark p-8 rounded-lg border border-border-color">
+                        <h4 class="text-accent-gold font-bold text-xl mb-6">
+                            <span class="lang-es">📖 Lo que encontrarás dentro:</span>
+                            <span class="lang-en hidden">📖 What you'll find inside:</span>
+                        </h4>
+                        <ul class="space-y-4 text-lg text-secondary-text">
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3 text-xl">✓</span>
+                                <span class="lang-es">Las 10 claves de comunicación efectiva</span>
+                                <span class="lang-en hidden">The 10 keys to effective communication</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3 text-xl">✓</span>
+                                <span class="lang-es">Técnicas de storytelling que conectan</span>
+                                <span class="lang-en hidden">Storytelling techniques that connect</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3 text-xl">✓</span>
+                                <span class="lang-es">Estrategias de empatía en la enseñanza</span>
+                                <span class="lang-en hidden">Empathy strategies in teaching</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3 text-xl">✓</span>
+                                <span class="lang-es">Métodos para mantener la atención</span>
+                                <span class="lang-en hidden">Methods to maintain attention</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call-to-Action: Únete a la lista de espera -->
+        <div class="text-center py-8">
+            <div class="scroll-indicator animate-bounce">
+                <a href="#conversion" class="scroll-link inline-block text-accent-gold hover:text-accent-gold-hover transition-colors duration-200">
+                    <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                    <p class="text-sm mt-2">
+                        <span class="lang-es">Únete a la lista de espera</span>
+                        <span class="lang-en hidden">Join the waiting list</span>
+                    </p>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sección La Conversión (El CTA Final) -->
+        <section id="conversion" class="bg-gradient-to-br from-accent-blue to-accent-gold p-12 rounded-lg shadow-2xl text-center enhanced-glow">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-5xl font-bold title-gradient mb-8">
+                    <span class="lang-es">Únete a la Aventura: La Academia Maia Kode</span>
+                    <span class="lang-en hidden">Join the Adventure: The Maia Kode Academy</span>
+                </h2>
+                
+                <p class="text-2xl text-primary-dark mb-12 leading-relaxed font-medium">
+                    <span class="lang-es">Sé el primero en saber cuándo la Academia abra sus puertas. Regístrate ahora, descarga gratis "El Manifiesto de Maia" y únete a la lista de espera para recibir acceso anticipado y contenido exclusivo.</span>
+                    <span class="lang-en hidden">Be the first to know when the Academy opens its doors. Register now, download "Maia's Manifesto" for free and join the waiting list to receive early access and exclusive content.</span>
+                </p>
+
+                <!-- Formulario de Captura -->
+                <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-10 max-w-lg mx-auto border border-primary-dark border-opacity-20">
+                    <form id="lead-capture-form" class="space-y-6">
+                        <div>
+                            <label for="lead-email" class="block text-lg font-semibold text-primary-dark mb-3">
+                                <span class="lang-es">Email</span>
+                                <span class="lang-en hidden">Email</span>
+                            </label>
+                            <input type="email" id="lead-email" name="email" required
+                                   class="w-full px-6 py-4 border-3 border-primary-dark rounded-lg text-primary-dark placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200 text-lg"
+                                   data-placeholder-es="tu@email.com" 
+                                   data-placeholder-en="your@email.com"
+                                   placeholder="tu@email.com">
+                        </div>
+                        
+                        <div>
+                            <label for="lead-name" class="block text-lg font-semibold text-primary-dark mb-3">
+                                <span class="lang-es">Nombre</span>
+                                <span class="lang-en hidden">Name</span>
+                            </label>
+                            <input type="text" id="lead-name" name="name"
+                                   class="w-full px-6 py-4 border-3 border-primary-dark rounded-lg text-primary-dark placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200 text-lg"
+                                   data-placeholder-es="Tu nombre" 
+                                   data-placeholder-en="Your name"
+                                   placeholder="Tu nombre">
+                        </div>
+                        
+                        <button type="submit" class="w-full electric-cta text-white font-bold py-5 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-xl shadow-lg">
+                            <span class="lang-es">¡Descargar y Unirme a la Lista!</span>
+                            <span class="lang-en hidden">Download and Join the List!</span>
+                        </button>
+                    </form>
+                    
+                    <p class="text-lg text-primary-dark mt-6 opacity-90">
+                        <span class="lang-es">💡 Recibirás el PDF inmediatamente y actualizaciones exclusivas sobre Maia Kode</span>
+                        <span class="lang-en hidden">💡 You'll receive the PDF immediately and exclusive updates about Maia Kode</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto (Secundario) -->
+        <section id="contacto" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+            <h2 class="text-4xl font-bold title-gradient mb-8 text-center">
+                <span class="lang-es">¿Tienes una idea o propuesta?</span>
+                <span class="lang-en hidden">Do you have an idea or proposal?</span>
+            </h2>
+            
+            <p class="text-xl text-center text-secondary-text mb-12 max-w-3xl mx-auto leading-relaxed">
+                <span class="lang-es">Siempre estamos abiertos a la colaboración. Si quieres compartir algo con nosotros, este es tu espacio.</span>
+                <span class="lang-en hidden">We are always open to collaboration. If you want to share something with us, this is your space.</span>
+            </p>
+            
+            <!-- Formulario de Contacto Completo -->
+            <div class="max-w-2xl mx-auto">
+                <form id="contact-form" class="space-y-8">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="contact-name" class="block text-lg font-semibold text-accent-gold mb-3">
+                                <span class="lang-es">Nombre</span>
+                                <span class="lang-en hidden">Name</span>
+                            </label>
+                            <input type="text" id="contact-name" name="name" required
+                                   class="w-full px-4 py-4 bg-tertiary-dark border-2 border-border-color rounded-lg text-primary-text placeholder-secondary-text focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200 text-lg"
+                                   data-placeholder-es="Tu nombre" 
+                                   data-placeholder-en="Your name"
+                                   placeholder="Tu nombre">
+                        </div>
+                        
+                        <div>
+                            <label for="contact-email" class="block text-lg font-semibold text-accent-gold mb-3">
+                                <span class="lang-es">Email</span>
+                                <span class="lang-en hidden">Email</span>
+                            </label>
+                            <input type="email" id="contact-email" name="email" required
+                                   class="w-full px-4 py-4 bg-tertiary-dark border-2 border-border-color rounded-lg text-primary-text placeholder-secondary-text focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200 text-lg"
+                                   data-placeholder-es="tu@email.com" 
+                                   data-placeholder-en="your@email.com"
+                                   placeholder="tu@email.com">
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="contact-message" class="block text-lg font-semibold text-accent-gold mb-3">
+                            <span class="lang-es">Mensaje</span>
+                            <span class="lang-en hidden">Message</span>
+                        </label>
+                        <textarea id="contact-message" name="message" rows="6" required
+                                  class="w-full px-4 py-4 bg-tertiary-dark border-2 border-border-color rounded-lg text-primary-text placeholder-secondary-text focus:outline-none focus:ring-2 focus:ring-accent-blue focus:border-accent-blue transition-all duration-200 resize-vertical text-lg"
+                                  data-placeholder-es="Comparte tu idea, propuesta o consulta..." 
+                                  data-placeholder-en="Share your idea, proposal or query..."
+                                  placeholder="Comparte tu idea, propuesta o consulta..."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="bg-accent-gold hover:bg-accent-gold-hover text-primary-dark font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg">
+                            <span class="lang-es">Enviar Mensaje</span>
+                            <span class="lang-en hidden">Send Message</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </section>    </main>
+
+    <footer class="bg-secondary-dark text-tertiary-text py-8 mt-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm">
+                <span class="lang-es">Un proyecto de Jon Efe. | Funciones de IA por OpenAI.</span>
+                <span class="lang-en hidden">A project by Jon Efe. | AI functions by OpenAI.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="decorative-btn-container-circle scroll-to-top-container">
+        <button id="scrollToTopBtn" class="decorative-btn-circle scroll-to-top-btn" aria-label="Volver arriba" title="Volver arriba">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="scroll-arrow">
+                <path d="M12 2L7 7l1.41 1.41L11 5.83V22h2V5.83l2.59 2.58L17 7l-5-5z"/>
+            </svg>
+            <span class="lang-es scroll-text">Volver arriba</span>
+            <span class="lang-en scroll-text hidden">Back to Top</span>
+        </button>
+    </div>
+
+    <script defer src="app.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langElements = document.querySelectorAll('[data-lang-es], [data-lang-en]');
+            const body = document.body;
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            const scrollToTopContainer = document.querySelector('.scroll-to-top-container');
+
+            // Scroll to top functionality
+            function handleScroll() {
+                if (window.pageYOffset > 300) {
+                    scrollToTopContainer.classList.add('show');
+                } else {
+                    scrollToTopContainer.classList.remove('show');
+                }
+            }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Add click event listener to scroll to top button
+            scrollToTopBtn.addEventListener('click', scrollToTop);
+
+            // Smooth scroll navigation functionality
+            document.querySelectorAll('.nav-link, .mobile-nav-link, .scroll-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#')) {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const navElement = document.querySelector('nav');
+                            const navHeight = navElement ? navElement.offsetHeight : 0;
+                            // Use offsetTop instead of getBoundingClientRect to get absolute position
+                            // Then subtract nav height and add small padding for better positioning
+                            const offsetPosition = targetElement.offsetTop - navHeight - 10;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            const mobileMenu = document.getElementById('mobile-menu');
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Mobile menu toggle functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Function to update the displayed language and active state
+            function updateLang(lang) {
+                const isEs = lang === 'es';
+                document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', !isEs));
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', isEs));
+                body.lang = lang;
+
+                // Update meta tags and title for SEO
+                langElements.forEach(el => {
+                    const content = el.getAttribute(`data-lang-${lang}`);
+                    if (el.tagName === 'TITLE') {
+                        el.textContent = content;
+                    } else if (el.tagName === 'META') {
+                        el.setAttribute('content', content);
+                    }
+                });
+
+                // Update active button state
+                langButtons.forEach(btn => {
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add('active-lang');
+                        btn.classList.remove('bg-tertiary-dark', 'text-tertiary-text');
+                    } else {
+                        btn.classList.remove('active-lang');
+                        btn.classList.add('bg-tertiary-dark', 'text-tertiary-text');
+                    }
+                });
+
+                // Update currentLanguage in app.js and refresh influencer profiles
+                if (window.updateAppLanguage) {
+                    window.updateAppLanguage(lang);
+                }
+
+                // Update scroll-to-top button attributes
+                const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+                if (scrollToTopBtn) {
+                    const scrollToTopText = lang === 'es' ? 'Volver arriba' : 'Back to Top';
+                    scrollToTopBtn.setAttribute('aria-label', scrollToTopText);
+                    scrollToTopBtn.setAttribute('title', scrollToTopText);
+                }
+
+                // Update form placeholders based on selected language
+                document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
+                    const placeholder = el.getAttribute(`data-placeholder-${lang}`);
+                    if (placeholder) {
+                        el.setAttribute('placeholder', placeholder);
+                    }
+                });
+            }
+
+            // Handle language selection
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedLang = button.dataset.lang;
+                    updateLang(selectedLang);
+                });
+            });
+
+            // Initial language setup (default to Spanish)
+            updateLang('es');
+
+            // Form handling functionality
+            
+            // Lead capture form (conversion section)
+            const leadCaptureForm = document.getElementById('lead-capture-form');
+            if (leadCaptureForm) {
+                leadCaptureForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('lead-email').value.trim();
+                    const name = document.getElementById('lead-name').value.trim();
+                    
+                    if (!email) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa tu email.' : 'Please enter your email.');
+                        return;
+                    }
+                    
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa un email válido.' : 'Please enter a valid email.');
+                        return;
+                    }
+                    
+                    // Show success message
+                    const button = leadCaptureForm.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = body.lang === 'es' ? 
+                        '<span class="lang-es">¡Enviado! Revisa tu email</span>' : 
+                        '<span class="lang-en">Sent! Check your email</span>';
+                    button.disabled = true;
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        leadCaptureForm.reset();
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        
+                        // Show download message
+                        alert(body.lang === 'es' ? 
+                            '¡Gracias! En un proyecto real, recibirías el PDF por email y serías añadido a la lista de espera.' :
+                            'Thank you! In a real project, you would receive the PDF by email and be added to the waiting list.');
+                    }, 3000);
+                });
+            }
+            
+            // Contact form
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const name = document.getElementById('contact-name').value.trim();
+                    const email = document.getElementById('contact-email').value.trim();
+                    const message = document.getElementById('contact-message').value.trim();
+                    
+                    if (!name || !email || !message) {
+                        alert(body.lang === 'es' ? 
+                            'Por favor, completa todos los campos.' : 
+                            'Please fill in all fields.');
+                        return;
+                    }
+                    
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa un email válido.' : 'Please enter a valid email.');
+                        return;
+                    }
+                    
+                    // Show success message
+                    const button = contactForm.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = body.lang === 'es' ? 
+                        '<span class="lang-es">¡Enviado!</span>' : 
+                        '<span class="lang-en">Sent!</span>';
+                    button.disabled = true;
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        contactForm.reset();
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        
+                        // Show confirmation message
+                        alert(body.lang === 'es' ? 
+                            '¡Gracias por tu mensaje! En un proyecto real, recibirías una respuesta pronto.' :
+                            'Thank you for your message! In a real project, you would receive a response soon.');
+                    }, 3000);
+                });
+            }
+        });
+    </script>
+
+    <script>
+        // Enhanced scroll behavior for navigation links
+        document.addEventListener('DOMContentLoaded', () => {
+            // Handle smooth scroll with proper offset for navigation
+            function smoothScrollToSection(targetId) {
+                const targetElement = document.getElementById(targetId);
+                const navElement = document.querySelector('nav.sticky');
+                
+                if (targetElement) {
+                    const navHeight = navElement ? navElement.offsetHeight : 0;
+                    // Use offsetTop instead of getBoundingClientRect to get absolute position
+                    const offsetPosition = targetElement.offsetTop - navHeight - 10;
+                    
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+
+            // Add scroll behavior to navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    smoothScrollToSection(targetId);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

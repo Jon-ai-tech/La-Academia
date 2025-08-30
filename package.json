@@ -1,0 +1,23 @@
+{
+  "name": "maia-kode-genesis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JonMK-maker/maia-kode-genesis.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JonMK-maker/maia-kode-genesis/issues"
+  },
+  "homepage": "https://github.com/JonMK-maker/maia-kode-genesis#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}

@@ -1,0 +1,171 @@
+[
+    {
+        "name": "Alba Moreno", 
+        "language": "Español", 
+        "image": "images/Alba-Moreno.jpg",
+        "platforms": [ { "name": "TikTok", "url": "https://www.tiktok.com/@fisicamr", "iconName": "TikTok" }, { "name": "Instagram", "url": "https://www.instagram.com/fisicamr", "iconName": "Instagram" } ],
+        "description": { "personality": "Claramente \"geek apasionada\". Su entusiasmo por la física es contagioso...", "esthetics": "Se ajusta al \"geek-chic\" con un estilo personal distintivo..." },
+        "contentType": "Altamente didáctico, explicando conceptos de física...", "topLevelReason": "Impacto masivo en una audiencia joven...", "id": "alba_moreno"
+    },
+    {
+        "name": "Veronica Sierra", 
+        "language": "Español", 
+        "image": "images/Veronica-Sierra.jpg",
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@Verownika", "iconName": "YouTube" }, 
+            { "name": "Instagram", "url": "https://www.instagram.com/verownika", "iconName": "Instagram" }
+        ],
+        "description": { "personality": "Ingeniera con una clara pasión por la tecnología...", "esthetics": "Profesional y moderna, se alinea con un \"geek-chic\" funcional..." },
+        "contentType": "Contenido didáctico sobre tecnología, software, gadgets...", "topLevelReason": "Es un referente femenino en el sector tecnológico en español...", "id": "veronica_sierra"
+    },
+    {
+        "name": "Teresa Arnandis", 
+        "language": "Español", 
+        "image": "images/Teresa-Arnandis.jpg",
+        "platforms": [ { "name": "TikTok", "url": "https://www.tiktok.com/@ladyscience", "iconName": "TikTok" }, { "name": "Instagram", "url": "https://www.instagram.com/ladyscienceofficial", "iconName": "Instagram" } ],
+        "description": { "personality": "Doctora en Bioquímica y Biomedicina, claramente \"geek apasionada\"...", "esthetics": "Profesional y accesible. Su estilo es \"geek-chic\"..." },
+        "contentType": "Contenido altamente didáctico, enfocado en la divulgación científica...", "topLevelReason": "Su labor combatiendo la desinformación con rigor científico es crucial...", "id": "teresa_arnandis"
+    },
+    {
+        "name": "Nazareth Castellanos", 
+        "language": "Español", 
+        "image": "images/Nazareth-Castellanos.jpg",
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@nazarethcastellanos548", "iconName": "YouTube" }
+        ],
+        "description": { "personality": "Neurocientífica con una profunda pasión por la conexión mente-cuerpo...", "esthetics": "Aunque su presencia principal no es tan \"visual\"..." },
+        "contentType": "Extremadamente didáctico, centrado en la neurociencia...", "topLevelReason": "Es una de las divulgadoras científicas más respetadas...", "id": "nazareth_castellanos"
+    },
+    {
+        "name": "Jennifer Samaniego", 
+        "language": "Español", 
+        "image": "images/Jennifer-Samaniego.jpg",
+        "platforms": [ 
+            { "name": "LinkedIn", "url": "https://www.linkedin.com/in/jenn-samaniego-%F0%9F%87%AA%F0%9F%87%A8-02708a39/", "iconName": "LinkedIn" },
+            { "name": "Instagram", "url": "https://www.instagram.com/jenn_samaniego/", "iconName": "Instagram" }
+        ],
+        "description": { "personality": "Analista de Innovación Educativa, claramente una \"geek apasionada\"...", "esthetics": "Profesional y académica. Su \"geek-chic\" se manifiesta..." },
+        "contentType": "Contenido didáctico enfocado en la aplicación de tecnologías emergentes...", "topLevelReason": "Es una figura clave en la innovación educativa en América Latina...", "id": "jennifer_samaniego"
+    },
+    {
+        "name": "Rocío Vidal", 
+        "language": "Español", 
+        "image": "images/Rocio-Vidal.jpg",
+        "platforms": [ 
+             { "name": "YouTube", "url": "https://www.youtube.com/channel/UCoXtmmnLCbXDiSo8GxsmOzA", "iconName": "YouTube" },
+             { "name": "Instagram", "url": "https://www.instagram.com/lagatadeschrodinger", "iconName": "Instagram" }, 
+             { "name": "X (Twitter)", "url": "https://x.com/schrodingergata", "iconName": "X (Twitter)" }
+        ],
+        "description": { "personality": "Divulgadora científica con fuerte enfoque en pensamiento crítico y escepticismo. Clara, directa y apasionada por desmentir pseudociencias. Sentido del humor irónico.", "esthetics": "Estilo moderno y directo. En sus vídeos, la claridad del mensaje y la argumentación son prioritarias. Geek-chic intelectual." },
+        "contentType": "Vídeos de investigación y análisis sobre ciencia, tecnología, y actualidad con perspectiva científica. Libros publicados. Colaboraciones y debates.", "topLevelReason": "Voz influyente en la comunidad escéptica hispanohablante. Gran capacidad para explicar temas complejos y fomentar el pensamiento crítico.", "id": "rocio_vidal"
+    },
+    {
+        "name": "Sandra Ortonobes", 
+        "language": "Español", 
+        "image": "images/Sandra-Ortonobes.jpg",
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@LaHiperactina", "iconName": "YouTube" }, 
+            { "name": "Instagram", "url": "https://www.instagram.com/lahiperactina/", "iconName": "Instagram" }, 
+            { "name": "TikTok", "url": "https://www.tiktok.com/@lahiperactina", "iconName": "TikTok" } 
+        ],
+        "description": { "personality": "Biotecnóloga y comunicadora científica entusiasta y didáctica. Transmite su pasión por la biología y la ciencia de forma muy cercana y comprensible. Empática con las dudas de su audiencia.", "esthetics": "Estilo fresco y juvenil. Utiliza gráficos y animaciones sencillas pero efectivas en sus vídeos. Geek-chic accesible." },
+        "contentType": "Explicaciones claras y entretenidas sobre biología, biotecnología, salud y curiosidades científicas. Formatos variados, desde vídeos elaborados hasta stories interactivas.", "topLevelReason": "Excelente habilidad para hacer la biología atractiva y fácil de entender para un público amplio. Gran engagement y comunidad activa.", "id": "sandra_ortonobes"
+    },
+    {
+        "name": "Marisol HB", 
+        "language": "Español", 
+        "image": "images/Marisol-HB.jpg",
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@EstudiaConMarisol", "iconName": "YouTube" }, 
+            { "name": "Instagram", "url": "https://www.instagram.com/geekpipro", "iconName": "Instagram" },
+            { "name": "LinkedIn", "url": "https://www.linkedin.com/company/pasosporingeniería", "iconName": "LinkedIn" }
+        ],
+        "description": { "personality": "Ingeniera que comparte su experiencia profesional y académica de forma auténtica y motivadora. Empática con los desafíos de los estudiantes de ingeniería. Segura y con un toque de humor.", "esthetics": "Estilo natural y profesional. Muestra su día a día y entorno laboral, haciéndolo relatable. Geek-chic práctico." },
+        "contentType": "Consejos para estudiantes y profesionales de ingeniería, vlogs sobre su vida como ingeniera, divulgación de temas STEM y tecnología de forma aplicada.", "topLevelReason": "Conecta muy bien con estudiantes de ingeniería, ofreciendo una visión realista y aspiracional de la profesión. Fomenta la perseverancia y la pasión por STEM.", "id": "marisol_hb"
+    },
+    {
+        "name": "Simone Giertz", 
+        "language": "Ingles", 
+        "image": "images/Simone-Giertz.jpg",
+        "platforms": [ { "name": "YouTube", "url": "https://www.youtube.com/@simonegiertz", "iconName": "YouTube" } ],
+        "description": { "personality": "La \"Reina de los Robots Inútiles\". Encarna a la \"geek apasionada\"...", "esthetics": "Su estética es \"geek-chic\" de una manera muy personal y funcional..." },
+        "contentType": "Contenido didáctico sobre invención, ingeniería y resolución de problemas...", "topLevelReason": "Es única en su nicho. Ha inspirado a millones...", "id": "simone_giertz"
+    },
+    {
+        "name": "Mayuko Inoue", 
+        "language": "Ingles", 
+        "image": "images/Mayuko-Inoue.jpeg",
+        "platforms": [ { "name": "YouTube", "url": "https://www.youtube.com/@hellomayuko", "iconName": "YouTube" }, { "name": "Instagram", "url": "https://www.instagram.com/hellomayuko/", "iconName": "Instagram" } ],
+        "description": { "personality": "Ingeniera de software (ex-Netflix, ex-Patreon) que comparte su experiencia...", "esthetics": "Su estilo es \"geek-chic\" minimalista y profesional..." },
+        "contentType": "Contenido didáctico sobre desarrollo de software, carreras en tecnología...", "topLevelReason": "Ofrece una visión interna y honesta de la industria tecnológica...", "id": "mayuko_inoue"
+    },
+    {
+        "name": "Estefannie Explains It All", 
+        "language": "Ingles", 
+        "image": "images/Estefannie-Explains-It-All.jpg",
+        "platforms": [ { "name": "YouTube", "url": "https://www.youtube.com/@Estefannie", "iconName": "YouTube" }, { "name": "Instagram", "url": "https://www.instagram.com/estefanniegg/", "iconName": "Instagram" }, { "name": "TikTok", "url": "https://www.tiktok.com/@estefanniegg", "iconName": "TikTok" } ],
+        "description": { "personality": "Ingeniera de software y maker. Es una \"geek apasionada\" con un humor...", "esthetics": "Su estética es colorida, divertida y definitivamente \"geek-chic\"..." },
+        "contentType": "Contenido didáctico sobre electrónica, programación, impresión 3D...", "topLevelReason": "Su energía y creatividad son muy contagiosas...", "id": "estefannie_explains"
+    },
+    {
+        "name": "Dianna Cowern", 
+        "language": "Ingles", 
+        "image": "images/Dianna-Cowern.jpg",
+        "platforms": [ { "name": "YouTube", "url": "https://www.youtube.com/@PhysicsGirl", "iconName": "YouTube" } ],
+        "description": { "personality": "Divulgadora científica (física). Es una \"geek apasionada\" por la física...", "esthetics": "Profesional y accesible. Su \"geek-chic\" se manifiesta..." },
+        "contentType": "Contenido didáctico de alta calidad sobre física...", "topLevelReason": "Es una de las divulgadoras de ciencia más reconocidas en YouTube...", "id": "dianna_cowern"
+    },
+    {
+        "name": "Xyla Foxlin", 
+        "language": "Ingles", 
+        "image": "images/Xyla-Foxlin.jpg",
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@XylaFoxlin", "iconName": "YouTube" }, 
+            { "name": "TikTok", "url": "https://www.tiktok.com/@xylafoxlin", "iconName": "TikTok" }, 
+            { "name": "Instagram", "url": "https://www.instagram.com/xylafoxlin/", "iconName": "Instagram" } 
+        ],
+        "description": { "personality": "Ingeniera mecatrónica, emprendedora y maker. Es una \"geek apasionada\"...", "esthetics": "Su estética es \"geek-chic\" funcional y aventurera..." },
+        "contentType": "Contenido didáctico sobre ingeniería, fabricación, emprendimiento...", "topLevelReason": "Su ambición y la escala de sus proyectos son increíblemente inspiradoras...", "id": "xyla_foxlin"
+    },
+    {
+        "name": "Emily Calandrelli", 
+        "language": "Ingles", 
+        "image": "images/Emily-Calandrelli.jpeg",
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@tilscience", "iconName": "YouTube" }, 
+            { "name": "Instagram", "url": "https://www.instagram.com/thespacegal/", "iconName": "Instagram" },
+            { "name": "X (Twitter)", "url": "https://twitter.com/thespacegal", "iconName": "X (Twitter)" },
+            { "name": "Sitio Web", "url": "https://thespacegal.com/", "iconName": "Sitio Web" }
+        ],
+        "description": { "personality": "Ingeniera (MIT), comunicadora científica y presentadora de TV (Emily's Wonder Lab en Netflix). Entusiasta, carismática y excelente para explicar conceptos STEM a niños y adultos. Empática y muy accesible.", "esthetics": "Profesional, colorida y amigable. Su 'geek-chic' es vibrante y educativo, ideal para audiencias jóvenes y familias. No sexualizada." },
+        "contentType": "Programas de TV educativos sobre ciencia, demostraciones científicas, libros para niños, charlas y contenido en redes sociales que hace la ciencia divertida y accesible, especialmente el espacio y la ingeniería.", 
+        "topLevelReason": "Gran alcance y reconocimiento, especialmente entre familias y educadores. Su habilidad para inspirar curiosidad por STEM en los más jóvenes es excepcional. Muy buena comunicadora.", 
+        "id": "emily_calandrelli"
+    },
+    {
+        "name": "Cleo Abram", 
+        "language": "Ingles", 
+        "image": "images/Cleo-Abram.jpg", 
+        "platforms": [ 
+            { "name": "YouTube", "url": "https://www.youtube.com/@CleoAbram", "iconName": "YouTube" }, 
+            { "name": "Instagram", "url": "https://www.instagram.com/cleoabram/", "iconName": "Instagram" } 
+        ],
+        "description": { "personality": "Periodista tecnológica y productora de vídeo. Curiosa, analítica y excelente comunicadora. Empática al abordar el impacto de la tecnología en la sociedad. Clara y didáctica.", "esthetics": "Producción de vídeo de muy alta calidad, con un estilo visual moderno, limpio y atractivo. Geek-chic sofisticado y profesional." },
+        "contentType": "Explicaciones profundas y accesibles sobre tecnologías complejas como IA, energía nuclear, y el futuro de la tecnología. Entrevistas con expertos. Formato muy visual y bien investigado.", "topLevelReason": "Destaca por la calidad cinematográfica de sus explicaciones y su habilidad para hacer comprensibles temas muy técnicos. Fomenta una comprensión matizada de la tecnología.", "id": "cleo_abram"
+    },
+    {
+        "name": "Kathy Pham", 
+        "language": "Ingles", 
+        "image": "images/Kathy-Pham.jpg",
+        "platforms": [  
+             { "name": "Youtube 1", "url": "https://www.youtube.com/watch?v=haxusGuUyt4", "iconName": "YouTube" }, 
+            { "name": "Youtube 2", "url": "https://www.youtube.com/watch?v=hK0iFkezaDc", "iconName": "YouTube" },
+            { "name": "Blog (Workday)", "url": "https://blog.workday.com/en-us/authors/kathy-pham.html", "iconName": "Blog (Workday)" },
+            { "name": "LinkedIn", "url": "https://www.linkedin.com/in/kathytpham/", "iconName": "LinkedIn" },
+            { "name": "Sitio Web", "url": "https://www.kathypham.com/", "iconName": "Sitio Web" },
+            { "name": "Instagram", "url": "https://www.instagram.com/reel/DHGkrZKh8SB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==", "iconName": "Instagram" }
+        ],
+        "description": { "personality": "Ingeniera de software y educadora. Apasionada por la programación y por ayudar a otros a aprender. Cercana, empática y motivadora. Transparente sobre su propio viaje de aprendizaje.", "esthetics": "Estilo amigable y accesible. Sus tutoriales son claros y bien estructurados. Geek-chic práctico y relatable." },
+        "contentType": "Tutoriales de programación (Python, JavaScript, etc.), consejos para aprender a programar, vlogs sobre la vida como desarrolladora, y recursos para principiantes. Fuerte enfoque en la comunidad y en el apoyo mutuo.", "topLevelReason": "Excelente para principiantes en programación. Su enfoque en desmitificar el código y construir una comunidad de apoyo es muy valioso. Inspira por su dedicación a la enseñanza.", "id": "kathy_pham"
+    }
+]
