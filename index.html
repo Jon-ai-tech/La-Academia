@@ -24,7 +24,14 @@
     <meta name="twitter:image" content="https://www.tudominio.com/maia-preview.jpg"> <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/dompurify@3.0.5/dist/purify.min.js"></script>
+    
+    <!-- 3D Animations and Visual Effects Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="visual-effects.css">
     <style>
         .lang-button {
             width: 44px;
@@ -64,13 +71,23 @@
 <body class="bg-primary-dark text-primary-text">
 
     <!-- Hero Section (El Gancho) -->
-    <header id="hero" class="bg-secondary-dark text-white pt-32 pb-16 shadow-md min-h-screen flex items-center data-stream enhanced-glow">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight title-gradient mb-6">
+    <header id="hero" class="bg-secondary-dark text-white pt-32 pb-16 shadow-md min-h-screen flex items-center data-stream enhanced-glow parallax-container">
+        <!-- CSS-only 3D Avatar -->
+        <div class="hero-3d-scene">
+            <div class="floating-3d-avatar">
+                <div class="avatar-head"></div>
+                <div class="avatar-body"></div>
+                <div class="avatar-hand left"></div>
+                <div class="avatar-hand right"></div>
+            </div>
+        </div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1 class="text-4xl sm:text-6xl font-extrabold leading-tight title-gradient mb-6 hero-animate magnetic-hover">
                 <span class="lang-es">Aprendizaje con Alma Digital</span>
                 <span class="lang-en hidden">Learning with Digital Soul</span>
             </h1>
-            <h2 class="text-xl sm:text-2xl text-accent-blue mt-2 sm:mt-4 mb-12 max-w-4xl mx-auto font-semibold">
+            <h2 class="text-xl sm:text-2xl text-accent-blue mt-2 sm:mt-4 mb-12 max-w-4xl mx-auto font-semibold hero-animate">
                 <span class="lang-es">Descubre cómo se construye una IA con propósito para revolucionar tu forma de crecer.</span>
                 <span class="lang-en hidden">Discover how an AI with purpose is built to revolutionize the way you grow.</span>
             </h2>
@@ -78,9 +95,9 @@
 
             
             <!-- Video de Bienvenida de Maia (30-60 segundos) -->
-            <div class="video-placeholder bg-tertiary-dark rounded-lg p-12 mb-12 border-2 border-dashed border-accent-gold border-opacity-30 max-w-4xl mx-auto">
+            <div class="video-placeholder bg-tertiary-dark rounded-lg p-12 mb-12 border-2 border-dashed border-accent-gold border-opacity-30 max-w-4xl mx-auto hover-3d hero-animate glow-pulse">
                 <div class="text-center">
-                    <div class="w-24 h-24 mx-auto mb-6 bg-accent-gold bg-opacity-20 rounded-full flex items-center justify-center">
+                    <div class="w-24 h-24 mx-auto mb-6 bg-accent-gold bg-opacity-20 rounded-full flex items-center justify-center morph-shape">
                         <svg class="w-12 h-12 text-accent-gold" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M8 5v10l7-5z"/>
                         </svg>
@@ -97,7 +114,7 @@
             </div>
             
             <!-- Indicador de Scroll -->
-            <div class="scroll-indicator animate-bounce">
+            <div class="scroll-indicator animate-bounce hero-animate">
                 <a href="#vision" class="scroll-link inline-block text-accent-gold hover:text-accent-gold-hover transition-colors duration-200">
                     <svg class="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
@@ -184,8 +201,8 @@
 
     <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-20">
         <!-- Sección La Visión -->
-        <section id="vision" class="bg-secondary-dark p-8 rounded-lg shadow-lg">
-            <h2 class="text-4xl font-bold title-gradient mb-8 text-center">
+        <section id="vision" class="bg-secondary-dark p-8 rounded-lg shadow-lg hover-3d" data-speed="0.3">
+            <h2 class="text-4xl font-bold title-gradient mb-8 text-center text-reveal">
                 <span class="lang-es">Nuestra Visión para el Futuro de la Educación</span>
                 <span class="lang-en hidden">Our Vision for the Future of Education</span>
             </h2>
@@ -292,7 +309,7 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Imagen del PDF -->
                 <div class="text-center">
-                    <div class="w-72 h-96 mx-auto bg-tertiary-dark rounded-lg shadow-2xl border-4 border-accent-gold border-opacity-50 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 overflow-hidden electric-cta">
+                    <div class="w-72 h-96 mx-auto bg-tertiary-dark rounded-lg shadow-2xl border-4 border-accent-gold border-opacity-50 flex items-center justify-center hover-3d electric-cta glow-pulse gpu-accelerated">
                         <img src="images/Libro-Maia-Kode.png" alt="Libro Maia Kode - Guía para una Comunicación de Impacto" class="w-full h-full object-cover rounded-lg">
                     </div>
                 </div>
@@ -488,6 +505,10 @@
         </button>
     </div>
 
+    <!-- 3D Animations and Visual Effects Scripts -->
+    <script defer src="particles.js"></script>
+    <script defer src="3d-animations.js"></script>
+    <script defer src="locomotive-scroll.js"></script>
     <script defer src="app.js"></script>
 
     <script>
