@@ -1547,7 +1547,44 @@ Crea un perfil coherente y específico que combine lo mejor de estos referentes.
         });
     }
 
+    // ============== NAVIGATION SMOOTH SCROLL WITH OFFSET ============== 
+    // Add smooth scrolling behavior that accounts for sticky navigation height
+    function initializeNavigationScrolling() {
+        // Get all navigation links that point to sections
+        const navLinks = document.querySelectorAll('a[href^="#"]:not([href="#"])');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Calculate the navigation height
+                    const navElement = document.querySelector('nav');
+                    const navHeight = navElement ? navElement.offsetHeight : 0;
+                    
+                    // Add a small buffer for better visual alignment
+                    const offset = navHeight + 20;
+                    
+                    // Calculate the target position
+                    const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset - offset;
+                    
+                    // Smooth scroll to the target position
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
     initializeApp();
+    
+    // Initialize navigation scrolling after DOM is ready
+    initializeNavigationScrolling();
 
 });
 
