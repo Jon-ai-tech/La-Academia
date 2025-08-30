@@ -1,0 +1,145 @@
+/* ============== 3D EFFECTS AND ANIMATIONS ============== */
+
+// 3D transforms and perspective
+.scene-3d {
+  perspective: 1000px;
+  perspective-origin: center;
+}
+
+.transform-3d {
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+// Hover 3D effects
+.hover-3d {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  &:hover {
+    transform: translateZ(10px) rotateX(5deg) rotateY(5deg);
+    box-shadow: 0 15px 35px rgba($accent-gold, 0.2);
+  }
+}
+
+// Floating animations
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+  50% {
+    transform: translateY(-5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-2deg);
+  }
+}
+
+@keyframes floatReverse {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  25% {
+    transform: translateY(15px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(5px) rotate(0deg);
+  }
+  75% {
+    transform: translateY(10px) rotate(2deg);
+  }
+}
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-element-reverse {
+  animation: floatReverse 8s ease-in-out infinite;
+}
+
+// Morphing geometry keyframes
+@keyframes morph {
+  0% { border-radius: 50%; transform: scale(1) rotate(0deg); }
+  25% { border-radius: 25%; transform: scale(1.1) rotate(90deg); }
+  50% { border-radius: 0%; transform: scale(0.9) rotate(180deg); }
+  75% { border-radius: 25%; transform: scale(1.1) rotate(270deg); }
+  100% { border-radius: 50%; transform: scale(1) rotate(360deg); }
+}
+
+.morphing-shape {
+  animation: morph 8s ease-in-out infinite;
+  background: $bg-gradient-gold-blue;
+}
+
+// Pulsing glow effect
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: $glow-gold;
+    filter: brightness(1);
+  }
+  50% {
+    box-shadow: $glow-blue;
+    filter: brightness(1.2);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+
+// Rotation effects
+@keyframes rotate360 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.rotating-element {
+  animation: rotate360 20s linear infinite;
+}
+
+// Scale and bounce
+@keyframes bounceScale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(0.95);
+  }
+  75% {
+    transform: scale(1.02);
+  }
+}
+
+.bounce-scale {
+  animation: bounceScale 2s ease-in-out infinite;
+}
+
+// 3D cube flip animation
+@keyframes cube-flip {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: rotateX(90deg) rotateY(0deg);
+  }
+  50% {
+    transform: rotateX(90deg) rotateY(90deg);
+  }
+  75% {
+    transform: rotateX(0deg) rotateY(90deg);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(0deg);
+  }
+}
+
+.cube-flip {
+  animation: cube-flip 4s ease-in-out infinite;
+  transform-style: preserve-3d;
+}

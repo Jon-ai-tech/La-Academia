@@ -1,0 +1,47 @@
+/* ============== AURORA DORADA COLOR VARIABLES ============== */
+
+// Primary colors from existing palette
+$primary-dark: #0D1117;       // Negro GitHub - Sofisticado y profundo
+$secondary-dark: #161B22;     // Gris oscuro GitHub - Para secciones  
+$tertiary-dark: #21262D;      // Gris medio - Para elementos internos
+
+// Text colors
+$primary-text: #E6EDF3;       // Blanco suave - Texto principal
+$secondary-text: #B0BAC6;     // Gris claro - Texto secundario
+$tertiary-text: #89929B;      // Gris muted - Texto menos importante
+
+// Aurora Dorada accent colors
+$accent-gold: #FFC777;        // Dorado vibrante y elegante
+$accent-gold-hover: #FFD700;  // Dorado más intenso para hover
+$accent-blue: #58A6FF;        // Azul eléctrico - Tecnología y confianza
+$accent-blue-hover: #4A9CFF;  // Azul más intenso para hover
+$accent-violet: #A855F7;      // Violeta creativo - Innovación y creatividad
+$accent-magenta: #E879F9;     // Magenta geek-chic - Modernidad y estilo
+
+// UI colors
+$border-color: #30363D;       // Gris para bordes
+$disabled-bg: #484F58;        // Fondo deshabilitado
+$hover-bg: #262C36;           // Fondo hover
+
+// Status colors
+$success-color: #238636;      // Verde éxito
+$warning-color: #D29922;      // Amarillo advertencia
+$error-color: #DA3633;        // Rojo error
+
+// Gradients
+$title-gradient: linear-gradient(135deg, $accent-gold 0%, $accent-blue 50%, $accent-violet 100%);
+$bg-gradient-gold-blue: linear-gradient(135deg, $accent-blue 0%, $accent-gold 100%);
+$bg-gradient-violet-magenta: linear-gradient(135deg, $accent-violet 0%, $accent-magenta 100%);
+
+// Shadows and effects
+$glow-gold: 0 0 20px rgba(255, 199, 119, 0.3);
+$glow-blue: 0 0 20px rgba(88, 166, 255, 0.3);
+$glow-violet: 0 0 20px rgba(168, 85, 247, 0.3);
+$glow-magenta: 0 0 20px rgba(232, 121, 249, 0.3);
+
+// Z-index layers
+$z-cursor: 9999;
+$z-particles: 1000;
+$z-navigation: 100;
+$z-modal: 200;
+$z-tooltip: 300;
