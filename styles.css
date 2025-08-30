@@ -1893,18 +1893,23 @@ button:focus, a:focus {
 .nav-link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     height: 2.5rem; /* Fixed height for all nav links */
     line-height: 1.5;
     vertical-align: middle;
+    padding: 0.5rem 0.75rem; /* Default padding for regular nav links */
+    border-radius: 0;
+    transition: all 0.3s ease;
 }
 
 /* Specific styling for the CTA button to maintain visual distinction while keeping alignment */
 .nav-link.bg-accent-blue {
-    padding: 0.5rem 1rem; /* Equivalent to py-2 px-4 but ensures consistent height */
+    padding: 0.5rem 1rem !important; /* More padding for CTA button, important to override Tailwind */
     border-radius: 0.5rem;
     background-color: var(--accent-blue);
     color: white;
     font-weight: 600;
+    box-sizing: border-box; /* Ensure padding is included in height calculation */
 }
 
 .nav-link.bg-accent-blue:hover {
