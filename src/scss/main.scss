@@ -302,6 +302,46 @@ section {
             transform: none !important;
         }
     }
+    
+    // Simplify Maia elements on mobile for performance
+    .maia-avatar {
+        transform: scale(0.8) !important;
+        animation-duration: 8s !important;
+    }
+    
+    .maia-text {
+        font-size: 14px !important;
+        letter-spacing: 1px !important;
+    }
+    
+    .floating-code {
+        font-size: 10px !important;
+        opacity: 0.5 !important;
+    }
+    
+    .ai-tool-icon {
+        transform: scale(0.8) !important;
+        
+        .tool-icon {
+            font-size: 18px !important;
+        }
+        
+        .tool-name {
+            font-size: 8px !important;
+        }
+    }
+    
+    .neural-connection {
+        opacity: 0.4 !important;
+    }
+    
+    .educational-element {
+        font-size: 16px !important;
+    }
+    
+    .bilingual-text {
+        font-size: 12px !important;
+    }
 }
 
 /* ============== ACCESSIBILITY ============== */
@@ -318,7 +358,15 @@ section {
     .custom-cursor,
     .cursor-trail,
     .particle,
-    .digital-rain {
+    .digital-rain,
+    .maia-avatar,
+    .maia-text,
+    .floating-code,
+    .ai-tool-icon,
+    .neural-connection,
+    .educational-element,
+    .bilingual-text,
+    .maia-glasses-reflection {
         display: none !important;
     }
 }

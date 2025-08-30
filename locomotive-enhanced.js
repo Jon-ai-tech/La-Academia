@@ -138,35 +138,339 @@
         }
 
         createAdvancedShape(index) {
-            const shape = document.createElement('div');
-            const isWireframe = Math.random() > 0.6;
-            const size = 30 + Math.random() * 50;
-            const color = this.colors[Math.floor(Math.random() * this.colors.length)];
+            const element = this.createMaiaElement(index);
+            element.dataset.depth = Math.random() * 5 + 1;
+            element.dataset.rotationSpeed = (Math.random() - 0.5) * 2;
             
-            shape.className = 'floating-shape advanced-shape';
-            shape.style.cssText = `
+            document.body.appendChild(element);
+            this.shapes.push(element);
+        }
+
+        createMaiaElement(index) {
+            const maiaElements = [
+                () => this.createMaiaAvatar(),
+                () => this.createMaiaText(),
+                () => this.createFloatingCode(),
+                () => this.createAIToolIcon(),
+                () => this.createNeuralConnection(),
+                () => this.createEducationalElement(),
+                () => this.createBilingualElement(),
+                () => this.createGlassesReflection()
+            ];
+
+            return maiaElements[index % maiaElements.length]();
+        }
+
+        createMaiaAvatar() {
+            const avatar = document.createElement('div');
+            avatar.className = 'maia-avatar floating-shape';
+            avatar.innerHTML = `
+                <div class="maia-head">
+                    <div class="maia-hair"></div>
+                    <div class="maia-face">
+                        <div class="maia-glasses">
+                            <div class="maia-glasses-reflection"></div>
+                        </div>
+                        <div class="maia-features">
+                            <div class="maia-eyes"></div>
+                            <div class="maia-smile"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            avatar.style.cssText = `
                 position: fixed;
-                width: ${size}px;
-                height: ${size}px;
-                ${isWireframe ? 
-                    `border: 2px solid ${color}; background: transparent;` : 
-                    `background: ${color}; opacity: 0.4;`}
-                border-radius: ${this.getRandomBorderRadius()};
+                width: 70px;
+                height: 90px;
+                left: ${50 + Math.random() * (window.innerWidth - 150)}px;
+                top: ${50 + Math.random() * (window.innerHeight - 150)}px;
+                pointer-events: none;
+                z-index: 3;
+                animation: advancedFloat${Math.floor(Math.random() * 3)} ${12 + Math.random() * 4}s ease-in-out infinite;
+                filter: drop-shadow(0 0 10px rgba(88, 166, 255, 0.3));
+            `;
+
+            // Style the hair with wavy effect
+            const hair = avatar.querySelector('.maia-hair');
+            hair.style.cssText = `
+                width: 55px;
+                height: 35px;
+                background: linear-gradient(45deg, #58A6FF, #7BB4FF);
+                border-radius: 50% 40% 60% 30%;
+                position: relative;
+                animation: hairWave 4s ease-in-out infinite;
+                box-shadow: inset 0 2px 8px rgba(0,0,0,0.2);
+            `;
+
+            // Style the face
+            const face = avatar.querySelector('.maia-face');
+            face.style.cssText = `
+                width: 45px;
+                height: 55px;
+                background: linear-gradient(135deg, #FFC777, #FFD199);
+                border-radius: 50%;
+                position: relative;
+                top: -12px;
+                left: 7px;
+                box-shadow: inset -2px -2px 8px rgba(0,0,0,0.1);
+            `;
+
+            // Style the glasses
+            const glasses = avatar.querySelector('.maia-glasses');
+            glasses.style.cssText = `
+                width: 35px;
+                height: 15px;
+                border: 2px solid #333;
+                border-radius: 50%;
+                position: absolute;
+                top: 18px;
+                left: 3px;
+                background: rgba(255, 255, 255, 0.15);
+                box-shadow: 0 0 5px rgba(0,0,0,0.2);
+            `;
+
+            // Add eyes
+            const eyes = avatar.querySelector('.maia-eyes');
+            eyes.style.cssText = `
+                position: absolute;
+                top: 20px;
+                left: 8px;
+                width: 20px;
+                height: 3px;
+                background: #333;
+                border-radius: 2px;
+                box-shadow: 12px 0 0 #333;
+            `;
+
+            // Add smile
+            const smile = avatar.querySelector('.maia-smile');
+            smile.style.cssText = `
+                position: absolute;
+                top: 32px;
+                left: 15px;
+                width: 12px;
+                height: 6px;
+                border: 2px solid #A855F7;
+                border-top: none;
+                border-radius: 0 0 12px 12px;
+            `;
+
+            return avatar;
+        }
+
+        createMaiaText() {
+            const textElement = document.createElement('div');
+            textElement.className = 'maia-text floating-shape';
+            
+            const letters = 'MAIA KODE'.split('');
+            textElement.innerHTML = letters.map((letter, i) => 
+                `<span class="maia-text-letter" style="animation-delay: ${i * 0.1}s">${letter}</span>`
+            ).join('');
+
+            textElement.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * (window.innerWidth - 150)}px;
+                top: ${Math.random() * (window.innerHeight - 50)}px;
+                font-family: 'Courier New', monospace;
+                font-size: 18px;
+                font-weight: bold;
+                color: #FFC777;
+                text-shadow: 0 0 10px rgba(255, 199, 119, 0.5);
+                pointer-events: none;
+                z-index: 2;
+                letter-spacing: 2px;
+                animation: advancedFloat${Math.floor(Math.random() * 3)} ${12 + Math.random() * 4}s ease-in-out infinite;
+            `;
+
+            return textElement;
+        }
+
+        createFloatingCode() {
+            const codeSnippets = [
+                'import tensorflow as tf',
+                'model = Sequential()',
+                'print("¡Hola, soy Maia!")',
+                '# Crear redes neuronales',
+                'from transformers import *',
+                'def teach_ai():',
+                '  return knowledge',
+                'class MaiaKode:',
+                '  def __init__(self):',
+                '    self.purpose = "educate"'
+            ];
+
+            const codeElement = document.createElement('div');
+            codeElement.className = 'floating-code floating-shape';
+            codeElement.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
+
+            codeElement.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * (window.innerWidth - 200)}px;
+                top: ${Math.random() * (window.innerHeight - 30)}px;
+                font-family: 'Courier New', monospace;
+                font-size: 12px;
+                color: #FFC777;
+                text-shadow: 0 0 5px rgba(255, 199, 119, 0.5);
                 pointer-events: none;
                 z-index: 1;
+                opacity: 0.7;
+                animation: codeFloat ${8 + Math.random() * 4}s ease-in-out infinite;
+                background: rgba(0, 0, 0, 0.3);
+                padding: 5px 8px;
+                border-radius: 4px;
+                border-left: 3px solid #58A6FF;
+            `;
+
+            return codeElement;
+        }
+
+        createAIToolIcon() {
+            const tools = ['🤖', '🧠', '⚡', '🔬', '📊', '🎯', '💡', '🚀'];
+            const toolNames = ['ChatGPT', 'Neural Net', 'TensorFlow', 'Research', 'Data', 'Focus', 'Innovation', 'Progress'];
+            
+            const toolIndex = Math.floor(Math.random() * tools.length);
+            const toolElement = document.createElement('div');
+            toolElement.className = 'ai-tool-icon floating-shape';
+            
+            toolElement.innerHTML = `
+                <div class="tool-icon">${tools[toolIndex]}</div>
+                <div class="tool-name">${toolNames[toolIndex]}</div>
+            `;
+
+            toolElement.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * (window.innerWidth - 80)}px;
+                top: ${Math.random() * (window.innerHeight - 60)}px;
+                width: 60px;
+                height: 50px;
+                text-align: center;
+                pointer-events: none;
+                z-index: 2;
+                animation: advancedFloat${Math.floor(Math.random() * 3)} ${6 + Math.random() * 4}s ease-in-out infinite;
+            `;
+
+            const icon = toolElement.querySelector('.tool-icon');
+            icon.style.cssText = `
+                font-size: 24px;
+                margin-bottom: 5px;
+                filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
+            `;
+
+            const name = toolElement.querySelector('.tool-name');
+            name.style.cssText = `
+                font-size: 10px;
+                color: #A855F7;
+                font-family: Arial, sans-serif;
+                text-shadow: 0 0 3px rgba(168, 85, 247, 0.3);
+            `;
+
+            return toolElement;
+        }
+
+        createNeuralConnection() {
+            const connection = document.createElement('div');
+            connection.className = 'neural-connection floating-shape';
+
+            connection.style.cssText = `
+                position: fixed;
+                width: ${15 + Math.random() * 25}px;
+                height: ${15 + Math.random() * 25}px;
                 left: ${Math.random() * window.innerWidth}px;
                 top: ${Math.random() * window.innerHeight}px;
-                animation: advancedFloat${index % 3} ${8 + Math.random() * 6}s ease-in-out infinite;
-                transform-origin: center;
-                filter: blur(${Math.random() * 1}px);
-                mix-blend-mode: ${Math.random() > 0.7 ? 'screen' : 'normal'};
+                background: radial-gradient(circle, #A855F7 0%, transparent 70%);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: 1;
+                animation: neuralPulse ${2 + Math.random() * 2}s ease-in-out infinite;
+                opacity: 0.6;
             `;
+
+            return connection;
+        }
+
+        createEducationalElement() {
+            const eduElements = ['📚', '🎓', '📝', '🔍', '📐', '🧮', '📖', '✏️'];
+            const element = document.createElement('div');
+            element.className = 'educational-element floating-shape';
+            element.textContent = eduElements[Math.floor(Math.random() * eduElements.length)];
+
+            element.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * (window.innerWidth - 40)}px;
+                top: ${Math.random() * (window.innerHeight - 40)}px;
+                font-size: 20px;
+                pointer-events: none;
+                z-index: 1;
+                animation: bookFlip ${6 + Math.random() * 3}s ease-in-out infinite;
+                filter: drop-shadow(0 0 5px rgba(255, 199, 119, 0.4));
+            `;
+
+            return element;
+        }
+
+        createBilingualElement() {
+            const bilingualPairs = [
+                ['ES', 'EN'],
+                ['Hola', 'Hello'], 
+                ['Aprender', 'Learn'],
+                ['IA', 'AI'],
+                ['Código', 'Code'],
+                ['Futuro', 'Future']
+            ];
+
+            const pair = bilingualPairs[Math.floor(Math.random() * bilingualPairs.length)];
+            const element = document.createElement('div');
+            element.className = 'bilingual-text floating-shape';
             
-            shape.dataset.depth = Math.random() * 5 + 1;
-            shape.dataset.rotationSpeed = (Math.random() - 0.5) * 2;
+            element.innerHTML = `<span class="lang-es">${pair[0]}</span><span class="lang-en">${pair[1]}</span>`;
+
+            element.style.cssText = `
+                position: fixed;
+                left: ${Math.random() * (window.innerWidth - 100)}px;
+                top: ${Math.random() * (window.innerHeight - 30)}px;
+                font-family: Arial, sans-serif;
+                font-size: 14px;
+                font-weight: bold;
+                pointer-events: none;
+                z-index: 1;
+                animation: advancedFloat${Math.floor(Math.random() * 3)} ${8 + Math.random() * 4}s ease-in-out infinite;
+            `;
+
+            const spanEs = element.querySelector('.lang-es');
+            const spanEn = element.querySelector('.lang-en');
             
-            document.body.appendChild(shape);
-            this.shapes.push(shape);
+            spanEs.style.cssText = `
+                color: #E879F9;
+                margin-right: 8px;
+                text-shadow: 0 0 3px rgba(232, 121, 249, 0.5);
+            `;
+
+            spanEn.style.cssText = `
+                color: #58A6FF;
+                text-shadow: 0 0 3px rgba(88, 166, 255, 0.5);
+            `;
+
+            return element;
+        }
+
+        createGlassesReflection() {
+            const reflection = document.createElement('div');
+            reflection.className = 'maia-glasses-reflection floating-shape';
+
+            reflection.style.cssText = `
+                position: fixed;
+                width: 3px;
+                height: 15px;
+                left: ${Math.random() * window.innerWidth}px;
+                top: ${Math.random() * window.innerHeight}px;
+                background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.8) 50%, transparent 60%);
+                pointer-events: none;
+                z-index: 1;
+                animation: glassesReflection ${3 + Math.random() * 2}s ease-in-out infinite;
+                border-radius: 2px;
+            `;
+
+            return reflection;
         }
 
         getRandomBorderRadius() {
