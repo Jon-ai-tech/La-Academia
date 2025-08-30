@@ -1,1 +1,19 @@
+Hemos revisado los cambios y todavía hay dos problemas que necesitan ser corregidos:
 
+**1. Alineación del botón "Únete" (CRÍTICO):**
+![image2](image2)
+El botón "Únete" sigue estando fuera de nivel en comparación con los otros botones de navegación (Visión, Inspiración, El Manifiesto). Necesita estar exactamente al mismo nivel vertical que los demás botones.
+
+**2. Scroll automático excesivo (CRÍTICO):**
+![image3](image3)
+![image4](image4) 
+![image5](image5)
+
+Los botones de navegación que implementan scroll automático están bajando demasiado. Están pasando directamente al contenido de la siguiente sección sin mostrar los títulos. Por ejemplo:
+- Al hacer clic en "Visión" debería mostrar el título de la sección, no saltar directamente al contenido
+- Al hacer clic en "Inspiración" debería mostrar "Ver la inspiración detrás de la visión" en la parte superior
+- Al hacer clic en "El Manifiesto" debería mostrar "Descargar 'El Manifiesto de Maia'" en la parte superior
+
+El scroll debe detenerse justo antes del título de cada sección, no en el medio del contenido.
+
+Por favor corrige estos dos puntos específicos antes de continuar con las mejoras del layout de las imágenes de influencers.
