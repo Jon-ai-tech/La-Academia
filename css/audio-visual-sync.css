@@ -1,0 +1,549 @@
+/* ============== AUDIO-VISUAL SYNC STYLES ============== */
+/* Dog Studio inspired effects synchronized with audio */
+/* Aurora Dorada palette integration for La Academia */
+
+:root {
+  /* Aurora Dorada Extended Palette */
+  --aurora-gold: #FFC777;
+  --aurora-gold-glow: rgba(255, 199, 119, 0.4);
+  --aurora-gold-pulse: rgba(255, 199, 119, 0.6);
+  
+  --cosmos-blue: #58A6FF;
+  --cosmos-blue-glow: rgba(88, 166, 255, 0.4);
+  --cosmos-blue-pulse: rgba(88, 166, 255, 0.6);
+  
+  --mystic-violet: #C792EA;
+  --mystic-violet-glow: rgba(199, 146, 234, 0.4);
+  --mystic-violet-pulse: rgba(199, 146, 234, 0.6);
+  
+  /* Audio-reactive gradients */
+  --gradient-aurora: linear-gradient(135deg, var(--aurora-gold), var(--cosmos-blue));
+  --gradient-cosmic: radial-gradient(ellipse at center, var(--cosmos-blue), var(--mystic-violet));
+  --gradient-nebula: linear-gradient(45deg, var(--mystic-violet), var(--aurora-gold));
+}
+
+/* ============== AUDIO-REACTIVE BASE CLASSES ============== */
+
+.audio-reactive {
+  transition: all 0.1s ease-out;
+  will-change: transform, filter, box-shadow;
+}
+
+.audio-reactive-bass {
+  --frequency: bass;
+}
+
+.audio-reactive-mid {
+  --frequency: mid;
+}
+
+.audio-reactive-treble {
+  --frequency: treble;
+}
+
+/* Beat-reactive elements */
+.beat-reactive {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.beat-reactive.beat-active {
+  transform: scale(1.05);
+  filter: brightness(1.2);
+}
+
+/* ============== FREQUENCY-SPECIFIC EFFECTS ============== */
+
+/* Bass-reactive nebulae effects */
+.bass-nebula {
+  background: var(--gradient-cosmic);
+  opacity: 0.3;
+  filter: blur(20px);
+  animation: nebulaPulse 4s ease-in-out infinite;
+}
+
+.bass-nebula.audio-active {
+  opacity: 0.8;
+  filter: blur(10px);
+  transform: scale(1.2);
+}
+
+@keyframes nebulaPulse {
+  0%, 100% { 
+    opacity: 0.3;
+    transform: scale(1) rotate(0deg);
+  }
+  50% { 
+    opacity: 0.5;
+    transform: scale(1.1) rotate(180deg);
+  }
+}
+
+/* Mid-frequency particle effects */
+.mid-particles {
+  background: var(--aurora-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--aurora-gold-glow);
+  animation: particleFloat 3s ease-in-out infinite;
+}
+
+.mid-particles.audio-active {
+  box-shadow: 0 0 20px var(--aurora-gold-pulse);
+  transform: translateY(-15px) scale(1.3);
+}
+
+@keyframes particleFloat {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.6;
+  }
+  33% { 
+    transform: translateY(-10px) rotate(120deg);
+    opacity: 0.8;
+  }
+  66% { 
+    transform: translateY(5px) rotate(240deg);
+    opacity: 0.7;
+  }
+}
+
+/* Treble-reactive star effects */
+.treble-stars {
+  background: var(--aurora-gold);
+  border-radius: 50%;
+  box-shadow: 0 0 6px var(--aurora-gold-glow);
+  animation: starTwinkle 2s ease-in-out infinite;
+}
+
+.treble-stars.audio-active {
+  box-shadow: 0 0 15px var(--aurora-gold-pulse);
+  transform: scale(1.5);
+  filter: brightness(1.5);
+}
+
+@keyframes starTwinkle {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+/* ============== AUDIO WAVE EFFECTS ============== */
+
+.audio-waves {
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-wave-line {
+  stroke: var(--aurora-gold);
+  stroke-width: 2;
+  fill: none;
+  filter: drop-shadow(0 0 4px var(--aurora-gold-glow));
+  animation: waveFlow 3s ease-in-out infinite;
+}
+
+.audio-wave-line.audio-active {
+  stroke-width: 4;
+  filter: drop-shadow(0 0 8px var(--aurora-gold-pulse));
+}
+
+@keyframes waveFlow {
+  0% { 
+    stroke-dashoffset: 0;
+    opacity: 0.6;
+  }
+  50% { 
+    stroke-dashoffset: -50;
+    opacity: 1;
+  }
+  100% { 
+    stroke-dashoffset: -100;
+    opacity: 0.6;
+  }
+}
+
+/* ============== DYNAMIC GLOW EFFECTS ============== */
+
+.dynamic-glow {
+  transition: box-shadow 0.3s ease;
+}
+
+.dynamic-glow.bass-glow {
+  box-shadow: 0 0 20px var(--cosmos-blue-glow);
+}
+
+.dynamic-glow.mid-glow {
+  box-shadow: 0 0 20px var(--aurora-gold-glow);
+}
+
+.dynamic-glow.treble-glow {
+  box-shadow: 0 0 20px var(--mystic-violet-glow);
+}
+
+.dynamic-glow.audio-intense {
+  box-shadow: 
+    0 0 30px var(--aurora-gold-pulse),
+    0 0 60px var(--cosmos-blue-pulse),
+    inset 0 0 20px var(--mystic-violet-pulse);
+}
+
+/* ============== REACTIVE TEXT EFFECTS ============== */
+
+.audio-reactive-text {
+  background: var(--gradient-aurora);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: textShimmer 4s ease-in-out infinite;
+}
+
+.audio-reactive-text.beat-active {
+  animation-duration: 0.3s;
+  transform: scale(1.02);
+}
+
+@keyframes textShimmer {
+  0%, 100% { 
+    background-position: 0% 50%;
+    filter: brightness(1);
+  }
+  50% { 
+    background-position: 100% 50%;
+    filter: brightness(1.3);
+  }
+}
+
+/* ============== AUDIO VISUALIZER ELEMENTS ============== */
+
+.audio-visualizer-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.frequency-bar {
+  width: 4px;
+  background: var(--gradient-aurora);
+  border-radius: 2px;
+  margin: 0 1px;
+  transition: height 0.1s ease;
+  min-height: 4px;
+}
+
+.frequency-bar.bass-bar {
+  background: var(--cosmos-blue);
+}
+
+.frequency-bar.mid-bar {
+  background: var(--aurora-gold);
+}
+
+.frequency-bar.treble-bar {
+  background: var(--mystic-violet);
+}
+
+/* ============== IMMERSIVE BACKGROUND LAYERS ============== */
+
+.audio-background-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.stars-layer {
+  z-index: 1;
+}
+
+.nebula-layer {
+  z-index: 2;
+}
+
+.particle-layer {
+  z-index: 3;
+}
+
+.wave-layer {
+  z-index: 4;
+}
+
+/* ============== BEAT DETECTION EFFECTS ============== */
+
+.beat-ripple {
+  position: absolute;
+  border: 2px solid var(--aurora-gold);
+  border-radius: 50%;
+  pointer-events: none;
+  animation: beatRippleExpand 0.8s ease-out forwards;
+}
+
+@keyframes beatRippleExpand {
+  0% {
+    width: 0;
+    height: 0;
+    opacity: 0.8;
+    transform: translate(-50%, -50%) scale(0);
+  }
+  100% {
+    width: 200px;
+    height: 200px;
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.beat-expansion {
+  animation: beatExpand 0.3s ease-out;
+}
+
+@keyframes beatExpand {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* ============== INTERACTIVE AUDIO FEEDBACK ============== */
+
+.audio-hover-feedback {
+  position: relative;
+  overflow: hidden;
+}
+
+.audio-hover-feedback::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, var(--aurora-gold-glow), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+.audio-hover-feedback:hover::before {
+  left: 100%;
+}
+
+/* ============== RESPONSIVE AUDIO ELEMENTS ============== */
+
+@media (max-width: 768px) {
+  .audio-background-layer {
+    opacity: 0.5;
+  }
+  
+  .audio-reactive {
+    transition-duration: 0.2s;
+  }
+  
+  .beat-reactive.beat-active {
+    transform: scale(1.02);
+  }
+  
+  .audio-visualizer-container {
+    bottom: 10px;
+    right: 10px;
+    transform: scale(0.8);
+  }
+}
+
+/* ============== ACCESSIBILITY SUPPORT ============== */
+
+@media (prefers-reduced-motion: reduce) {
+  .audio-reactive,
+  .beat-reactive,
+  .audio-reactive-text,
+  .bass-nebula,
+  .mid-particles,
+  .treble-stars,
+  .audio-wave-line {
+    animation: none !important;
+    transition: none !important;
+  }
+  
+  .beat-reactive.beat-active {
+    transform: none !important;
+  }
+  
+  .beat-ripple {
+    display: none !important;
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --aurora-gold: #FFD700;
+    --cosmos-blue: #4169E1;
+    --mystic-violet: #9370DB;
+  }
+  
+  .audio-reactive-text {
+    color: var(--aurora-gold);
+    background: none;
+  }
+}
+
+/* ============== PERFORMANCE OPTIMIZATIONS ============== */
+
+.audio-optimized {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+.gpu-accelerated {
+  transform: translate3d(0, 0, 0);
+  will-change: transform, opacity;
+}
+
+/* ============== CUSTOM AUDIO CONTROL STYLES ============== */
+
+.maia-audio-controls {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.audio-control-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--aurora-gold);
+  color: var(--aurora-gold);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.audio-control-btn:hover {
+  background: var(--aurora-gold);
+  color: #000;
+  box-shadow: 0 0 20px var(--aurora-gold-glow);
+}
+
+.audio-control-btn.active {
+  background: var(--cosmos-blue);
+  border-color: var(--cosmos-blue);
+  box-shadow: 0 0 15px var(--cosmos-blue-glow);
+}
+
+/* Volume slider */
+.volume-slider {
+  width: 100px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+}
+
+.volume-slider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 70%;
+  background: var(--aurora-gold);
+  border-radius: 2px;
+}
+
+/* ============== AUDIO STATUS INDICATORS ============== */
+
+.audio-status {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.8);
+  border: 1px solid var(--aurora-gold);
+  border-radius: 6px;
+  color: var(--aurora-gold);
+  font-size: 12px;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.audio-status.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============== LOADING STATES ============== */
+
+.audio-loading {
+  animation: audioLoadingPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes audioLoadingPulse {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+/* ============== CROSS-BROWSER COMPATIBILITY ============== */
+
+/* Firefox */
+@-moz-document url-prefix() {
+  .audio-reactive-text {
+    background: var(--aurora-gold);
+    color: transparent;
+  }
+}
+
+/* Safari */
+@supports (-webkit-appearance: none) {
+  .audio-background-layer {
+    -webkit-transform: translateZ(0);
+  }
+}
+
+/* ============== THEME INTEGRATION ============== */
+
+[data-theme="dark"] {
+  --aurora-gold-glow: rgba(255, 199, 119, 0.6);
+  --cosmos-blue-glow: rgba(88, 166, 255, 0.6);
+  --mystic-violet-glow: rgba(199, 146, 234, 0.6);
+}
+
+[data-theme="light"] {
+  --aurora-gold-glow: rgba(255, 199, 119, 0.3);
+  --cosmos-blue-glow: rgba(88, 166, 255, 0.3);
+  --mystic-violet-glow: rgba(199, 146, 234, 0.3);
+}
+
+/* ============== PRINT STYLES ============== */
+
+@media print {
+  .audio-background-layer,
+  .audio-visualizer-container,
+  .maia-audio-controls,
+  .audio-status {
+    display: none !important;
+  }
+}
