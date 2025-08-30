@@ -1,0 +1,165 @@
+/* ============== ADVANCED ANIMATIONS ============== */
+
+// Particle system animations
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) translateX(10px) scale(0.5);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(10vh) translateX(-10px) scale(1);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(20px) scale(0);
+    opacity: 0;
+  }
+}
+
+@keyframes particleFloatReverse {
+  0% {
+    transform: translateY(-10vh) translateX(20px) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(10vh) translateX(-10px) scale(0.5);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(90vh) translateX(10px) scale(1);
+  }
+  100% {
+    transform: translateY(100vh) translateX(0px) scale(0);
+    opacity: 0;
+  }
+}
+
+.particle {
+  position: fixed;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: $z-particles;
+  
+  &.gold {
+    background: radial-gradient(circle, $accent-gold 0%, transparent 70%);
+    animation: particleFloat 8s linear infinite;
+  }
+  
+  &.blue {
+    background: radial-gradient(circle, $accent-blue 0%, transparent 70%);
+    animation: particleFloat 10s linear infinite;
+  }
+  
+  &.violet {
+    background: radial-gradient(circle, $accent-violet 0%, transparent 70%);
+    animation: particleFloatReverse 12s linear infinite;
+  }
+  
+  &.magenta {
+    background: radial-gradient(circle, $accent-magenta 0%, transparent 70%);
+    animation: particleFloatReverse 9s linear infinite;
+  }
+}
+
+// Advanced loading animations
+@keyframes digitalRain {
+  0% {
+    transform: translateY(-100vh);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+.digital-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent, $accent-gold, transparent);
+  animation: digitalRain 3s linear infinite;
+  z-index: $z-particles;
+  
+  @for $i from 1 through 20 {
+    &:nth-child(#{$i}) {
+      left: #{$i * 5}%;
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}
+
+// Electric pulse effect
+@keyframes electricPulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 5px $accent-blue,
+      0 0 10px $accent-blue,
+      0 0 20px $accent-blue;
+    border-color: $accent-blue;
+  }
+  50% {
+    box-shadow: 
+      0 0 10px $accent-magenta,
+      0 0 20px $accent-magenta,
+      0 0 40px $accent-magenta;
+    border-color: $accent-magenta;
+  }
+}
+
+.electric-pulse {
+  animation: electricPulse 2s ease-in-out infinite;
+  border: 2px solid transparent;
+}
+
+// Typewriter effect
+@keyframes typewriter {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+@keyframes blink-caret {
+  0%, 50% { border-color: $accent-gold; }
+  51%, 100% { border-color: transparent; }
+}
+
+.typewriter {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 3px solid;
+  animation: 
+    typewriter 3s steps(30, end) 1s forwards,
+    blink-caret 1s step-end infinite;
+}
+
+// Aurora effect
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
+  }
+}
+
+.aurora-effect {
+  background: linear-gradient(-45deg, $accent-gold, $accent-blue, $accent-violet, $accent-magenta);
+  background-size: 400% 400%;
+  animation: aurora 8s ease infinite;
+}

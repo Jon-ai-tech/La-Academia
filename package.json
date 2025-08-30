@@ -1,23 +1,43 @@
 {
-  "name": "maia-kode-genesis",
-  "version": "1.0.0",
-  "description": "",
+  "name": "la-academia-maia-kode",
+  "version": "2.0.0",
+  "description": "La Academia Maia Kode - Locomotive Style Experience",
   "main": "app.js",
   "scripts": {
+    "dev": "gulp dev",
+    "build": "gulp build",
+    "start": "gulp serve",
+    "preview": "python3 -m http.server 3000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/JonMK-maker/maia-kode-genesis.git"
+    "url": "git+https://github.com/MaiaKode/La-Academia.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["locomotive", "3d", "animations", "academy", "education"],
+  "author": "Maia Kode",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/JonMK-maker/maia-kode-genesis/issues"
+    "url": "https://github.com/MaiaKode/La-Academia/issues"
   },
-  "homepage": "https://github.com/JonMK-maker/maia-kode-genesis#readme",
+  "homepage": "https://github.com/MaiaKode/La-Academia#readme",
   "dependencies": {
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "three": "^0.158.0",
+    "gsap": "^3.12.2",
+    "locomotive-scroll": "^4.1.4"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.69.5",
+    "gulp-autoprefixer": "^8.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-uglify": "^3.0.2",
+    "gulp-rename": "^2.0.0",
+    "browser-sync": "^2.29.3",
+    "gulp-imagemin": "^8.0.0",
+    "del": "^7.1.0"
   }
 }
