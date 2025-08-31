@@ -1586,6 +1586,105 @@ Crea un perfil coherente y específico que combine lo mejor de estos referentes.
     // Initialize navigation scrolling after DOM is ready
     initializeNavigationScrolling();
 
+    // ============== MAIA GENESIS SCROLL ANIMATION ============== 
+    function initializeMaiaGenesisAnimation() {
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+        
+        // Create main timeline for the Genesis animation
+        const genesisTimeline = gsap.timeline({
+            scrollTrigger: {
+                trigger: "#maia-genesis",
+                start: "top top",
+                end: "bottom bottom",
+                scrub: 1,
+                pin: false,
+                anticipatePin: 1
+            }
+        });
+
+        // Act I: Digital Awakening (0% - 25%)
+        genesisTimeline
+            // Cursor appears and blinks
+            .set("#cursor", { opacity: 1 })
+            .to("#cursor", { duration: 1, opacity: 1 })
+            
+            // Hello World appears
+            .to("#hello-world", { duration: 0.5, opacity: 1, y: 0 }, "+=0.2")
+            
+            // Binary code fades in
+            .to("#binary-code", { duration: 0.8, opacity: 0.1 }, "+=0.1")
+            
+            // Pixelated Maia appears
+            .to("#maia-pixelated", { duration: 0.6, opacity: 1, scale: 1 }, "+=0.3");
+
+        // Act II: Identity Formation (25% - 50%)
+        genesisTimeline
+            // Fade out Act I elements
+            .to("#act-1 > div > *:not(#maia-pixelated)", { duration: 0.5, opacity: 0 }, "+=0.5")
+            
+            // Transform pixelated to base
+            .to("#maia-pixelated", { duration: 0.8, opacity: 0, scale: 0.8 }, "+=0.2")
+            .to("#maia-base", { duration: 0.8, opacity: 1, scale: 1 }, "-=0.4")
+            
+            // Add hair
+            .to("#maia-hair", { duration: 0.6, opacity: 1, y: 0 }, "+=0.3")
+            
+            // Add glasses
+            .to("#maia-glasses", { duration: 0.6, opacity: 1, scale: 1 }, "+=0.2");
+
+        // Act III: Educational Journey (50% - 75%)
+        genesisTimeline
+            // Fade out Act II
+            .to("#act-2", { duration: 0.5, opacity: 0 }, "+=0.3")
+            
+            // Show walking Maia
+            .to("#maia-walking", { duration: 0.6, opacity: 1 }, "+=0.2")
+            
+            // Maia walks across screen
+            .to("#maia-walking", { duration: 2, x: "80vw", ease: "none" })
+            
+            // Learning icons appear and float
+            .to("#learning-icons", { duration: 0.8, opacity: 1 }, "-=1.5")
+            .to(".learning-icon", { 
+                duration: 1, 
+                opacity: 1, 
+                y: 0,
+                stagger: 0.3,
+                ease: "back.out(1.7)" 
+            }, "-=1");
+
+        // Act IV: The Academy (75% - 100%)
+        genesisTimeline
+            // Fade out Act III
+            .to("#act-3", { duration: 0.5, opacity: 0 }, "+=0.5")
+            
+            // Academy title appears
+            .to("#academy-title", { 
+                duration: 1, 
+                opacity: 1, 
+                scale: 1,
+                ease: "back.out(1.7)" 
+            }, "+=0.3")
+            
+            // Orbiting logos appear and start orbiting
+            .to("#orbiting-logos", { duration: 0.8, opacity: 1 }, "+=0.2")
+            .set(".logo-orbit", { opacity: 1 });
+
+        // Enhanced mobile experience
+        if (window.innerWidth < 768) {
+            // Adjust timeline durations for mobile
+            genesisTimeline.timeScale(0.8);
+        }
+    }
+
+    // Initialize Genesis animation after a brief delay to ensure DOM is ready
+    setTimeout(() => {
+        if (document.getElementById('maia-genesis')) {
+            initializeMaiaGenesisAnimation();
+        }
+    }, 100);
+
 });
 
 // ============== FIN: Contenido completo para: app.js ==============

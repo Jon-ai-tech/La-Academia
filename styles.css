@@ -2095,4 +2095,128 @@ button:focus, a:focus {
         letter-spacing: 1px;
     }
 }
+
+/* ============== MAIA GENESIS ANIMATION STYLES ============== */
+
+#maia-genesis {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--secondary-dark) 50%, var(--primary-dark) 100%);
+    overflow: hidden;
+}
+
+/* Cursor blinking animation */
+#cursor {
+    animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+}
+
+/* Binary code background */
+#binary-code {
+    z-index: -1;
+    filter: opacity(0.1) blur(1px);
+}
+
+/* Sprite animation for walking Maia */
+.maia-sprite {
+    animation: walk 0.8s steps(8) infinite;
+}
+
+@keyframes walk {
+    0% { background-position-x: 0%; }
+    100% { background-position-x: 100%; }
+}
+
+/* Floating learning icons animation */
+.learning-icon {
+    animation: float 3s ease-in-out infinite;
+}
+
+.learning-icon:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.learning-icon:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.learning-icon:nth-child(3) {
+    animation-delay: 2s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Orbiting logos */
+.logo-orbit {
+    animation: orbit 8s linear infinite;
+}
+
+#python-logo {
+    animation-delay: 0s;
+    top: 50%;
+    left: 0%;
+    transform-origin: 128px center;
+}
+
+#tensorflow-logo {
+    animation-delay: 4s;
+    top: 50%;
+    right: 0%;
+    transform-origin: -64px center;
+}
+
+@keyframes orbit {
+    0% {
+        transform: rotate(0deg) translateX(128px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translateX(128px) rotate(-360deg);
+    }
+}
+
+/* Title gradient for Academy */
+.title-gradient {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-blue) 50%, var(--accent-violet) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Responsive adjustments for Genesis section */
+@media (max-width: 768px) {
+    #maia-genesis {
+        height: 500vh; /* Shorter on mobile */
+    }
+    
+    .logo-orbit {
+        animation-duration: 10s; /* Slower on mobile */
+    }
+    
+    #python-logo {
+        transform-origin: 96px center;
+    }
+    
+    #tensorflow-logo {
+        transform-origin: -48px center;
+    }
+    
+    @keyframes orbit {
+        0% {
+            transform: rotate(0deg) translateX(96px) rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg) translateX(96px) rotate(-360deg);
+        }
+    }
+}
+
 }
