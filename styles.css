@@ -95,9 +95,9 @@ main, header, section, .max-w-6xl {
 .text-accent-cyan { color: var(--accent-blue); }  /* Reemplazado Cyan por Azul */
 .text-accent-gold { color: var(--accent-gold); }
 
-/* Title gradient class for blue-electric → violet → yellow gradient effect */
+/* Title gradient class - Aurora Dorada theme (INVERTED): Magenta → Violet → Blue → Gold */
 .title-gradient {
-    background: linear-gradient(135deg, #00BFFF, #8A2BE2, #FFD700);
+    background: linear-gradient(135deg, #E879F9 0%, #A855F7 25%, #58A6FF 75%, #FFC777 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -1772,16 +1772,6 @@ button:focus, a:focus {
     text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
 }
 
-/* Blue-purple gradient for section titles */
-.title-gradient {
-    /* Fallback for browsers that don't support background-clip: text */
-    color: #58A6FF;
-    background: linear-gradient(135deg, #58A6FF, #A855F7);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
 /* Modern browser support for gradient text */
 @supports (background-clip: text) or (-webkit-background-clip: text) {
     .title-gradient {
@@ -2181,15 +2171,6 @@ button:focus, a:focus {
     100% {
         transform: rotate(360deg) translateX(128px) rotate(-360deg);
     }
-}
-
-/* Title gradient for Academy */
-.title-gradient {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-blue) 50%, var(--accent-violet) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
 
 /* Responsive adjustments for Genesis section */
 @media (max-width: 768px) {
@@ -2219,4 +2200,74 @@ button:focus, a:focus {
     }
 }
 
+/* ============== INICIO: Estilos para la animación "Génesis de Maia" ============== */
+.genesis-container {
+    position: relative;
+    height: 600vh !important; /* Altura muy larga para dar espacio al scroll - important to override Tailwind */
+    overflow: hidden;
+    background: linear-gradient(180deg, #0D1117 0%, #161B22 50%, #0D1117 100%);
+    min-height: 600vh !important; /* Ensure minimum height */
 }
+
+.genesis-stage {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.genesis-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0; /* Todos los elementos empiezan invisibles */
+}
+
+.genesis-element img {
+    max-width: 100%;
+    height: auto;
+}
+
+#act1-cursor { 
+    font-size: 3rem; 
+    color: #FFC777; 
+    animation: blink 1s infinite; 
+}
+@keyframes blink { 
+    50% { opacity: 0; } 
+}
+
+#act1-hello { 
+    font-size: 3rem; 
+    font-family: 'Space Grotesk', sans-serif; 
+    color: #E879F9; 
+}
+
+#act2-maia-base, #act2-maia-hair, #act2-maia-glasses {
+    max-height: 80vh; /* Limita el tamaño de Maia */
+}
+
+#act3-maia-walking {
+    width: 150px; /* Ancho de un frame del sprite */
+    height: 250px; /* Alto del sprite */
+    background-image: url('images/genesis/maia-walking-sprite.webp');
+    background-size: 800% 100%; /* 8 frames de ancho */
+}
+
+.floating-icon { 
+    font-size: 3rem; 
+}
+
+.academy-title { 
+    font-size: 4rem; 
+    color: #FFC777; 
+    font-weight: bold;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.orbiting-icon img { 
+    width: 60px; 
+}
+/* ============== FIN: Estilos para la animación "Génesis de Maia" ============== */
