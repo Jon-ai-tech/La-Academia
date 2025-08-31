@@ -147,14 +147,11 @@
         }
 
         createMaiaElement(index) {
+            // Only keep professional 3D effects, remove distracting floating elements
             const maiaElements = [
                 () => this.createMaiaAvatar(),
-                () => this.createMaiaText(),
-                () => this.createFloatingCode(),
                 () => this.createAIToolIcon(),
                 () => this.createNeuralConnection(),
-                () => this.createEducationalElement(),
-                () => this.createBilingualElement(),
                 () => this.createGlassesReflection()
             ];
 
@@ -581,15 +578,16 @@
         }
 
         startParticleGeneration() {
+            // Reduced frequency for cleaner visual experience
             setInterval(() => {
-                if (Math.random() < 0.4) {
+                if (Math.random() < 0.2) { // Reduced from 0.4 to 0.2
                     this.createParticle();
                 }
-            }, 1500);
+            }, 3000); // Increased from 1500 to 3000
 
-            // Create ambient particles on scroll
+            // Reduced scroll particles
             window.addEventListener('scroll', () => {
-                if (Math.random() < 0.3) {
+                if (Math.random() < 0.1) { // Reduced from 0.3 to 0.1
                     this.createParticle(
                         Math.random() * window.innerWidth,
                         window.scrollY + Math.random() * window.innerHeight
@@ -605,18 +603,19 @@
                 this.mouse.y = e.clientY;
                 
                 const now = Date.now();
-                if (now - lastMove > 300 && Math.random() < 0.3) {
+                // Reduced mouse trail particles for cleaner experience
+                if (now - lastMove > 800 && Math.random() < 0.15) { // Increased delay and reduced probability
                     this.createParticle(e.clientX, e.clientY, 'trail');
                     lastMove = now;
                 }
             });
 
-            // Section entry particles
+            // Subtle section entry particles
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const rect = entry.target.getBoundingClientRect();
-                        this.burst(rect.left + rect.width / 2, rect.top, 3);
+                        this.burst(rect.left + rect.width / 2, rect.top, 2); // Reduced from 3 to 2
                     }
                 });
             });
@@ -1121,11 +1120,11 @@
 
             console.log('✨ Enhanced Locomotive-style experience initialized!');
             
-            // Create welcome burst
+            // Create subtle welcome burst
             setTimeout(() => {
                 const centerX = window.innerWidth / 2;
                 const centerY = window.innerHeight / 2;
-                this.particles.burst(centerX, centerY, 20);
+                this.particles.burst(centerX, centerY, 5); // Reduced from 20 to 5
             }, 1000);
         }
 
