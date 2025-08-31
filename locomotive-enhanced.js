@@ -1159,4 +1159,34 @@
         xhr.send();
     }
 
+    // Integration with unified controller
+    window.addEventListener('laacademia:ready', (event) => {
+        const controller = event.detail.controller;
+        console.log('🔗 Integrating Locomotive with Unified Controller...');
+        
+        // Connect scroll events
+        if (controller.components.scroll) {
+            controller.components.scroll.on('scroll', (data) => {
+                // Trigger locomotive scroll effects
+                if (locomotiveApp.particles && data.percent > 0.1) {
+                    // Create subtle particle effects during scroll
+                    const centerX = window.innerWidth / 2;
+                    const centerY = window.innerHeight / 2;
+                    locomotiveApp.particles.createBurst(centerX, centerY, 2, {
+                        color: '#FFC777',
+                        opacity: 0.3,
+                        size: 2
+                    });
+                }
+            });
+        }
+        
+        // Connect audio events
+        window.addEventListener('laacademia:userInteraction', () => {
+            console.log('🎵 Locomotive audio integration activated');
+        });
+        
+        console.log('✅ Locomotive-Unified integration complete');
+    });
+
 })();
