@@ -1586,97 +1586,55 @@ Crea un perfil coherente y específico que combine lo mejor de estos referentes.
     // Initialize navigation scrolling after DOM is ready
     initializeNavigationScrolling();
 
-    // ============== MAIA GENESIS SCROLL ANIMATION ============== 
+    // =======================================================================
+    // ===== INICIO: NUEVA LÓGICA DE ANIMACIÓN "GÉNESIS DE MAIA" (GSAP) =====
+    // =======================================================================
     function initializeMaiaGenesisAnimation() {
-        // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
-        
-        // Create main timeline for the Genesis animation
+
         const genesisTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: "#maia-genesis",
                 start: "top top",
                 end: "bottom bottom",
-                scrub: 1,
-                pin: false,
-                anticipatePin: 1
+                scrub: 1 // Suaviza la animación con el scroll
             }
         });
 
-        // Act I: Digital Awakening (0% - 25%)
+        // --- Acto I: Despertar Digital ---
         genesisTimeline
-            // Cursor appears and blinks
-            .set("#cursor", { opacity: 1 })
-            .to("#cursor", { duration: 1, opacity: 1 })
-            
-            // Hello World appears
-            .to("#hello-world", { duration: 0.5, opacity: 1, y: 0 }, "+=0.2")
-            
-            // Binary code fades in
-            .to("#binary-code", { duration: 0.8, opacity: 0.1 }, "+=0.1")
-            
-            // Pixelated Maia appears
-            .to("#maia-pixelated", { duration: 0.6, opacity: 1, scale: 1 }, "+=0.3");
+            .to("#act1-cursor", { opacity: 1, duration: 1 })
+            .to("#act1-hello", { opacity: 1, duration: 2 })
+            .to(["#act1-cursor", "#act1-hello"], { opacity: 0, duration: 1 })
+            .fromTo("#act1-code", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 3 })
+            .to("#act1-code", { opacity: 0, duration: 1 })
+            .fromTo("#act1-maia-pixel", { opacity: 0 }, { opacity: 1, duration: 3 });
 
-        // Act II: Identity Formation (25% - 50%)
+        // --- Acto II: Formación de Identidad ---
         genesisTimeline
-            // Fade out Act I elements
-            .to("#act-1 > div > *:not(#maia-pixelated)", { duration: 0.5, opacity: 0 }, "+=0.5")
-            
-            // Transform pixelated to base
-            .to("#maia-pixelated", { duration: 0.8, opacity: 0, scale: 0.8 }, "+=0.2")
-            .to("#maia-base", { duration: 0.8, opacity: 1, scale: 1 }, "-=0.4")
-            
-            // Add hair
-            .to("#maia-hair", { duration: 0.6, opacity: 1, y: 0 }, "+=0.3")
-            
-            // Add glasses
-            .to("#maia-glasses", { duration: 0.6, opacity: 1, scale: 1 }, "+=0.2");
+            .to("#act1-maia-pixel", { opacity: 0, duration: 1 })
+            .to("#act2-maia-base", { opacity: 1, duration: 2 })
+            .fromTo("#act2-maia-hair", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: 2 })
+            .fromTo("#act2-maia-glasses", { scale: 0, opacity: 0 }, { scale: 1, opacity: 1, duration: 2 });
 
-        // Act III: Educational Journey (50% - 75%)
+        // --- Acto III: Viaje Educativo ---
         genesisTimeline
-            // Fade out Act II
-            .to("#act-2", { duration: 0.5, opacity: 0 }, "+=0.3")
-            
-            // Show walking Maia
-            .to("#maia-walking", { duration: 0.6, opacity: 1 }, "+=0.2")
-            
-            // Maia walks across screen
-            .to("#maia-walking", { duration: 2, x: "80vw", ease: "none" })
-            
-            // Learning icons appear and float
-            .to("#learning-icons", { duration: 0.8, opacity: 1 }, "-=1.5")
-            .to(".learning-icon", { 
-                duration: 1, 
-                opacity: 1, 
-                y: 0,
-                stagger: 0.3,
-                ease: "back.out(1.7)" 
-            }, "-=1");
+            .to(["#act2-maia-base", "#act2-maia-hair", "#act2-maia-glasses"], { x: "-200%", duration: 4 })
+            .to("#act3-maia-walking", { opacity: 1, x: "50vw", duration: 10 })
+            .to("#act3-icon-book", { y: -100, x: "-20vw", opacity: 1, duration: 3 })
+            .to("#act3-icon-chart", { y: 100, x: "0vw", opacity: 1, duration: 3 })
+            .to("#act3-icon-idea", { y: -50, x: "20vw", opacity: 1, duration: 3 });
 
-        // Act IV: The Academy (75% - 100%)
+        // --- Acto IV: La Academia ---
         genesisTimeline
-            // Fade out Act III
-            .to("#act-3", { duration: 0.5, opacity: 0 }, "+=0.5")
-            
-            // Academy title appears
-            .to("#academy-title", { 
-                duration: 1, 
-                opacity: 1, 
-                scale: 1,
-                ease: "back.out(1.7)" 
-            }, "+=0.3")
-            
-            // Orbiting logos appear and start orbiting
-            .to("#orbiting-logos", { duration: 0.8, opacity: 1 }, "+=0.2")
-            .set(".logo-orbit", { opacity: 1 });
-
-        // Enhanced mobile experience
-        if (window.innerWidth < 768) {
-            // Adjust timeline durations for mobile
-            genesisTimeline.timeScale(0.8);
-        }
+            .to(["#act3-maia-walking", ".floating-icon"], { opacity: 0, duration: 2 })
+            .fromTo("#act4-title", { scale: 0 }, { scale: 1, opacity: 1, duration: 4 })
+            .to(["#act4-logo-python", "#act4-logo-tf"], { opacity: 1, duration: 1 });
     }
+
+    // =====================================================================
+    // ===== FIN: NUEVA LÓGICA DE ANIMACIÓN "GÉNESIS DE MAIA" (GSAP) =====
+    // =====================================================================
 
     // Initialize Genesis animation after a brief delay to ensure DOM is ready
     setTimeout(() => {

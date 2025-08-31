@@ -63,9 +63,8 @@
         }
     </style>
     
-    <!-- GSAP and ScrollTrigger for Maia Genesis Animation (Local Files) -->
-    <script src="node_modules/gsap/dist/gsap.min.js"></script>
-    <script src="node_modules/gsap/dist/ScrollTrigger.min.js"></script>
+    <!-- GSAP and ScrollTrigger for Maia Genesis Animation (Local Minimal Version) -->
+    <script src="js/gsap-minimal.js"></script>
 </head>
 <body class="bg-primary-dark text-primary-text">
 
@@ -203,90 +202,25 @@
 
     <main class="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 space-y-20">
         <!-- Sección El Génesis de Maia Kode -->
-        <section id="maia-genesis" class="relative w-full" style="height: 600vh;">
-            <!-- Act I: Digital Awakening -->
-            <div id="act-1" class="fixed inset-0 flex items-center justify-center">
-                <div class="text-center">
-                    <!-- Cursor blinking -->
-                    <div id="cursor" class="inline-block w-1 h-8 bg-accent-gold opacity-0"></div>
-                    
-                    <!-- Hello World text -->
-                    <div id="hello-world" class="text-4xl md:text-6xl font-bold text-accent-gold opacity-0 mb-8">
-                        <span class="lang-es">Hola Mundo</span>
-                        <span class="lang-en hidden">Hello World</span>
-                    </div>
-                    
-                    <!-- Binary code background -->
-                    <div id="binary-code" class="absolute inset-0 opacity-0 pointer-events-none">
-                        <img src="/images/genesis/code-binary.png" alt="Binary Code" class="w-full h-full object-cover">
-                    </div>
-                    
-                    <!-- Pixelated Maia -->
-                    <div id="maia-pixelated" class="opacity-0 mx-auto w-32 h-32 md:w-48 md:h-48">
-                        <img src="/images/genesis/maia-pixelated.webp" alt="Maia Pixelated" class="w-full h-full object-contain">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Act II: Identity Formation -->
-            <div id="act-2" class="fixed inset-0 flex items-center justify-center">
-                <div class="relative">
-                    <!-- Maia base -->
-                    <div id="maia-base" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
-                        <img src="/images/genesis/maia-base.webp" alt="Maia Base" class="w-48 h-48 md:w-64 md:h-64">
-                    </div>
-                    
-                    <!-- Maia hair -->
-                    <div id="maia-hair" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
-                        <img src="/images/genesis/maia-hair.webp" alt="Maia Hair" class="w-48 h-48 md:w-64 md:h-64">
-                    </div>
-                    
-                    <!-- Maia glasses -->
-                    <div id="maia-glasses" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
-                        <img src="/images/genesis/maia-glasses.webp" alt="Maia Glasses" class="w-48 h-48 md:w-64 md:h-64">
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Act III: Educational Journey -->
-            <div id="act-3" class="fixed inset-0 flex items-center justify-center">
-                <div class="relative w-full h-full">
-                    <!-- Walking Maia sprite -->
-                    <div id="maia-walking" class="absolute bottom-1/3 left-0 w-24 h-24 md:w-32 md:h-32 opacity-0">
-                        <div class="maia-sprite w-full h-full bg-no-repeat" 
-                             style="background-image: url('/images/genesis/maia-walking-sprite.webp'); background-size: 800% 100%;"></div>
-                    </div>
-                    
-                    <!-- Floating learning icons -->
-                    <div id="learning-icons" class="absolute inset-0 opacity-0">
-                        <div class="learning-icon absolute top-1/4 left-1/4 w-16 h-16 text-accent-blue text-4xl">📚</div>
-                        <div class="learning-icon absolute top-1/3 right-1/4 w-16 h-16 text-accent-gold text-4xl">📊</div>
-                        <div class="learning-icon absolute bottom-1/3 left-1/3 w-16 h-16 text-accent-violet text-4xl">💡</div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Act IV: The Academy -->
-            <div id="act-4" class="fixed inset-0 flex items-center justify-center">
-                <div class="text-center relative">
-                    <!-- Main title -->
-                    <div id="academy-title" class="opacity-0 mb-16">
-                        <h1 class="text-6xl md:text-8xl font-bold title-gradient">
-                            <span class="lang-es">LA ACADEMIA</span>
-                            <span class="lang-en hidden">THE ACADEMY</span>
-                        </h1>
-                    </div>
-                    
-                    <!-- Orbiting logos -->
-                    <div id="orbiting-logos" class="relative w-64 h-64 mx-auto opacity-0">
-                        <div id="python-logo" class="absolute w-16 h-16 logo-orbit">
-                            <img src="/images/genesis/logo-python.png" alt="Python" class="w-full h-full">
-                        </div>
-                        <div id="tensorflow-logo" class="absolute w-16 h-16 logo-orbit">
-                            <img src="/images/genesis/logo-tensorflow.png" alt="TensorFlow" class="w-full h-full">
-                        </div>
-                    </div>
-                </div>
+        <section id="maia-genesis" class="genesis-container">
+            <div class="genesis-stage">
+                <div id="act1-cursor" class="genesis-element">_</div>
+                <div id="act1-hello" class="genesis-element">Hello World</div>
+                <div id="act1-code" class="genesis-element"><img src="images/genesis/code-binary.png" alt="Código binario"></div>
+                <div id="act1-maia-pixel" class="genesis-element"><img src="images/genesis/maia-pixelated.webp" alt="Maia pixelada"></div>
+
+                <div id="act2-maia-base" class="genesis-element"><img src="images/genesis/maia-base.webp" alt="Maia base"></div>
+                <div id="act2-maia-hair" class="genesis-element"><img src="images/genesis/maia-hair.webp" alt="Pelo de Maia"></div>
+                <div id="act2-maia-glasses" class="genesis-element"><img src="images/genesis/maia-glasses.webp" alt="Gafas de Maia"></div>
+
+                <div id="act3-maia-walking" class="genesis-element"></div>
+                <div id="act3-icon-book" class="genesis-element floating-icon">📚</div>
+                <div id="act3-icon-chart" class="genesis-element floating-icon">📊</div>
+                <div id="act3-icon-idea" class="genesis-element floating-icon">💡</div>
+
+                <h2 id="act4-title" class="genesis-element academy-title">LA ACADEMIA</h2>
+                <div id="act4-logo-python" class="genesis-element orbiting-icon"><img src="images/genesis/logo-python.png" alt="Python"></div>
+                <div id="act4-logo-tf" class="genesis-element orbiting-icon"><img src="images/genesis/logo-tensorflow.png" alt="TensorFlow"></div>
             </div>
         </section>
 
