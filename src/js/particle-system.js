@@ -159,10 +159,10 @@ class ParticleSystem {
         document.addEventListener('mousemove', (e) => {
             const now = Date.now();
             
-            // Throttle particle creation
-            if (now - lastMouseMove > 100) {
-                // Random chance to create particle on mouse move
-                if (Math.random() < 0.3) {
+            // Throttle particle creation for cleaner experience
+            if (now - lastMouseMove > 300) { // Increased from 100 to 300
+                // Reduced chance to create particle on mouse move
+                if (Math.random() < 0.1) { // Reduced from 0.3 to 0.1
                     this.createFloatingParticle(
                         e.clientX + (Math.random() - 0.5) * 50,
                         e.clientY + (Math.random() - 0.5) * 50
@@ -179,9 +179,9 @@ class ParticleSystem {
         window.addEventListener('scroll', () => {
             const now = Date.now();
             
-            if (now - lastScroll > 200) {
-                // Create particles during scroll
-                for (let i = 0; i < 2; i++) {
+            if (now - lastScroll > 400) { // Increased from 200 to 400
+                // Reduced particles during scroll
+                for (let i = 0; i < 1; i++) { // Reduced from 2 to 1
                     this.createFloatingParticle(
                         Math.random() * window.innerWidth,
                         Math.random() * window.innerHeight
