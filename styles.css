@@ -2203,9 +2203,10 @@ button:focus, a:focus {
 /* ============== INICIO: Estilos para la animación "Génesis de Maia" ============== */
 .genesis-container {
     position: relative;
-    height: 600vh; /* Altura muy larga para dar espacio al scroll */
+    height: 600vh !important; /* Altura muy larga para dar espacio al scroll - important to override Tailwind */
     overflow: hidden;
     background: linear-gradient(180deg, #0D1117 0%, #161B22 50%, #0D1117 100%);
+    min-height: 600vh !important; /* Ensure minimum height */
 }
 
 .genesis-stage {
@@ -2229,10 +2230,20 @@ button:focus, a:focus {
     height: auto;
 }
 
-#act1-cursor { font-size: 3rem; color: #FFC777; animation: blink 1s infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+#act1-cursor { 
+    font-size: 3rem; 
+    color: #FFC777; 
+    animation: blink 1s infinite; 
+}
+@keyframes blink { 
+    50% { opacity: 0; } 
+}
 
-#act1-hello { font-size: 3rem; font-family: 'Space Grotesk', sans-serif; color: #E879F9; }
+#act1-hello { 
+    font-size: 3rem; 
+    font-family: 'Space Grotesk', sans-serif; 
+    color: #E879F9; 
+}
 
 #act2-maia-base, #act2-maia-hair, #act2-maia-glasses {
     max-height: 80vh; /* Limita el tamaño de Maia */
@@ -2245,12 +2256,18 @@ button:focus, a:focus {
     background-size: 800% 100%; /* 8 frames de ancho */
 }
 
-.floating-icon { font-size: 3rem; }
+.floating-icon { 
+    font-size: 3rem; 
+}
+
 .academy-title { 
     font-size: 4rem; 
     color: #FFC777; 
     font-weight: bold;
     font-family: 'Space Grotesk', sans-serif;
 }
-.orbiting-icon img { width: 60px; }
+
+.orbiting-icon img { 
+    width: 60px; 
+}
 /* ============== FIN: Estilos para la animación "Génesis de Maia" ============== */
