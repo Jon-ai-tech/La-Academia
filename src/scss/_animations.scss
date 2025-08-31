@@ -205,58 +205,9 @@
   background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.8) 50%, transparent 60%);
 }
 
-// Letter-by-letter text formation
-@keyframes letterForm {
-  0% {
-    opacity: 0;
-    transform: translateY(20px) scale(0.8);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translateY(-5px) scale(1.1);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px) scale(1);
-  }
-}
-
-.maia-text-letter {
-  animation: letterForm 0.6s ease-out forwards;
-  opacity: 0;
-  display: inline-block;
-}
-
-// Floating code snippets
-@keyframes codeFloat {
-  0%, 100% {
-    transform: translateY(0px) translateX(0px) rotate(0deg);
-    opacity: 0.6;
-  }
-  25% {
-    transform: translateY(-15px) translateX(5px) rotate(1deg);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-8px) translateX(-3px) rotate(0deg);
-    opacity: 0.9;
-  }
-  75% {
-    transform: translateY(-20px) translateX(8px) rotate(-1deg);
-    opacity: 0.7;
-  }
-}
-
-.floating-code {
-  animation: codeFloat 8s ease-in-out infinite;
-  font-family: 'Courier New', monospace;
-  color: $accent-gold;
-  text-shadow: 0 0 5px rgba($accent-gold, 0.5);
-  pointer-events: none;
-  font-size: 12px;
-  line-height: 1.2;
-  white-space: pre;
-}
+// ============== REMOVED UNUSED ANIMATIONS ============== 
+// letterForm, codeFloat, and languageSwitch animations removed
+// These were used for distracting floating elements that have been cleaned up
 
 // AI tool assembly animation
 @keyframes toolAssemble {
@@ -329,30 +280,4 @@
   transform-style: preserve-3d;
 }
 
-// Bilingual transition effect
-@keyframes languageSwitch {
-  0% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-  25% {
-    opacity: 0.5;
-    transform: translateX(-10px);
-  }
-  50% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  75% {
-    opacity: 0.5;
-    transform: translateX(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0px);
-  }
-}
-
-.bilingual-text {
-  animation: languageSwitch 4s ease-in-out infinite;
-}
+// Removed bilingual transition effect - no longer needed

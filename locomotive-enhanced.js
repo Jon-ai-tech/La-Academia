@@ -147,12 +147,14 @@
         }
 
         createMaiaElement(index) {
-            // Keep only professional, purposeful elements
-            const maiaElements = [
-                () => this.createMaiaAvatar(),
-                () => this.createMaiaText(),
-                () => this.createNeuralConnection(),
-                () => this.createBilingualElement(),
+// Keep only professional, purposeful elements
+const maiaElements = [
+    () => this.createMaiaAvatar(),
+    () => this.createMaiaText(),
+    () => this.createAIToolIcon(),
+    () => this.createNeuralConnection(),
+    () => this.createBilingualElement(),
+];
                 () => this.createGlassesReflection()
             ];
 
@@ -483,16 +485,16 @@
         }
 
         startParticleGeneration() {
-            // Reduced particle generation for cleaner appearance
-            setInterval(() => {
-                if (Math.random() < 0.1) { // Reduced from 0.4 to 0.1
-                    this.createParticle();
-                }
-            }, 3000); // Increased interval from 1500 to 3000ms
+// Reduced particle generation for cleaner appearance
+setInterval(() => {
+    if (Math.random() < 0.1) { // Reduced from 0.4 to 0.1
+        this.createParticle();
+    }
+}, 3000); // Increased interval from 1500 to 3000ms
 
-            // Reduced ambient particles on scroll  
-            window.addEventListener('scroll', () => {
-                if (Math.random() < 0.05) { // Reduced from 0.3 to 0.05
+// Reduced ambient particles on scroll  
+window.addEventListener('scroll', () => {
+    if (Math.random() < 0.05) { // Reduced from 0.3 to 0.05
                     this.createParticle(
                         Math.random() * window.innerWidth,
                         window.scrollY + Math.random() * window.innerHeight
@@ -509,18 +511,19 @@
                 
                 // Greatly reduced mouse trail particles for cleaner experience
                 const now = Date.now();
-                if (now - lastMove > 1000 && Math.random() < 0.05) { // Reduced from 300ms & 0.3 to 1000ms & 0.05
+// Reduced mouse trail particles for cleaner experience
+if (now - lastMove > 1000 && Math.random() < 0.05) { // Reduced from 300ms & 0.3 to 1000ms & 0.05
                     this.createParticle(e.clientX, e.clientY, 'trail');
                     lastMove = now;
                 }
             });
 
-            // Reduced section entry particles
+// Subtle section entry particles
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const rect = entry.target.getBoundingClientRect();
-                        this.burst(rect.left + rect.width / 2, rect.top, 1); // Reduced from 3 to 1 particle
+this.burst(rect.left + rect.width / 2, rect.top, 1); // Reduced from 3 to 1 particle
                     }
                 });
             });
@@ -1025,11 +1028,11 @@
 
             console.log('✨ Enhanced Locomotive-style experience initialized!');
             
-            // Create subtle welcome effect instead of overwhelming burst
-            setTimeout(() => {
-                const centerX = window.innerWidth / 2;
-                const centerY = window.innerHeight / 2;
-                this.particles.burst(centerX, centerY, 3); // Reduced from 20 to 3 particles
+// Create subtle welcome effect instead of overwhelming burst
+setTimeout(() => {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    this.particles.burst(centerX, centerY, 3); // Reduced from 20 to 3 particles
             }, 1000);
         }
 
