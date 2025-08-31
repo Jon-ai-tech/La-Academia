@@ -170,20 +170,42 @@ class MotoScrollSystem {
     }
     
     createPlaceholderImage(frameIndex) {
-        // Create a simple placeholder canvas
+        // Create a sophisticated placeholder canvas with professional gradient
         const canvas = document.createElement('canvas');
         canvas.width = 800;
         canvas.height = 600;
         const ctx = canvas.getContext('2d');
         
-        // Draw a simple placeholder
-        ctx.fillStyle = '#1a1a2e';
+        // Create gradient background
+        const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+        gradient.addColorStop(0, '#1a1a2e');
+        gradient.addColorStop(0.5, '#2d2d44');
+        gradient.addColorStop(1, '#1a1a2e');
+        ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         
-        ctx.fillStyle = '#FFC777';
-        ctx.font = '24px Arial';
+        // Add subtle pattern
+        ctx.fillStyle = 'rgba(255, 199, 119, 0.05)';
+        for (let i = 0; i < 20; i++) {
+            ctx.beginPath();
+            ctx.arc(
+                Math.random() * canvas.width, 
+                Math.random() * canvas.height, 
+                Math.random() * 10 + 5, 
+                0, 
+                Math.PI * 2
+            );
+            ctx.fill();
+        }
+        
+        // Add frame indicator (subtle)
+        ctx.fillStyle = 'rgba(255, 199, 119, 0.3)';
+        ctx.font = '16px Arial';
         ctx.textAlign = 'center';
-        ctx.fillText(`Frame ${frameIndex + 1}`, canvas.width / 2, canvas.height / 2);
+        ctx.fillText(`Maia Kode Academy`, canvas.width / 2, canvas.height / 2 - 10);
+        ctx.fillStyle = 'rgba(255, 199, 119, 0.2)';
+        ctx.font = '12px Arial';
+        ctx.fillText(`Loading sequence...`, canvas.width / 2, canvas.height / 2 + 20);
         
         // Convert to image
         const img = new Image();

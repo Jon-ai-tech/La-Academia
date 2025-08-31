@@ -147,11 +147,14 @@
         }
 
         createMaiaElement(index) {
-            // Only keep professional 3D effects, remove distracting floating elements
-            const maiaElements = [
-                () => this.createMaiaAvatar(),
-                () => this.createAIToolIcon(),
-                () => this.createNeuralConnection(),
+// Keep only professional, purposeful elements
+const maiaElements = [
+    () => this.createMaiaAvatar(),
+    () => this.createMaiaText(),
+    () => this.createAIToolIcon(),
+    () => this.createNeuralConnection(),
+    () => this.createBilingualElement(),
+];
                 () => this.createGlassesReflection()
             ];
 
@@ -282,87 +285,9 @@
             return textElement;
         }
 
-        createFloatingCode() {
-            const codeSnippets = [
-                'import tensorflow as tf',
-                'model = Sequential()',
-                'print("¡Hola, soy Maia!")',
-                '# Crear redes neuronales',
-                'from transformers import *',
-                'def teach_ai():',
-                '  return knowledge',
-                'class MaiaKode:',
-                '  def __init__(self):',
-                '    self.purpose = "educate"'
-            ];
+        // Removed createFloatingCode method to eliminate distracting random code snippets
 
-            const codeElement = document.createElement('div');
-            codeElement.className = 'floating-code floating-shape';
-            codeElement.textContent = codeSnippets[Math.floor(Math.random() * codeSnippets.length)];
-
-            codeElement.style.cssText = `
-                position: fixed;
-                left: ${Math.random() * (window.innerWidth - 200)}px;
-                top: ${Math.random() * (window.innerHeight - 30)}px;
-                font-family: 'Courier New', monospace;
-                font-size: 12px;
-                color: #FFC777;
-                text-shadow: 0 0 5px rgba(255, 199, 119, 0.5);
-                pointer-events: none;
-                z-index: 1;
-                opacity: 0.7;
-                animation: codeFloat ${8 + Math.random() * 4}s ease-in-out infinite;
-                background: rgba(0, 0, 0, 0.3);
-                padding: 5px 8px;
-                border-radius: 4px;
-                border-left: 3px solid #58A6FF;
-            `;
-
-            return codeElement;
-        }
-
-        createAIToolIcon() {
-            const tools = ['🤖', '🧠', '⚡', '🔬', '📊', '🎯', '💡', '🚀'];
-            const toolNames = ['ChatGPT', 'Neural Net', 'TensorFlow', 'Research', 'Data', 'Focus', 'Innovation', 'Progress'];
-            
-            const toolIndex = Math.floor(Math.random() * tools.length);
-            const toolElement = document.createElement('div');
-            toolElement.className = 'ai-tool-icon floating-shape';
-            
-            toolElement.innerHTML = `
-                <div class="tool-icon">${tools[toolIndex]}</div>
-                <div class="tool-name">${toolNames[toolIndex]}</div>
-            `;
-
-            toolElement.style.cssText = `
-                position: fixed;
-                left: ${Math.random() * (window.innerWidth - 80)}px;
-                top: ${Math.random() * (window.innerHeight - 60)}px;
-                width: 60px;
-                height: 50px;
-                text-align: center;
-                pointer-events: none;
-                z-index: 2;
-                animation: advancedFloat${Math.floor(Math.random() * 3)} ${6 + Math.random() * 4}s ease-in-out infinite;
-            `;
-
-            const icon = toolElement.querySelector('.tool-icon');
-            icon.style.cssText = `
-                font-size: 24px;
-                margin-bottom: 5px;
-                filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
-            `;
-
-            const name = toolElement.querySelector('.tool-name');
-            name.style.cssText = `
-                font-size: 10px;
-                color: #A855F7;
-                font-family: Arial, sans-serif;
-                text-shadow: 0 0 3px rgba(168, 85, 247, 0.3);
-            `;
-
-            return toolElement;
-        }
+        // Removed createAIToolIcon method to eliminate distracting floating tool icons
 
         createNeuralConnection() {
             const connection = document.createElement('div');
@@ -385,25 +310,7 @@
             return connection;
         }
 
-        createEducationalElement() {
-            const eduElements = ['📚', '🎓', '📝', '🔍', '📐', '🧮', '📖', '✏️'];
-            const element = document.createElement('div');
-            element.className = 'educational-element floating-shape';
-            element.textContent = eduElements[Math.floor(Math.random() * eduElements.length)];
-
-            element.style.cssText = `
-                position: fixed;
-                left: ${Math.random() * (window.innerWidth - 40)}px;
-                top: ${Math.random() * (window.innerHeight - 40)}px;
-                font-size: 20px;
-                pointer-events: none;
-                z-index: 1;
-                animation: bookFlip ${6 + Math.random() * 3}s ease-in-out infinite;
-                filter: drop-shadow(0 0 5px rgba(255, 199, 119, 0.4));
-            `;
-
-            return element;
-        }
+        // Removed createEducationalElement method to eliminate distracting floating emoji icons
 
         createBilingualElement() {
             const bilingualPairs = [
@@ -578,16 +485,16 @@
         }
 
         startParticleGeneration() {
-            // Reduced frequency for cleaner visual experience
-            setInterval(() => {
-                if (Math.random() < 0.2) { // Reduced from 0.4 to 0.2
-                    this.createParticle();
-                }
-            }, 3000); // Increased from 1500 to 3000
+// Reduced particle generation for cleaner appearance
+setInterval(() => {
+    if (Math.random() < 0.1) { // Reduced from 0.4 to 0.1
+        this.createParticle();
+    }
+}, 3000); // Increased interval from 1500 to 3000ms
 
-            // Reduced scroll particles
-            window.addEventListener('scroll', () => {
-                if (Math.random() < 0.1) { // Reduced from 0.3 to 0.1
+// Reduced ambient particles on scroll  
+window.addEventListener('scroll', () => {
+    if (Math.random() < 0.05) { // Reduced from 0.3 to 0.05
                     this.createParticle(
                         Math.random() * window.innerWidth,
                         window.scrollY + Math.random() * window.innerHeight
@@ -602,20 +509,21 @@
                 this.mouse.x = e.clientX;
                 this.mouse.y = e.clientY;
                 
+                // Greatly reduced mouse trail particles for cleaner experience
                 const now = Date.now();
-                // Reduced mouse trail particles for cleaner experience
-                if (now - lastMove > 800 && Math.random() < 0.15) { // Increased delay and reduced probability
+// Reduced mouse trail particles for cleaner experience
+if (now - lastMove > 1000 && Math.random() < 0.05) { // Reduced from 300ms & 0.3 to 1000ms & 0.05
                     this.createParticle(e.clientX, e.clientY, 'trail');
                     lastMove = now;
                 }
             });
 
-            // Subtle section entry particles
+// Subtle section entry particles
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         const rect = entry.target.getBoundingClientRect();
-                        this.burst(rect.left + rect.width / 2, rect.top, 2); // Reduced from 3 to 2
+this.burst(rect.left + rect.width / 2, rect.top, 1); // Reduced from 3 to 1 particle
                     }
                 });
             });
@@ -1120,11 +1028,11 @@
 
             console.log('✨ Enhanced Locomotive-style experience initialized!');
             
-            // Create subtle welcome burst
-            setTimeout(() => {
-                const centerX = window.innerWidth / 2;
-                const centerY = window.innerHeight / 2;
-                this.particles.burst(centerX, centerY, 5); // Reduced from 20 to 5
+// Create subtle welcome effect instead of overwhelming burst
+setTimeout(() => {
+    const centerX = window.innerWidth / 2;
+    const centerY = window.innerHeight / 2;
+    this.particles.burst(centerX, centerY, 3); // Reduced from 20 to 3 particles
             }, 1000);
         }
 
