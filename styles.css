@@ -1,8 +1,13 @@
 .accordion-content.expanded {
-    /* Removed overflow-y: auto */
+    overflow-y: visible;
+    max-height: fit-content;
 }
 
 .title-gradient {
-    background: linear-gradient(to right, #E879F9, #A855F7, #58A6FF, #FFC777);
+    background: linear-gradient(135deg, #E879F9 0%, #A855F7 33%, #58A6FF 66%, #FFC777 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
 }
 /* Add other gradient fixes here as necessary */
