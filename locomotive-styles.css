@@ -914,6 +914,27 @@ button:not(.lang-button):focus-visible {
   color: #0D1117;
 }
 
+.btn-gradient-4color {
+  background: linear-gradient(45deg, #d44c9d, #A855F7, #00D4FF, #FFC777);
+  background-size: 200% 200%;
+  color: white !important;
+  font-weight: 600;
+}
+.btn-gradient-4color:hover {
+  background-position: right center;
+  color: white !important;
+  transform: scale(1.03) translateZ(0);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+.btn-gradient-4color:active {
+  transform: scale(0.98) translateZ(0);
+  transition-duration: 150ms;
+}
+.btn-gradient-4color:focus-visible {
+  outline: 2px solid #FFC777;
+  outline-offset: 2px;
+}
+
 .btn-secondary {
   background: transparent;
   border: 2px solid #FFC777;
