@@ -787,7 +787,7 @@ section + section {
 }
 
 .title-gradient {
-  background: linear-gradient(135deg, #FFC777 0%, #58A6FF 50%, #A855F7 100%);
+  background: linear-gradient(45deg, #d44c9d, #A855F7, #00D4FF, #FFC777);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
