@@ -616,10 +616,6 @@
   background: linear-gradient(135deg, transparent 40%, rgba(255, 255, 255, 0.8) 50%, transparent 60%);
 }
 
-/* ============== PROFESSIONAL 3D EFFECTS ONLY ============== */
-/* Removed unused animations: letterForm, codeFloat, languageSwitch */
-/* These were used for distracting floating elements that have been cleaned up */
-
 @keyframes toolAssemble {
   0% {
     transform: scale(0) rotate(180deg);
@@ -682,8 +678,6 @@
   animation: bookFlip 6s ease-in-out infinite;
   transform-style: preserve-3d;
 }
-
-/* Removed languageSwitch animation - no longer needed */
 
 /* ============== SELF-HOSTED VARIABLE FONTS ============== */
 @font-face {
