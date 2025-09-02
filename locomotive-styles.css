@@ -774,12 +774,20 @@ section + section {
   color: #B0BAC6;
 }
 
+.text-primary-dark {
+  color: #0D1117;
+}
+
 .text-accent-magenta {
   color: #FFC777;
 }
 
 .text-accent-cyan {
   color: #58A6FF;
+}
+
+.text-accent-blue {
+  color: #0D1117;
 }
 
 .text-accent-gold {
