@@ -32,6 +32,8 @@ $error-color: #DA3633;        // Rojo error
 $title-gradient: linear-gradient(135deg, $accent-gold 0%, $accent-blue 50%, $accent-violet 100%);
 $bg-gradient-gold-blue: linear-gradient(135deg, $accent-blue 0%, $accent-gold 100%);
 $bg-gradient-violet-magenta: linear-gradient(135deg, $accent-violet 0%, $accent-magenta 100%);
+// 4-color gradient for buttons (matching title gradient but with different angle)
+$button-gradient-4color: linear-gradient(45deg, #d44c9d, #A855F7, #00D4FF, #FFC777);
 
 // Shadows and effects
 $glow-gold: 0 0 20px rgba(255, 199, 119, 0.3);

@@ -230,6 +230,32 @@ button:not(.lang-button) {
     }
 }
 
+// 4-color gradient button (new class for all main CTA buttons)
+.btn-gradient-4color {
+    background: $button-gradient-4color;
+    background-size: 200% 200%;
+    color: white !important; // Ensure white text for contrast
+    font-weight: $font-weight-semibold;
+    
+    &:hover {
+        background-position: right center;
+        color: white !important;
+        transform: scale($hover-scale) translateZ(0);
+        box-shadow: $button-shadow-hover;
+    }
+    
+    &:active {
+        transform: scale($active-scale) translateZ(0);
+        transition-duration: $transition-fast;
+    }
+    
+    // Focus state for accessibility
+    &:focus-visible {
+        outline: $focus-outline;
+        outline-offset: $focus-offset;
+    }
+}
+
 // Secondary button (outline style)
 .btn-secondary {
     background: transparent;
