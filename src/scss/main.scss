@@ -6,7 +6,11 @@
 @import 'locomotive';
 @import 'animations';
 
-/* ============== SELF-HOSTED VARIABLE FONTS ============== */
+/* ============== GOOGLE FONTS FOR PERFORMANCE ============== */
+// Preconnect for faster loading
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ============== SELF-HOSTED VARIABLE FONTS (FALLBACK) ============== */
 @font-face {
     font-family: 'Space Grotesk';
     src: url('../fonts/space-grotesk/SpaceGrotesk-VariableFont_wght.woff2') format('woff2-variations');
@@ -23,34 +27,60 @@
     font-style: normal;
 }
 
-// Fallback Google Fonts import for compatibility
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
-
-/* ============== BASE STYLES ============== */
+/* ============== APPLE-LIKE LAYOUT SYSTEM ============== */
 html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    font-size: 16px; // Base for rem calculations
 }
 
-body {
-    font-family: 'IBM Plex Serif', 'Inter', serif;
-    font-weight: 400;
-    background-color: $primary-dark;
-    color: $primary-text;
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
-}
-
-// Ensure all main containers respect viewport width
-main, header, section, .max-w-6xl {
+// Layout containers with max-width system
+main, header, section {
     max-width: 100vw;
     overflow-x: hidden;
 }
 
-// Universal box-sizing for better responsive control
+.max-w-6xl,
+.container {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding-left: $spacing-lg;  // 32px lateral margins
+    padding-right: $spacing-lg;
+}
+
+// Section spacing system
+section {
+    margin-bottom: $section-spacing; // 128px between sections
+    
+    + section {
+        margin-top: $section-spacing;
+    }
+}
+
+// Universal box-sizing for better control
 *, *::before, *::after {
     box-sizing: border-box;
+}
+
+// 12-column grid system
+.grid {
+    display: grid;
+    gap: $spacing-lg; // 32px gap
+    
+    &.grid-cols-1 { grid-template-columns: 1fr; }
+    &.grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+    &.grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+    &.grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+    &.grid-cols-12 { grid-template-columns: repeat(12, 1fr); }
+    
+    @media (max-width: 768px) {
+        &.grid-cols-2,
+        &.grid-cols-3,
+        &.grid-cols-4,
+        &.grid-cols-12 {
+            grid-template-columns: 1fr; // Stack on mobile
+        }
+    }
 }
 
 /* ============== UTILITY CLASSES ============== */
@@ -72,106 +102,368 @@ main, header, section, .max-w-6xl {
     color: transparent;
 }
 
-/* ============== TYPOGRAPHY ============== */
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', 'Inter', sans-serif;
-    font-weight: 400;
+/* ============== APPLE-LIKE TYPOGRAPHY SYSTEM ============== */
+
+// Base body font
+body {
+    font-family: $font-secondary; // Inter for body text
+    font-weight: $font-weight-regular;
+    font-size: $font-size-body;
+    line-height: $line-height-relaxed;
+    background-color: $primary-dark;
+    color: $primary-text;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-h1 { font-weight: 600; }
-h2 { font-weight: 500; }
+// Typography hierarchy
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-primary; // Space Grotesk for headlines
+    color: $primary-text;
+    margin: 0 0 $element-spacing-title 0;
+    font-weight: $font-weight-bold;
+}
 
-/* ============== ENHANCED BUTTON STYLES ============== */
-.decorative-btn {
+h1 { 
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-tight;
+    letter-spacing: -0.02em; // Tighter spacing for large text
+}
+
+h2 { 
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    line-height: $line-height-snug;
+    letter-spacing: -0.01em;
+}
+
+h3 { 
+    font-size: $font-size-h3;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-snug;
+}
+
+// Paragraphs with Swiss precision
+p {
+    font-family: $font-secondary; // Inter
+    font-size: $font-size-body;
+    font-weight: $font-weight-regular;
+    line-height: $line-height-relaxed;
+    margin: 0 0 $element-spacing-paragraph 0;
+    color: $primary-text;
+}
+
+// Secondary text
+.text-secondary {
+    color: $secondary-text;
+}
+
+// CTA and button text
+.cta-text, 
+.btn-text,
+button {
+    font-family: $font-secondary; // Inter
+    font-size: $font-size-cta;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-snug;
+}
+
+/* ============== APPLE-LIKE BUTTON SYSTEM & MICROINTERACTIONS ============== */
+
+// Base button styles
+.btn,
+.decorative-btn,
+button:not(.lang-button) {
     position: relative;
-    overflow: hidden;
-    background: linear-gradient(45deg, $accent-blue, $accent-magenta);
-    background-size: 200% 200%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: $spacing-md $spacing-xl; // 24px 48px
     border: none;
-    color: white;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-weight: 600;
+    border-radius: 12px; // Slightly rounded, Apple-like
+    font-family: $font-secondary;
+    font-size: $font-size-cta;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-snug;
+    text-decoration: none;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: $glow-blue;
+    transition: all $transition-medium $ease-out;
+    transform: translateZ(0); // Force GPU acceleration
+    will-change: transform, box-shadow;
     
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-        transition: left 0.5s ease;
-    }
-    
+    // Microinteraction: Subtle hover scale and elevation
     &:hover {
-        background-position: 100% 100%;
-        transform: translateY(-2px);
-        box-shadow: $glow-magenta;
+        transform: scale($hover-scale) translateZ(0);
+        box-shadow: $button-shadow-hover;
         
-        &::before {
-            left: 100%;
-        }
+        // Prevent text selection on hover
+        user-select: none;
     }
     
     &:active {
-        transform: translateY(0);
+        transform: scale($active-scale) translateZ(0);
+        transition-duration: $transition-fast;
+    }
+    
+    // Focus state for accessibility
+    &:focus-visible {
+        outline: $focus-outline;
+        outline-offset: $focus-offset;
     }
 }
 
-// Scroll to top button with enhanced effects
+// Primary CTA button (gold gradient)
+.btn-primary,
+.decorative-btn {
+    background: $bg-gradient-gold-blue;
+    background-size: 200% 200%;
+    color: $primary-dark;
+    font-weight: $font-weight-semibold;
+    
+    &:hover {
+        background-position: right center;
+        color: $primary-dark;
+    }
+}
+
+// Secondary button (outline style)
+.btn-secondary {
+    background: transparent;
+    border: 2px solid $accent-gold;
+    color: $accent-gold;
+    
+    &:hover {
+        background: $accent-gold;
+        color: $primary-dark;
+    }
+}
+
+// Text button (minimal)
+.btn-text {
+    background: transparent;
+    border: none;
+    color: $accent-gold;
+    padding: $spacing-sm $spacing-md;
+    
+    &:hover {
+        color: $accent-gold-hover;
+        transform: translateY(-1px) translateZ(0);
+        box-shadow: none;
+    }
+}
+
+// Loading state for forms
+.btn-loading {
+    position: relative;
+    color: transparent !important;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        border-top: 2px solid currentColor;
+        border-radius: 50%;
+        animation: button-loading 1s linear infinite;
+    }
+}
+
+@keyframes button-loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+// Success state for forms
+.btn-success {
+    background: $success-color !important;
+    
+    &::after {
+        content: '✓';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 18px;
+        color: white;
+    }
+}
+
+
+// Scroll to top button with Apple-like design
 .scroll-to-top-btn {
     position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    width: 60px;
-    height: 60px;
+    bottom: $spacing-lg; // 32px
+    right: $spacing-lg;  // 32px
+    width: 56px;
+    height: 56px;
     border-radius: 50%;
     background: $bg-gradient-gold-blue;
     border: none;
-    color: white;
+    color: $primary-dark;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all $transition-medium $ease-out;
     opacity: 0;
     visibility: hidden;
-    transform: scale(0.8);
+    transform: scale(0.8) translateZ(0);
     z-index: $z-navigation;
-    box-shadow: $glow-gold;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    will-change: transform, opacity;
     
     &.show {
         opacity: 1;
         visibility: visible;
-        transform: scale(1);
+        transform: scale(1) translateZ(0);
     }
     
     &:hover {
-        transform: scale(1.1) translateY(-5px);
-        box-shadow: $glow-blue;
+        transform: scale($hover-scale) translateZ(0);
+        box-shadow: $button-shadow-hover;
     }
     
-    .scroll-arrow {
-        transition: transform 0.3s ease;
+    &:active {
+        transform: scale($active-scale) translateZ(0);
     }
     
-    &:hover .scroll-arrow {
-        transform: translateY(-3px);
+    svg {
+        width: 20px;
+        height: 20px;
+        transition: transform $transition-medium $ease-out;
+    }
+    
+    &:hover svg {
+        transform: translateY(-2px);
     }
 }
 
-/* ============== ENHANCED CARDS ============== */
+/* ============== APPLE-LIKE VIDEO COMPONENT ============== */
+.maia-video-container {
+    transition: all $transition-medium $ease-out;
+    will-change: transform, box-shadow;
+    
+    &:hover {
+        transform: translateY(-2px) translateZ(0);
+        box-shadow: 0 12px 50px rgba(0, 0, 0, 0.3);
+    }
+    
+    .play-button-container {
+        filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+    }
+}
+
+// Gradient utilities
+.bg-gradient-radial {
+    background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* ============== STUDENT JOURNEY GSAP ANIMATIONS ============== */
+.journey-act {
+    transition: opacity $transition-slow $ease-in-out;
+    will-change: opacity, transform;
+}
+
+.floating-icon {
+    transition: all $transition-medium $ease-out;
+    will-change: transform;
+    
+    &[data-icon="book"] { 
+        animation: float-chaotic-1 3s ease-in-out infinite;
+    }
+    &[data-icon="chart"] { 
+        animation: float-chaotic-2 3.5s ease-in-out infinite;
+    }
+    &[data-icon="laptop"] { 
+        animation: float-chaotic-3 4s ease-in-out infinite;
+    }
+    &[data-icon="puzzle"] { 
+        animation: float-chaotic-4 3.2s ease-in-out infinite;
+    }
+    &[data-icon="brain"] { 
+        animation: float-chaotic-5 3.8s ease-in-out infinite;
+    }
+}
+
+@keyframes float-chaotic-1 {
+    0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+    33% { transform: translate(-30%, -70%) rotate(-15deg); }
+    66% { transform: translate(-70%, -30%) rotate(10deg); }
+}
+
+@keyframes float-chaotic-2 {
+    0%, 100% { transform: translate(50%, -50%) rotate(0deg); }
+    33% { transform: translate(70%, -30%) rotate(20deg); }
+    66% { transform: translate(30%, -70%) rotate(-10deg); }
+}
+
+@keyframes float-chaotic-3 {
+    0%, 100% { transform: translate(-50%, 50%) rotate(0deg); }
+    33% { transform: translate(-70%, 30%) rotate(-25deg); }
+    66% { transform: translate(-30%, 70%) rotate(15deg); }
+}
+
+@keyframes float-chaotic-4 {
+    0%, 100% { transform: translate(50%, -50%) rotate(0deg); }
+    33% { transform: translate(30%, -30%) rotate(30deg); }
+    66% { transform: translate(70%, -70%) rotate(-20deg); }
+}
+
+@keyframes float-chaotic-5 {
+    0%, 100% { transform: translate(-50%, 50%) rotate(0deg); }
+    33% { transform: translate(-30%, 30%) rotate(-30deg); }
+    66% { transform: translate(-70%, 70%) rotate(25deg); }
+}
+
+// Progress dots
+.progress-dot {
+    transition: all $transition-medium $ease-out;
+    
+    &.active {
+        background-color: $accent-gold;
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+// Organized icons alignment
+.organized-icon {
+    transition: all $transition-medium $ease-out;
+    will-change: transform, opacity;
+}
+
+// Project building animation
+#project-mockup {
+    transition: all $transition-slow $ease-out;
+    will-change: transform, opacity;
+}
+
+#growth-line path {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+    transition: stroke-dashoffset 2s $ease-out;
+    
+    &.animate {
+        stroke-dashoffset: 0;
+    }
+}
+.card,
 .influencer-card {
     background-color: $tertiary-dark;
     color: $secondary-text;
-    border: 2px solid transparent;
-    border-radius: 12px;
-    padding: 1.5rem;
-    transition: all 0.3s ease;
+    border: 1px solid $border-color;
+    border-radius: 16px; // More Apple-like rounded corners
+    padding: $spacing-xl; // 48px padding
+    transition: all $transition-medium $ease-out;
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    will-change: transform, box-shadow;
     
     &::before {
         content: '';
@@ -182,26 +474,27 @@ h2 { font-weight: 500; }
         bottom: 0;
         background: $bg-gradient-gold-blue;
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity $transition-medium $ease-out;
         z-index: -1;
     }
     
     &:hover {
+        transform: translateY(-4px) translateZ(0);
+        box-shadow: 0 8px 40px rgba(0, 0, 0, 0.2);
         border-color: $accent-gold;
-        transform: translateY(-5px) scale(1.02);
-        box-shadow: $glow-gold;
+        color: $primary-text;
         
         &::before {
-            opacity: 0.1;
+            opacity: 0.03; // Very subtle background change
         }
     }
     
-    &.selected {
-        border-color: $accent-blue;
-        background: linear-gradient(135deg, rgba($accent-blue, 0.1), rgba($accent-gold, 0.05));
-        transform: scale(1.02);
+    &:active {
+        transform: translateY(-2px) translateZ(0);
     }
 }
+
+
 
 /* ============== PARTICLE CONTAINER ============== */
 .particles-container {
@@ -215,24 +508,16 @@ h2 { font-weight: 500; }
     overflow: hidden;
 }
 
-/* ============== ENHANCED SECTIONS ============== */
+/* ============== APPLE-LIKE SECTIONS ============== */
 section {
     position: relative;
-    padding: 4rem 2rem;
+    padding: $section-spacing 0; // 128px vertical, 0 horizontal (handled by containers)
     
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: $bg-gradient-gold-blue;
-        opacity: 0.3;
-    }
+    // Remove default background overlays for cleaner look
+    // &::before content removed for minimalist approach
 }
 
-// Hero section enhancements
+// Hero section with Apple-like design
 .hero-section {
     min-height: 100vh;
     display: flex;
@@ -241,6 +526,7 @@ section {
     position: relative;
     overflow: hidden;
     
+    // Subtle background pattern (minimal)
     &::before {
         content: '';
         position: absolute;
@@ -344,7 +630,56 @@ section {
     }
 }
 
-/* ============== ACCESSIBILITY ============== */
+/* ============== FORM ENHANCEMENTS ============== */
+
+// Input focus states
+.input-focused input {
+    border-color: $accent-gold !important;
+    box-shadow: 0 0 0 3px rgba($accent-gold, 0.1);
+}
+
+// Form button states
+.btn-error {
+    background: $error-color !important;
+    color: white !important;
+}
+
+/* ============== ACCESSIBILITY ENHANCEMENTS ============== */
+
+// Focus visible improvements
+*:focus-visible {
+    outline: $focus-outline;
+    outline-offset: $focus-offset;
+    box-shadow: 0 0 0 3px rgba($accent-gold, 0.2);
+}
+
+// Skip to content link
+.skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: $accent-gold;
+    color: $primary-dark;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    
+    &:focus {
+        top: 6px;
+    }
+}
+
+// High contrast mode enhancements
+@media (prefers-contrast: high) {
+    .btn, .decorative-btn {
+        border: 2px solid currentColor;
+    }
+    
+    .card, .influencer-card {
+        border: 2px solid $primary-text;
+    }
+}
 @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
