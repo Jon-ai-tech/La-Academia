@@ -29,7 +29,7 @@ $warning-color: #D29922;      // Amarillo advertencia
 $error-color: #DA3633;        // Rojo error
 
 // Gradients
-$title-gradient: linear-gradient(135deg, $accent-gold 0%, $accent-blue 50%, $accent-violet 100%);
+$title-gradient: linear-gradient(135deg, $accent-magenta 0%, $accent-violet 33%, $accent-blue 66%, $accent-gold 100%);
 $bg-gradient-gold-blue: linear-gradient(135deg, $accent-blue 0%, $accent-gold 100%);
 $bg-gradient-violet-magenta: linear-gradient(135deg, $accent-violet 0%, $accent-magenta 100%);
 // 4-color gradient for buttons (matching title gradient but with different angle)
