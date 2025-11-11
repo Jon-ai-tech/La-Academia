@@ -92,7 +92,7 @@ function watch() {
 }
 
 // Define complex tasks
-const build = gulp.series(clean, gulp.parallel(styles, scripts, images, fonts, html));
+const build = gulp.series(clean, gulp.parallel(styles, scripts, images, fonts, html, copyRootCSS));
 const dev = gulp.series(build, gulp.parallel(watch, serve));
 
 // Export tasks
@@ -113,5 +113,11 @@ function html() {
   // paths.dest.root es la carpeta 'public'
   return gulp.src(paths.src.html)
     .pipe(gulp.dest(paths.dest.root))
+    .pipe(browserSync.stream());
+}
+// Copy root CSS files (like styles.css) to the public/css folder
+function copyRootCSS() {
+  return gulp.src('./styles.css') // Asume que styles.css está en la raíz
+    .pipe(gulp.dest(paths.dest.css)) // Copia a public/css
     .pipe(browserSync.stream());
 }
