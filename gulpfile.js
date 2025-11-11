@@ -92,7 +92,7 @@ function watch() {
 }
 
 // Define complex tasks
-const build = gulp.series(clean, gulp.parallel(styles, scripts, images, fonts));
+const build = gulp.series(clean, gulp.parallel(styles, scripts, images, fonts, html));
 const dev = gulp.series(build, gulp.parallel(watch, serve));
 
 // Export tasks
@@ -106,3 +106,12 @@ exports.serve = serve;
 exports.build = build;
 exports.dev = dev;
 exports.default = dev;
+
+// Copy HTML files
+function html() {
+  // paths.src.html se refiere al 'index.html' que está en la raíz
+  // paths.dest.root es la carpeta 'public'
+  return gulp.src(paths.src.html)
+    .pipe(gulp.dest(paths.dest.root))
+    .pipe(browserSync.stream());
+}
