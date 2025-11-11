@@ -29,7 +29,7 @@ const paths = {
 
 // Clean dist folder
 function clean() {
-  return deleteAsync(['dist']);
+  return deleteAsync(['dist']);
 }
 
 // Compile SCSS
