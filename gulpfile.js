@@ -27,9 +27,9 @@ const paths = {
   }
 };
 
-// Clean dist folder
+// Clean output folder
 function clean() {
-  return deleteAsync(['dist']);
+  return deleteAsync(['public']); // Limpia la carpeta 'public'
 }
 
 // Compile SCSS
