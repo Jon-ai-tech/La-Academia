@@ -11,19 +11,20 @@ const { deleteAsync } = require('del');
 
 // Source and destination paths
 const paths = {
-  src: {
-    scss: 'src/scss/**/*.scss',
-    js: 'src/js/**/*.js',
-    html: '*.html',
-    images: 'images/**/*',
-    fonts: 'fonts/**/*'
-  },
-  dest: {
-    css: '.',
-    js: '.',
-    images: 'dist/images',
-    fonts: 'dist/fonts'
-  }
+  src: {
+    scss: 'src/scss/**/*.scss',
+    js: 'src/js/**/*.js',
+    html: '*.html',
+    images: 'images/**/*',
+    fonts: 'fonts/**/*'
+  },
+  dest: {
+    root: 'public', // <--- NUEVO: Define la carpeta de salida principal
+    css: 'public/css', // <--- Las rutas usan 'public'
+    js: 'public/js', // <--- Las rutas usan 'public'
+    images: 'public/images', // <--- Las rutas usan 'public'
+    fonts: 'public/fonts' // <--- Las rutas usan 'public'
+  }
 };
 
 // Clean dist folder
