@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title data-lang-es="La Academia Maia Kode - Formación Práctica en IA" data-lang-en="Maia Kode Academy - Practical AI Training"></title>
+    
+    <meta name="description" data-lang-es="Deja de acumular tutoriales. Construye tu futuro en IA con metodología práctica y mentoría de Maia. Descarga El Manifiesto y únete a la lista." data-lang-en="Stop accumulating tutorials. Build your AI future with practical methodology and Maia's mentorship. Download The Manifesto and join the list.">
+    
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png"> 
+    
+    <!-- PERFORMANCE OPTIMIZATION: Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts for Apple-like Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font preloading for critical fonts -->
+    <link rel="preload" href="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mPbF4YW9aKk6Ls5W6w.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <!-- Fallback self-hosted fonts -->
+    <link rel="preload" href="./fonts/space-grotesk/SpaceGrotesk-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="./fonts/ibm-plex-serif/IBMPlexSerif-Regular.woff2" as="font" type="font/woff2" crossorigin>
+    
+    <meta property="og:title" data-lang-es="La Academia Maia Kode - Formación Práctica en IA" data-lang-en="Maia Kode Academy - Practical AI Training">
+    <meta property="og:description" data-lang-es="Primera formación online que combina metodología práctica con mentoría de IA. Construye tu portafolio profesional en IA. Descarga el manifiesto gratuito." data-lang-en="First online training combining practical methodology with AI mentorship. Build your professional AI portfolio. Download the free manifesto.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tudominio.com"> <meta property="og:image" content="https://www.tudominio.com/maia-preview.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-lang-es="La Academia Maia Kode - Formación Práctica en IA" data-lang-en="Maia Kode Academy - Practical AI Training">
+    <meta name="twitter:description" data-lang-es="Primera formación online que combina metodología práctica con mentoría de IA. Construye tu portafolio profesional en IA. Descarga el manifiesto gratuito." data-lang-en="First online training combining practical methodology with AI mentorship. Build your professional AI portfolio. Download the free manifesto.">
+    <meta name="twitter:image" content="https://www.tudominio.com/maia-preview.jpg">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/css/styles.css"> 
+<link rel="stylesheet" href="/css/locomotive-styles.min.css"> 
+<style>
+        .lang-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+            border: 2px solid transparent;
+            -webkit-tap-highlight-color: rgba(255, 199, 119, 0.3);
+        }
+        .lang-button:hover {
+            border-color: #FFC777; /* accent-gold */
+            transform: scale(1.05);
+        }
+        .lang-button:active {
+            transform: scale(0.95);
+            background-color: rgba(255, 199, 119, 0.2);
+        }
+        .active-lang {
+            background-color: var(--tertiary-dark); /* dark background consistent with other buttons */
+            color: #FFC777; /* accent-gold text */
+            border-color: #FFC777; /* accent-gold border */
+            box-shadow: 0 0 8px rgba(255, 199, 119, 0.4); /* gold glow effect */
+        }
+        .active-lang:hover {
+            transform: scale(1.05);
+            background-color: var(--secondary-dark); /* slightly lighter dark background */
+            color: #E0A84C; /* accent-gold-hover text */
+            box-shadow: 0 0 12px rgba(255, 199, 119, 0.6); /* enhanced glow on hover */
+        }
+    </style>
+    
+    <!-- GSAP and ScrollTrigger for Maia Genesis Animation (Local Minimal Version) -->
+<script src="/js/gsap-minimal.js"></script>
+    
+    <!-- Apple-like Student Journey Animation -->
+<script src="/js/student-journey-animation.js"></script>
+    
+    <!-- Apple-like Design System (Scroll Reveals, Form Enhancements, Performance) -->
+<script src="/js/apple-design-system.js"></script>
+</head>
+<body class="bg-primary-dark text-primary-text">
+
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">
+        <span class="lang-es">Ir al contenido principal</span>
+        <span class="lang-en hidden">Skip to main content</span>
+    </a>
+
+    <!-- Sticky Navigation Menu -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-secondary-dark bg-opacity-95 backdrop-blur-sm border-b" style="border-color: var(--border-color);">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Brand -->
+                <div class="flex items-center">
+                    <span class="text-xl font-bold text-accent-gold">Maia Kode</span>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-6">
+                    <a href="#problema" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Problema</span>
+                        <span class="lang-en hidden">The Problem</span>
+                    </a>
+                    <a href="#viaje" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Viaje</span>
+                        <span class="lang-en hidden">The Journey</span>
+                    </a>
+                    <a href="#metodo" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Método</span>
+                        <span class="lang-en hidden">Method</span>
+                    </a>
+                    <a href="#manifiesto" class="nav-link text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion" class="nav-link btn-gradient-4color text-white rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+                
+                <!-- Language toggle and Mobile menu -->
+                <div class="flex items-center space-x-2">
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="es" class="decorative-btn-circle lang-button active-lang bg-tertiary-dark text-tertiary-text">ES</button>
+                    </div>
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="en" class="decorative-btn-circle lang-button bg-tertiary-dark text-tertiary-text">EN</button>
+                    </div>
+                    
+                    <!-- Mobile menu button -->
+                    <button id="mobile-menu-btn" class="md:hidden text-secondary-text hover:text-accent-gold">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary-dark" style="border-top: 1px solid var(--border-color);">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#problema" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Problema</span>
+                        <span class="lang-en hidden">The Problem</span>
+                    </a>
+                    <a href="#viaje" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Viaje</span>
+                        <span class="lang-en hidden">The Journey</span>
+                    </a>
+                    <a href="#metodo" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Método</span>
+                        <span class="lang-en hidden">Method</span>
+                    </a>
+                    <a href="#manifiesto" class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion" class="mobile-nav-link block px-3 py-2 btn-gradient-4color text-white rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION -->
+    <header id="hero" class="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-dark via-secondary-dark to-primary-dark relative overflow-hidden">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-16">
+            <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight title-gradient mb-8">
+                <span class="lang-es">Deja de Acumular Tutoriales. Empieza a Construir tu Futuro en IA.</span>
+                <span class="lang-en hidden">Stop Accumulating Tutorials. Start Building your AI Future.</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-secondary-text mb-12 max-w-4xl mx-auto leading-relaxed">
+                <span class="lang-es">La Academia Maia Kode es la primera formación online que combina una metodología práctica, enfocada en crear tu portafolio profesional, con la mentoría de Maia: una IA diseñada para hacerte dominar las habilidades que el mercado realmente demanda.</span>
+                <span class="lang-en hidden">Maia Kode Academy is the first online training that combines a practical methodology, focused on creating your professional portfolio, with Maia's mentorship: an AI designed to help you master the skills the market truly demands.</span>
+            </p>
+            
+            <div class="space-y-8">
+                <a href="#manifiesto" class="inline-block btn-gradient-4color text-white font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg shadow-lg">
+                    <span class="lang-es">Descarga el Manifiesto y Únete a la Lista</span>
+                    <span class="lang-en hidden">Download the Manifesto and Join the List</span>
+                </a>
+                
+                <!-- Scroll indicator -->
+                <div class="scroll-indicator animate-bounce mt-16">
+                    <svg class="w-6 h-6 mx-auto text-accent-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+        
+        <!-- 2. EL PROBLEMA SECTION -->
+        <section id="problema" class="py-16">
+            <h2 class="text-4xl font-bold title-gradient mb-12 text-center">
+                <span class="lang-es">Si Aprender IA se Siente como un Laberinto, no Estás Solo.</span>
+                <span class="lang-en hidden">If Learning AI Feels Like a Maze, You're Not Alone.</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <!-- Problema 1 -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-6">🌊</div>
+                    <h3 class="text-2xl font-bold text-accent-gold mb-4">
+                        <span class="lang-es">Sobrecarga de Información</span>
+                        <span class="lang-en hidden">Information Overload</span>
+                    </h3>
+                    <p class="text-secondary-text leading-relaxed">
+                        <span class="lang-es">Cientos de cursos, videos y artículos técnicos que prometen mucho pero entregan un conocimiento desordenado y difícil de aplicar.</span>
+                        <span class="lang-en hidden">Hundreds of courses, videos and technical articles that promise a lot but deliver disorganized knowledge that's hard to apply.</span>
+                    </p>
+                </div>
+                
+                <!-- Problema 2 -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-6">🧩</div>
+                    <h3 class="text-2xl font-bold text-accent-gold mb-4">
+                        <span class="lang-es">La Brecha entre Teoría y Realidad</span>
+                        <span class="lang-en hidden">The Gap Between Theory and Reality</span>
+                    </h3>
+                    <p class="text-secondary-text leading-relaxed">
+                        <span class="lang-es">Acumulas conceptos teóricos, pero a la hora de crear un proyecto real desde cero, te sientes paralizado y sin una guía clara.</span>
+                        <span class="lang-en hidden">You accumulate theoretical concepts, but when it's time to create a real project from scratch, you feel paralyzed and without clear guidance.</span>
+                    </p>
+                </div>
+                
+                <!-- Problema 3 -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg text-center">
+                    <div class="text-5xl mb-6">🎭</div>
+                    <h3 class="text-2xl font-bold text-accent-gold mb-4">
+                        <span class="lang-es">El Síndrome del Impostor</span>
+                        <span class="lang-en hidden">Impostor Syndrome</span>
+                    </h3>
+                    <p class="text-secondary-text leading-relaxed">
+                        <span class="lang-es">Sientes que nunca sabes lo suficiente en un campo que cambia a diario, lo que te impide dar el siguiente paso en tu carrera o emprendimiento.</span>
+                        <span class="lang-en hidden">You feel like you never know enough in a field that changes daily, which prevents you from taking the next step in your career or entrepreneurship.</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl text-secondary-text mb-8">
+                    <span class="lang-es">El resultado es siempre el mismo: mucho esfuerzo, poco avance y un portafolio que no refleja tu verdadero potencial.<br>Y aquí es donde entra <strong class="text-accent-gold">el Método Maia Kode</strong>.</span>
+                    <span class="lang-en hidden">The result is always the same: lots of effort, little progress and a portfolio that doesn't reflect your true potential.<br>And this is where <strong class="text-accent-gold">the Maia Kode Method</strong> comes in.</span>
+                </p>
+                <a href="#viaje" class="inline-block btn-gradient-4color text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg">
+                    <span class="lang-es">Descubre la Solución</span>
+                    <span class="lang-en hidden">Discover the Solution</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. EL VIAJE DEL ESTUDIANTE (Apple-like GSAP Animation) -->
+        <section id="viaje" class="container">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-center mb-16 text-4xl font-bold title-gradient">
+                    <span class="lang-es">De la Confusión a la Competencia: Este es tu Viaje.</span>
+                    <span class="lang-en hidden">From Confusion to Competence: This is your Journey.</span>
+                </h2>
+                
+                <!-- Apple-like Journey Animation Container -->
+                <div id="journey-animation-container" class="relative bg-secondary-dark rounded-2xl p-16 mb-16" style="min-height: 600px; overflow: hidden;">
+                    <!-- Canvas for smooth animations -->
+                    <div id="journey-stage" class="relative w-full h-full flex items-center justify-center">
+                        
+                        <!-- Act I: Chaos - Floating learning elements -->
+                        <div id="act1-chaos" class="journey-act absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="chaos-container relative w-full h-full max-w-4xl">
+                                <!-- Floating chaotic icons -->
+                                <div class="floating-icon absolute top-1/4 left-1/4 transform -translate-x-1/2 -translate-y-1/2 text-4xl opacity-60" data-icon="book">📚</div>
+                                <div class="floating-icon absolute top-1/3 right-1/4 transform translate-x-1/2 -translate-y-1/2 text-4xl opacity-60" data-icon="chart">📊</div>
+                                <div class="floating-icon absolute bottom-1/3 left-1/3 transform -translate-x-1/2 translate-y-1/2 text-4xl opacity-60" data-icon="laptop">💻</div>
+                                <div class="floating-icon absolute top-1/2 right-1/3 transform translate-x-1/2 -translate-y-1/2 text-4xl opacity-60" data-icon="puzzle">🧩</div>
+                                <div class="floating-icon absolute bottom-1/4 center transform -translate-x-1/2 translate-y-1/2 text-4xl opacity-60" data-icon="brain">🧠</div>
+                                
+                                <!-- Chaos text -->
+                                <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+                                    <h3 class="text-2xl font-semibold text-accent-gold mb-4">
+                                        <span class="lang-es">Acto I: El Caos del Autoaprendizaje</span>
+                                        <span class="lang-en hidden">Act I: The Chaos of Self-Learning</span>
+                                    </h3>
+                                    <p class="text-lg text-secondary-text max-w-md">
+                                        <span class="lang-es">Recursos dispersos, sin conexión entre sí</span>
+                                        <span class="lang-en hidden">Scattered resources, without connection to each other</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Act II: Clarity - Maia appears and organizes -->
+                        <div id="act2-clarity" class="journey-act absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="clarity-container relative w-full h-full max-w-4xl">
+                                <!-- Maia avatar appears -->
+                                <div id="maia-avatar" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 scale-0">
+                                    <div class="w-24 h-24 rounded-full bg-accent-gold flex items-center justify-center text-4xl font-bold text-primary-dark">
+                                        M
+                                    </div>
+                                </div>
+                                
+                                <!-- Organized icons in alignment -->
+                                <div id="organized-icons" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+                                    <div class="flex items-center space-x-8">
+                                        <div class="organized-icon text-3xl opacity-80">📚</div>
+                                        <div class="organized-icon text-3xl opacity-80">→</div>
+                                        <div class="organized-icon text-3xl opacity-80">📊</div>
+                                        <div class="organized-icon text-3xl opacity-80">→</div>
+                                        <div class="organized-icon text-3xl opacity-80">💻</div>
+                                        <div class="organized-icon text-3xl opacity-80">→</div>
+                                        <div class="organized-icon text-3xl opacity-80">🎯</div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Clarity text -->
+                                <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+                                    <h3 class="text-2xl font-semibold text-accent-gold mb-4">
+                                        <span class="lang-es">Acto II: Maia Trae la Claridad</span>
+                                        <span class="lang-en hidden">Act II: Maia Brings Clarity</span>
+                                    </h3>
+                                    <p class="text-lg text-secondary-text max-w-md">
+                                        <span class="lang-es">Una ruta clara hacia la competencia real</span>
+                                        <span class="lang-en hidden">A clear route to real competence</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Act III: Construction - Building projects -->
+                        <div id="act3-construction" class="journey-act absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="construction-container relative w-full h-full max-w-4xl">
+                                <!-- Project construction animation -->
+                                <div id="project-building" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+                                    <div class="building-blocks-container relative">
+                                        <!-- Expanding icon that transforms into project mockup -->
+                                        <div id="expanding-icon" class="text-6xl mb-4 transform scale-0">🛠️</div>
+                                        <div id="project-mockup" class="w-64 h-40 bg-tertiary-dark rounded-lg border-2 border-accent-gold opacity-0 transform scale-0">
+                                            <div class="p-4">
+                                                <div class="h-3 bg-accent-gold rounded mb-2 w-3/4"></div>
+                                                <div class="h-2 bg-secondary-text rounded mb-1 w-full"></div>
+                                                <div class="h-2 bg-secondary-text rounded mb-1 w-5/6"></div>
+                                                <div class="h-2 bg-secondary-text rounded w-2/3"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Construction text -->
+                                <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+                                    <h3 class="text-2xl font-semibold text-accent-gold mb-4">
+                                        <span class="lang-es">Acto III: Construyendo Juntos</span>
+                                        <span class="lang-en hidden">Act III: Building Together</span>
+                                    </h3>
+                                    <p class="text-lg text-secondary-text max-w-md">
+                                        <span class="lang-es">Proyectos reales que demuestran competencia</span>
+                                        <span class="lang-en hidden">Real projects that demonstrate competence</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Act IV: Result - Portfolio completion -->
+                        <div id="act4-result" class="journey-act absolute inset-0 flex items-center justify-center opacity-0">
+                            <div class="result-container relative w-full h-full max-w-4xl">
+                                <!-- Portfolio frame with growth line -->
+                                <div id="portfolio-result" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0">
+                                    <div class="portfolio-frame relative">
+                                        <div class="w-80 h-48 bg-tertiary-dark rounded-xl border-4 border-accent-gold p-6">
+                                            <h4 class="text-accent-gold font-bold mb-3">
+                                                <span class="lang-es">Mi Portafolio Profesional</span>
+                                                <span class="lang-en hidden">My Professional Portfolio</span>
+                                            </h4>
+                                            <div class="space-y-2">
+                                                <div class="h-3 bg-accent-blue rounded w-full"></div>
+                                                <div class="h-3 bg-accent-gold rounded w-4/5"></div>
+                                                <div class="h-3 bg-accent-violet rounded w-3/4"></div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Growth line -->
+                                        <svg id="growth-line" class="absolute -right-16 top-1/2 transform -translate-y-1/2" width="120" height="80">
+                                            <path d="M 0 60 Q 30 40 60 20 Q 90 10 120 0" stroke="#FFC777" stroke-width="3" fill="none" opacity="0"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                
+                                <!-- Result text -->
+                                <div class="absolute bottom-16 left-1/2 transform -translate-x-1/2 text-center">
+                                    <h3 class="text-2xl font-semibold text-accent-gold mb-4">
+                                        <span class="lang-es">Acto IV: El Resultado Profesional</span>
+                                        <span class="lang-en hidden">Act IV: The Professional Result</span>
+                                    </h3>
+                                    <p class="text-lg text-secondary-text max-w-md">
+                                        <span class="lang-es">Portafolio sólido y habilidades demandadas</span>
+                                        <span class="lang-en hidden">Solid portfolio and in-demand skills</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Progress indicator -->
+                    <div id="journey-progress" class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-3">
+                        <div class="progress-dot w-3 h-3 rounded-full bg-secondary-text opacity-30" data-act="1"></div>
+                        <div class="progress-dot w-3 h-3 rounded-full bg-secondary-text opacity-30" data-act="2"></div>
+                        <div class="progress-dot w-3 h-3 rounded-full bg-secondary-text opacity-30" data-act="3"></div>
+                        <div class="progress-dot w-3 h-3 rounded-full bg-secondary-text opacity-30" data-act="4"></div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-xl text-secondary-text mb-8">
+                        <span class="lang-es">Este es el viaje que queremos que vivas con el método Maia Kode.</span>
+                        <span class="lang-en hidden">This is the journey we want you to experience with the Maia Kode method.</span>
+                    </p>
+                    <a href="#metodo" class="btn btn-gradient-4color">
+                        <span class="lang-es">Conoce el Método</span>
+                        <span class="lang-en hidden">Learn the Method</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <!-- 4. MÉTODO MAIA KODE + VIDEO -->
+        <section id="metodo" class="py-16">
+            <h2 class="text-4xl font-bold title-gradient mb-12 text-center">
+                <span class="lang-es">El Método Maia Kode: Un Currículo para Construir, una Mentora para Guiar.</span>
+                <span class="lang-en hidden">The Maia Kode Method: A Curriculum to Build, a Mentor to Guide.</span>
+            </h2>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                <!-- Columna 1: Metodología "Ausbildung-IA" -->
+                <div class="bg-secondary-dark rounded-lg p-8 shadow-lg">
+                    <h3 class="text-3xl font-bold text-accent-gold mb-6">
+                        <span class="lang-es">Un Currículo para Construir, no para Memorizar.</span>
+                        <span class="lang-en hidden">A Curriculum to Build, not to Memorize.</span>
+                    </h3>
+                    <p class="text-lg text-secondary-text leading-relaxed mb-6">
+                        <span class="lang-es">Inspirados en el riguroso sistema dual alemán, nuestra metodología se centra en el Aprendizaje Basado en Proyectos. No aprenderás teoría aislada; aplicarás cada concepto en la construcción de soluciones reales, culminando en un portafolio de trabajo que demuestra tu competencia y te prepara para el mercado laboral.</span>
+                        <span class="lang-en hidden">Inspired by the rigorous German dual system, our methodology focuses on Project-Based Learning. You won't learn isolated theory; you'll apply every concept in building real solutions, culminating in a work portfolio that demonstrates your competence and prepares you for the job market.</span>
+                    </p>
+                    <div class="space-y-3">
+                        <div class="flex items-start">
+                            <span class="text-accent-gold font-bold text-lg mr-3">🏗️</span>
+                            <div>
+                                <p class="text-primary-text font-semibold">
+                                    <span class="lang-es">Metodología "Ausbildung-IA"</span>
+                                    <span class="lang-en hidden">"Ausbildung-AI" Methodology</span>
+                                </p>
+                                <p class="text-secondary-text text-sm">
+                                    <span class="lang-es">Sistema dual: teoría + práctica simultánea</span>
+                                    <span class="lang-en hidden">Dual system: theory + simultaneous practice</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-gold font-bold text-lg mr-3">📋</span>
+                            <div>
+                                <p class="text-primary-text font-semibold">
+                                    <span class="lang-es">Aprendizaje Basado en Proyectos</span>
+                                    <span class="lang-en hidden">Project-Based Learning</span>
+                                </p>
+                                <p class="text-secondary-text text-sm">
+                                    <span class="lang-es">Construyes mientras aprendes</span>
+                                    <span class="lang-en hidden">You build while you learn</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-accent-gold font-bold text-lg mr-3">💼</span>
+                            <div>
+                                <p class="text-primary-text font-semibold">
+                                    <span class="lang-es">Portafolio Profesional</span>
+                                    <span class="lang-en hidden">Professional Portfolio</span>
+                                </p>
+                                <p class="text-secondary-text text-sm">
+                                    <span class="lang-es">Resultados tangibles que demuestran competencia</span>
+                                    <span class="lang-en hidden">Tangible results that demonstrate competence</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Columna 2: La Mentora Maia Kode -->
+                <div class="bg-secondary-dark rounded-lg p-8 shadow-lg">
+                    <h3 class="text-3xl font-bold text-accent-gold mb-6">
+                        <span class="lang-es">Tu Guía IA, Diseñada para Enseñar.</span>
+                        <span class="lang-en hidden">Your AI Guide, Designed to Teach.</span>
+                    </h3>
+                    <p class="text-lg text-secondary-text leading-relaxed mb-6">
+                        <span class="lang-es">La mejor forma de conocer a tu mentora es escuchándola directamente.</span>
+                        <span class="lang-en hidden">The best way to meet your mentor is to hear her directly.</span>
+                    </p>
+                    
+                    <!-- Apple-like Cinematographic Video Placeholder -->
+                    <div class="maia-video-container relative rounded-2xl overflow-hidden shadow-2xl mb-6 group cursor-pointer">
+                        <!-- 16:9 Aspect Ratio Container -->
+                        <div class="aspect-video relative bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+                            <!-- Subtle radial gradient overlay -->
+                            <div class="absolute inset-0 bg-gradient-radial from-transparent via-black/20 to-black/40"></div>
+                            
+                            <!-- Maia avatar/preview -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="text-center z-10">
+                                    <!-- Elegant Play Button -->
+                                    <div class="play-button-container mb-6 transform transition-all duration-300 group-hover:scale-110">
+                                        <div class="w-20 h-20 mx-auto bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 shadow-2xl">
+                                            <div class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:scale-105">
+                                                <svg class="w-8 h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path d="M8 5v10l7-5z"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Video Info -->
+                                    <div class="text-white">
+                                        <h4 class="text-xl font-semibold mb-2 group-hover:text-accent-gold transition-colors duration-300">
+                                            <span class="lang-es">Conoce a tu Mentora IA</span>
+                                            <span class="lang-en hidden">Meet your AI Mentor</span>
+                                        </h4>
+                                        <p class="text-sm opacity-80 mb-4">
+                                            <span class="lang-es">45 segundos que cambiarán tu perspectiva</span>
+                                            <span class="lang-en hidden">45 seconds that will change your perspective</span>
+                                        </p>
+                                        <div class="flex items-center justify-center space-x-2 text-xs opacity-60">
+                                            <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                                            <span class="lang-es">Disponible próximamente</span>
+                                            <span class="lang-en hidden">Coming soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Subtle background pattern -->
+                                <div class="absolute inset-0 opacity-5">
+                                    <div class="absolute top-1/4 left-1/4 w-32 h-32 border border-white/20 rounded-full"></div>
+                                    <div class="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/20 rounded-full"></div>
+                                    <div class="absolute top-1/3 right-1/3 w-16 h-16 border border-white/20 rounded-full"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Hover overlay -->
+                            <div class="absolute inset-0 bg-accent-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                        </div>
+                        
+                        <!-- Video metadata bar -->
+                        <div class="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm p-4">
+                            <div class="flex items-center justify-between text-white text-sm">
+                                <div class="flex items-center space-x-3">
+                                    <div class="w-6 h-6 bg-accent-gold rounded-full flex items-center justify-center text-xs font-bold text-black">M</div>
+                                    <span class="text-accent-gold">Maia Kode</span>
+                                </div>
+                                <div class="flex items-center space-x-2">
+                                    <span>00:45</span>
+                                    <div class="w-20 h-1 bg-white/20 rounded-full">
+                                        <div class="w-0 h-full bg-accent-gold rounded-full"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <p class="text-secondary-text text-center italic mb-4">
+                        <span class="lang-es">"La misión de Maia es simple: transformar la teoría en acción y guiarte, paso a paso, en la construcción de un portafolio profesional que hable por ti."</span>
+                        <span class="lang-en hidden">"Maia's mission is simple: transform theory into action and guide you, step by step, in building a professional portfolio that speaks for you."</span>
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <p class="text-xl text-secondary-text mb-8">
+                    <span class="lang-es">¿Quieres conocer más sobre el método y comenzar tu transformación?</span>
+                    <span class="lang-en hidden">Want to know more about the method and start your transformation?</span>
+                </p>
+                <a href="#manifiesto" class="inline-block btn-gradient-4color text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg">
+                    <span class="lang-es">Descarga El Manifiesto</span>
+                    <span class="lang-en hidden">Download The Manifesto</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- 5. LEAD MAGNET "EL MANIFIESTO DE MAIA" -->
+        <section id="manifiesto" class="py-16">
+            <h2 class="text-4xl font-bold title-gradient mb-12 text-center">
+                <span class="lang-es">Empieza a Construir Hoy: Descarga 'El Manifiesto de Maia'</span>
+                <span class="lang-en hidden">Start Building Today: Download 'Maia's Manifesto'</span>
+            </h2>
+            
+            <div class="text-center mb-8">
+                <p class="text-xl text-secondary-text max-w-4xl mx-auto leading-relaxed">
+                    <span class="lang-es">'El Manifiesto de Maia' es un informe estratégico en PDF donde descubrirás las 10 claves que usan los comunicadores y tecnólogos más inspiradores para transformar ideas complejas en proyectos de impacto. Es tu primer paso para aprender a construir con claridad y poder.</span>
+                    <span class="lang-en hidden">'Maia's Manifesto' is a strategic PDF report where you'll discover the 10 keys used by the most inspiring communicators and technologists to transform complex ideas into impactful projects. It's your first step to learning to build with clarity and power.</span>
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- PDF Preview -->
+                <div class="text-center">
+                    <div class="w-80 h-96 mx-auto bg-tertiary-dark rounded-lg shadow-2xl border-4 border-accent-gold border-opacity-50 flex items-center justify-center transform hover:scale-105 transition-transform duration-300 overflow-hidden">
+                        <img src="images/Libro-Maia-Kode.png" alt="El Manifiesto de Maia - Las 10 claves para construir proyectos de impacto en IA" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+                
+                <!-- Lead Capture Form -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-bold text-accent-gold mb-4">
+                            <span class="lang-es">📖 Tu Guía Gratuita Incluye:</span>
+                            <span class="lang-en hidden">📖 Your Free Guide Includes:</span>
+                        </h3>
+                        <ul class="space-y-3 text-lg text-secondary-text">
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3">✓</span>
+                                <span class="lang-es">Las 10 claves para transformar ideas complejas en proyectos de impacto</span>
+                                <span class="lang-en hidden">The 10 keys to transform complex ideas into impactful projects</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3">✓</span>
+                                <span class="lang-es">Metodología paso a paso para construir tu portafolio profesional</span>
+                                <span class="lang-en hidden">Step-by-step methodology to build your professional portfolio</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3">✓</span>
+                                <span class="lang-es">Estrategias usadas por los tecnólogos más inspiradores</span>
+                                <span class="lang-en hidden">Strategies used by the most inspiring technologists</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-accent-gold mr-3">✓</span>
+                                <span class="lang-es">Ejercicios prácticos para aplicar inmediatamente</span>
+                                <span class="lang-en hidden">Practical exercises to apply immediately</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Email Capture Form -->
+                    <div class="bg-secondary-dark p-8 rounded-lg">
+                        <form id="manifesto-form" class="space-y-6">
+                            <div>
+                                <label for="manifesto-email" class="block text-lg font-semibold text-accent-gold mb-3">
+                                    <span class="lang-es">Email</span>
+                                    <span class="lang-en hidden">Email</span>
+                                </label>
+                                <input type="email" id="manifesto-email" name="email" required
+                                       class="w-full px-4 py-4 bg-tertiary-dark rounded-lg text-primary-text placeholder-secondary-text focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200 text-lg"
+                                       style="border: 2px solid var(--border-color);"
+                                       data-placeholder-es="tu@email.com" 
+                                       data-placeholder-en="your@email.com"
+                                       placeholder="tu@email.com">
+                            </div>
+                            
+                            <div>
+                                <label for="manifesto-name" class="block text-lg font-semibold text-accent-gold mb-3">
+                                    <span class="lang-es">Nombre (opcional)</span>
+                                    <span class="lang-en hidden">Name (optional)</span>
+                                </label>
+                                <input type="text" id="manifesto-name" name="name"
+                                       class="w-full px-4 py-4 bg-tertiary-dark rounded-lg text-primary-text placeholder-secondary-text focus:outline-none focus:ring-2 focus:ring-accent-gold focus:border-accent-gold transition-all duration-200 text-lg"
+                                       style="border: 2px solid var(--border-color);"
+                                       data-placeholder-es="Tu nombre" 
+                                       data-placeholder-en="Your name"
+                                       placeholder="Tu nombre">
+                            </div>
+                            
+                            <button type="submit" class="w-full btn-gradient-4color text-white font-bold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-xl shadow-lg">
+                                <span class="lang-es">¡Descargar y Unirme a la Lista!</span>
+                                <span class="lang-en hidden">Download and Join the List!</span>
+                            </button>
+                        </form>
+                        
+                        <p class="text-sm text-secondary-text mt-4 text-center opacity-80">
+                            <span class="lang-es">Recibirás el PDF inmediatamente y serás el primero en saber cuándo abramos las puertas de la Academia, con acceso anticipado y contenido exclusivo.</span>
+                            <span class="lang-en hidden">You'll receive the PDF immediately and be the first to know when we open the Academy doors, with early access and exclusive content.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. TESTIMONIOS DE BETA TESTERS -->
+        <section id="testimonios" class="py-16">
+            <h2 class="text-4xl font-bold text-accent-gold mb-12 text-center">
+                <span class="lang-es">Lo Que Dicen Nuestros Beta Testers</span>
+                <span class="lang-en hidden">What Our Beta Testers Say</span>
+            </h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonio 1 -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent-gold rounded-full flex items-center justify-center text-primary-dark font-bold text-xl mr-4">
+                            D
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-accent-gold">Daniela V.</h4>
+                            <p class="text-sm text-secondary-text">
+                                <span class="lang-es">Profesional de Marketing</span>
+                                <span class="lang-en hidden">Marketing Professional</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-accent-gold text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-secondary-text italic">
+                        <span class="lang-es">"Por primera vez, no solo entendí la teoría, sino que terminé con un proyecto funcional para mi portafolio. El enfoque práctico lo cambia todo."</span>
+                        <span class="lang-en hidden">"For the first time, I not only understood the theory, but I finished with a functional project for my portfolio. The practical approach changes everything."</span>
+                    </p>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent-blue rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            M
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-accent-gold">Marcos R.</h4>
+                            <p class="text-sm text-secondary-text">
+                                <span class="lang-es">Emprendedor</span>
+                                <span class="lang-en hidden">Entrepreneur</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-accent-gold text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-secondary-text italic">
+                        <span class="lang-es">"Maia tiene una forma increíble de explicar las cosas. Las analogías que usa hacen que los conceptos más difíciles hagan 'clic' en tu cabeza. Se acabaron las horas de frustración."</span>
+                        <span class="lang-en hidden">"Maia has an incredible way of explaining things. The analogies she uses make the most difficult concepts 'click' in your head. No more hours of frustration."</span>
+                    </p>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-accent-purple rounded-full flex items-center justify-center text-white font-bold text-xl mr-4">
+                            S
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-accent-gold">Sofía L.</h4>
+                            <p class="text-sm text-secondary-text">
+                                <span class="lang-es">Desarrolladora Jr</span>
+                                <span class="lang-en hidden">Jr Developer</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-accent-gold text-2xl mb-4">⭐⭐⭐⭐⭐</div>
+                    <p class="text-secondary-text italic">
+                        <span class="lang-es">"Pasé de sentirme abrumado a tener una ruta de aprendizaje clara. Saber qué aprender y en qué orden, enfocado en conseguir un trabajo, no tiene precio."</span>
+                        <span class="lang-en hidden">"I went from feeling overwhelmed to having a clear learning path. Knowing what to learn and in what order, focused on getting a job, is priceless."</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. SOBRE LOS CREADORES -->
+        <section id="creadores" class="py-16">
+            <h2 class="text-4xl font-bold text-accent-gold mb-12 text-center">
+                <span class="lang-es">Un Proyecto Híbrido: La Sinergia entre Mente Humana e Inteligencia Artificial</span>
+                <span class="lang-en hidden">A Hybrid Project: The Synergy between Human Mind and Artificial Intelligence</span>
+            </h2>
+            
+            <div class="text-center mb-12">
+                <p class="text-xl text-secondary-text max-w-4xl mx-auto leading-relaxed">
+                    <span class="lang-es">La Academia Maia Kode es una creación de Jon Efe y José Aluz. Combinamos nuestra experiencia en negocios digitales, automatización y desarrollo de IA para construir la plataforma de aprendizaje que siempre quisimos tener. Maia es nuestra creación más avanzada, pero la estrategia, el rigor pedagógico y la validación de cada pieza de conocimiento están supervisados por nosotros.</span>
+                    <span class="lang-en hidden">Maia Kode Academy is a creation of Jon Efe and José Aluz. We combine our experience in digital business, automation and AI development to build the learning platform we always wanted to have. Maia is our most advanced creation, but the strategy, pedagogical rigor and validation of each piece of knowledge are supervised by us.</span>
+                </p>
+            </div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <!-- Jon Efe -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-accent-gold bg-tertiary-dark flex-shrink-0">
+                            <img src="images/Jon-Efe.png" alt="Jon Efe" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent-gold mb-2">Jon Efe</h3>
+                            <p class="text-lg text-accent-blue mb-4">
+                                <span class="lang-es">Co-creador y Director de Arte Digital</span>
+                                <span class="lang-en hidden">Co-creator and Digital Art Director</span>
+                            </p>
+                            <p class="text-secondary-text leading-relaxed">
+                                <span class="lang-es">Responsable de dar vida a Maia Kode en el plano visual y auditivo. Su especialidad es combinar herramientas de modelado 3D, IA generativa y producción de vídeo para construir un avatar que no solo se ve y se oye realista, sino que se siente como una mentora creíble y auténtica.</span>
+                                <span class="lang-en hidden">Responsible for bringing Maia Kode to life on the visual and audio plane. His specialty is combining 3D modeling tools, generative AI and video production to build an avatar that not only looks and sounds realistic, but feels like a credible and authentic mentor.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- José Aluz -->
+                <div class="bg-secondary-dark p-8 rounded-lg shadow-lg">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-24 h-24 rounded-full overflow-hidden border-4 border-accent-gold bg-tertiary-dark flex-shrink-0">
+                            <div class="w-full h-full flex items-center justify-center bg-gradient-to-br from-gray-600 to-gray-800">
+                                <div class="text-white text-4xl">👨‍🔬</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-accent-gold mb-2">José Aluz</h3>
+                            <p class="text-lg text-accent-blue mb-4">
+                                <span class="lang-es">Co-creador y Estratega de Personaje</span>
+                                <span class="lang-en hidden">Co-creator and Character Strategist</span>
+                            </p>
+                            <p class="text-secondary-text leading-relaxed">
+                                <span class="lang-es">Responsable de la estrategia de marca y la arquitectura narrativa de la Academia. Su trabajo es definir la personalidad de Maia, su voz y su misión pedagógica, asegurando que cada pieza de contenido conecte de forma auténtica y efectiva con los objetivos de los estudiantes.</span>
+                                <span class="lang-en hidden">Responsible for brand strategy and narrative architecture of the Academy. His work is to define Maia's personality, voice and pedagogical mission, ensuring that each piece of content connects authentically and effectively with students' objectives.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Maia Kode en el centro -->
+            <div class="text-center bg-gradient-to-br from-accent-blue to-accent-gold p-8 rounded-lg shadow-2xl">
+                <div class="w-32 h-32 mx-auto rounded-full overflow-hidden border-4 border-white mb-6">
+                    <img src="images/Maia Kode.png" alt="Maia Kode" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-3xl font-bold text-accent-gold mb-4">Maia Kode</h3>
+                <p class="text-xl text-white opacity-90 max-w-3xl mx-auto leading-relaxed">
+                    <span class="lang-es">Tu mentora de IA, diseñada específicamente para guiarte en el aprendizaje práctico de inteligencia artificial. Maia combina conocimiento técnico profundo con una pedagogía que transforma conceptos complejos en proyectos tangibles que construyes paso a paso.</span>
+                    <span class="lang-en hidden">Your AI mentor, designed specifically to guide you in the practical learning of artificial intelligence. Maia combines deep technical knowledge with a pedagogy that transforms complex concepts into tangible projects that you build step by step.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- CALL TO ACTION FINAL -->
+        <section id="conversion" class="py-16">
+            <div class="bg-gradient-to-br from-accent-blue to-accent-gold p-12 rounded-lg shadow-2xl text-center">
+                <h2 class="text-4xl font-bold title-gradient mb-8">
+                    <span class="lang-es">¿Listo para Dejar Atrás los Tutoriales y Construir tu Futuro en IA?</span>
+                    <span class="lang-en hidden">Ready to Leave Tutorials Behind and Build your AI Future?</span>
+                </h2>
+                <p class="text-xl text-white opacity-90 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    <span class="lang-es">Únete a la primera formación que te enseña IA de forma práctica, con mentoría personalizada y un enfoque en construir el portafolio que te abrirá las puertas del mercado laboral.</span>
+                    <span class="lang-en hidden">Join the first training that teaches AI in a practical way, with personalized mentorship and a focus on building the portfolio that will open doors to the job market.</span>
+                </p>
+                <a href="#manifiesto" class="btn btn-gradient-4color">
+                    <span class="lang-es">🚀 Descarga El Manifiesto y Únete a la Lista</span>
+                    <span class="lang-en hidden">🚀 Download The Manifesto and Join the List</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary-dark text-secondary-text py-12 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <!-- Logo y descripción -->
+                <div class="col-span-2">
+                    <div class="flex items-center mb-4">
+                        <span class="text-2xl font-bold text-accent-gold">Maia Kode</span>
+                    </div>
+                    <p class="text-secondary-text leading-relaxed mb-6">
+                        <span class="lang-es">Transformando el aprendizaje de IA a través de metodología práctica, mentoría personalizada y tecnología de vanguardia.</span>
+                        <span class="lang-en hidden">Transforming AI learning through practical methodology, personalized mentorship and cutting-edge technology.</span>
+                    </p>
+                    <!-- Redes sociales -->
+                    <div class="flex space-x-4">
+                        <!-- YouTube -->
+                        <a href="https://www.youtube.com/@MaiaKode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="YouTube">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 490 490">
+                                <path d="M480,180v130c0,55.195-44.805,100-100,100H110c-55.195,0-100-44.805-100-100V180c0-55.199,44.805-100,100-100h270C435.195,80,480,124.801,480,180z" fill="#EA4640"/>
+                                <polygon points="320,245 200,295 200,195" fill="#FFFFFF"/>
+                            </svg>
+                        </a>
+                        <!-- Instagram -->
+                        <a href="https://www.instagram.com/maiakode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <!-- TikTok -->
+                        <a href="https://www.tiktok.com/@maiakode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="TikTok">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 800 800">
+                                <path d="M298.9 278c-15.4 5.9-29.6 14.4-42.2 25-14.3 12.3-26.3 27.1-35.5 43.5-3.5 6-16.7 30-18.3 69.2-.9 22.2 5.8 45.1 8.9 54.6v.1c2 5.4 9.8 24.7 22.6 41 3.7 4.7 7.7 9.2 11.9 13.5 40.1 27.2 84.6 25.3 84.6 25.3 7.7-.3 33.5 0 62.8-13.8 32.5-15.3 51-38.1 51-38.1 2.8-3.4 18-20.3 27.8-45.9 7.5-19.6 10-43.1 10-52.5V231c1.1.6 14.4 9.4 14.4 9.4s19.3 12.3 49.4 20.3c21.6 5.7 50.7 6.9 50.7 6.9v-64.1c-5.5.6-14-0-24-2.3V90.6h-60v318.6c0 11.2 0 22-3.7 32.8-6.1 17.2-19 32.8-36.1 39.7-25.8 10.4-46 9.2-70-6.7-6-4.1-11.2-9.2-15.5-15-11.2-15.2-13.6-32.9-13.5-46.4 2.9-24.9 12.7-38.8 31.1-53.1 26.4-19.3 59.3-8.4 59.3-8.4V267c-18.1.3-35.9 4-52.5 11z"/>
+                            </svg>
+                        </a>
+                        <!-- X (Twitter) -->
+                        <a href="https://twitter.com/maiakode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="X (Twitter)">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 512 512">
+                                <path d="m 339.20866,125.98402 h 44.11006 l -96.36741,110.14194 113.36867,149.87853 h -88.76683 l -69.52535,-90.90068 -79.55277,90.90068 h -44.1367 L 221.41293,268.19503 112.65788,125.98402 h 91.02037 l 62.8448,83.08653 z m -15.4812,233.61817 h 24.4419 L 190.39724,150.99939 H 164.1685 Z"/>
+                            </svg>
+                        </a>
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/company/maiakode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <!-- GitHub -->
+                        <a href="https://github.com/maiakode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="GitHub">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                        <!-- Blue Sky -->
+                        <a href="https://bsky.app/profile/maiakode" target="_blank" rel="noopener noreferrer" class="text-secondary-text hover:text-accent-gold transition-colors duration-200" aria-label="Blue Sky">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 10.8c-1.087-2.114-4.046-6.053-6.798-7.995C2.566.944 1.561 1.266.902 2.104.139 3.025.216 5.818.216 5.818s.621 7.503 1.622 8.888c.8 1.106 2.048 1.106 2.048 1.106s1.14-.44 2.114-1.107c.97-.665 1.825-1.539 2.825-2.538C10.825 10.375 12 10.8 12 10.8s1.175-.425 3.175 1.367c1 .999 1.855 1.873 2.825 2.538.974.667 2.114 1.107 2.114 1.107s1.248 0 2.048-1.106c1.001-1.385 1.622-8.888 1.622-8.888s.077-2.793-.685-3.714C22.439 1.266 21.434.944 18.798 2.805 16.046 4.747 13.087 8.686 12 10.8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Enlaces -->
+                <div>
+                    <h4 class="font-semibold text-accent-gold mb-4">
+                        <span class="lang-es">Enlaces</span>
+                        <span class="lang-en hidden">Links</span>
+                    </h4>
+                    <ul class="space-y-2">
+                        <li><a href="#metodo" class="hover:text-accent-gold transition-colors duration-200">
+                            <span class="lang-es">El Método</span>
+                            <span class="lang-en hidden">The Method</span>
+                        </a></li>
+                        <li><a href="#manifiesto" class="hover:text-accent-gold transition-colors duration-200">
+                            <span class="lang-es">El Manifiesto</span>
+                            <span class="lang-en hidden">The Manifesto</span>
+                        </a></li>
+                        <li><a href="#creadores" class="hover:text-accent-gold transition-colors duration-200">
+                            <span class="lang-es">Sobre Nosotros</span>
+                            <span class="lang-en hidden">About Us</span>
+                        </a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contacto/Colaboración -->
+                <div>
+                    <h4 class="font-semibold text-accent-gold mb-4">
+                        <span class="lang-es">Contacto/Colaboración</span>
+                        <span class="lang-en hidden">Contact/Collaboration</span>
+                    </h4>
+                    <p class="text-sm text-secondary-text mb-4">
+                        <span class="lang-es">¿Tienes una idea o propuesta? Siempre estamos abiertos a la colaboración. Si quieres compartir algo con nosotros, este es tu espacio.</span>
+                        <span class="lang-en hidden">Have an idea or proposal? We're always open to collaboration. If you want to share something with us, this is your space.</span>
+                    </p>
+                    <ul class="space-y-2">
+                        <li><a href="mailto:hola@maiakode.com" class="hover:text-accent-gold transition-colors duration-200">hola@maiakode.com</a></li>
+                        <li class="text-secondary-text text-sm">
+                            <span class="lang-es">Soporte técnico disponible</span>
+                            <span class="lang-en hidden">Technical support available</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-border-color pt-8 text-center text-sm">
+                <p class="mb-3">
+                    <span class="lang-es">Un proyecto de Jon Efe & José Aluz</span>
+                    <span class="lang-en hidden">A project by Jon Efe & José Aluz</span>
+                </p>
+                <p class="text-tertiary-text">
+                    <span class="lang-es">© 2025 Maia Kode Academy. Todos los derechos reservados.</span>
+                    <span class="lang-en hidden">© 2025 Maia Kode Academy. All rights reserved.</span>
+                </p>
+                <p class="mt-2 text-tertiary-text">
+                    <span class="lang-es">
+                        <a href="#" class="hover:text-accent-gold transition-colors duration-200">Política de Privacidad</a> | 
+                        <a href="#" class="hover:text-accent-gold transition-colors duration-200">Términos de Uso</a> | 
+                        <a href="#" class="hover:text-accent-gold transition-colors duration-200">Cookies</a>
+                    </span>
+                    <span class="lang-en hidden">
+                        <a href="#" class="hover:text-accent-gold transition-colors duration-200">Privacy Policy</a> | 
+                        <a href="#" class="hover:text-accent-gold transition-colors duration-200">Terms of Use</a> | 
+                        <a href="#" class="hover:text-accent-gold transition-colors duration-200">Cookies</a>
+                    </span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="decorative-btn-container-circle scroll-to-top-container">
+        <button id="scrollToTopBtn" class="decorative-btn-circle scroll-to-top-btn" aria-label="Volver arriba" title="Volver arriba">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="scroll-arrow">
+                <path d="M12 2L7 7l1.41 1.41L11 5.83V22h2V5.83l2.59 2.58L17 7l-5-5z"/>
+            </svg>
+            <span class="lang-es scroll-text">Volver arriba</span>
+            <span class="lang-en scroll-text hidden">Back to Top</span>
+        </button>
+    </div>
+
+    <!-- Simplified scripts for language system and navigation only -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initialize "El Viaje del Estudiante" animation
+            function initializeJourneyAnimation() {
+                const elements = [
+                    document.getElementById('act1-confusion'),
+                    document.getElementById('act2-discovery'),
+                    document.getElementById('act3-transformation'),
+                    document.getElementById('act4-mastery')
+                ];
+                
+                let currentAct = 0;
+                let isAnimating = false;
+                
+                function showNextAct() {
+                    if (isAnimating) return;
+                    isAnimating = true;
+                    
+                    // Hide all elements
+                    elements.forEach(el => {
+                        if (el) {
+                            el.classList.add('hidden');
+                            el.style.opacity = '0';
+                        }
+                    });
+                    
+                    // Show current act with fade in
+                    if (elements[currentAct]) {
+                        elements[currentAct].classList.remove('hidden');
+                        elements[currentAct].style.opacity = '0';
+                        elements[currentAct].style.transform = 'translateY(20px)';
+                        
+                        // Animate in
+                        setTimeout(() => {
+                            elements[currentAct].style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                            elements[currentAct].style.opacity = '1';
+                            elements[currentAct].style.transform = 'translateY(0)';
+                            
+                            setTimeout(() => {
+                                isAnimating = false;
+                            }, 800);
+                        }, 100);
+                    }
+                    
+                    currentAct = (currentAct + 1) % elements.length;
+                }
+                
+                // Start animation when section is visible
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            showNextAct();
+                            const interval = setInterval(() => {
+                                if (entry.isIntersecting) {
+                                    showNextAct();
+                                } else {
+                                    clearInterval(interval);
+                                }
+                            }, 4000); // Change every 4 seconds
+                        }
+                    });
+                }, { threshold: 0.3 });
+                
+                const journeySection = document.getElementById('viaje');
+                if (journeySection) {
+                    observer.observe(journeySection);
+                }
+            }
+            
+            // Language system functionality
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langElements = document.querySelectorAll('[data-lang-es], [data-lang-en]');
+            const body = document.body;
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            const scrollToTopContainer = document.querySelector('.scroll-to-top-container');
+
+            // Scroll to top functionality
+            function handleScroll() {
+                if (window.pageYOffset > 300) {
+                    if (scrollToTopContainer) {
+                        scrollToTopContainer.classList.add('show');
+                    }
+                } else {
+                    if (scrollToTopContainer) {
+                        scrollToTopContainer.classList.remove('show');
+                    }
+                }
+            }
+
+            function scrollToTop() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+
+            // Add scroll event listener
+            window.addEventListener('scroll', handleScroll);
+            
+            // Add click event listener to scroll to top button
+            if (scrollToTopBtn) {
+                scrollToTopBtn.addEventListener('click', scrollToTop);
+            }
+
+            // Smooth scroll navigation functionality
+            document.querySelectorAll('.nav-link, .mobile-nav-link, .scroll-link, a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#') && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const navElement = document.querySelector('nav');
+                            const navHeight = navElement ? navElement.offsetHeight : 0;
+                            const offsetPosition = targetElement.offsetTop - navHeight - 20;
+                            
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                            
+                            // Close mobile menu if open
+                            const mobileMenu = document.getElementById('mobile-menu');
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Mobile menu toggle functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && mobileMenuBtn && !mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Function to update the displayed language and active state
+            function updateLang(lang) {
+                const isEs = lang === 'es';
+                document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', !isEs));
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', isEs));
+                body.lang = lang;
+
+                // Update meta tags and title for SEO
+                langElements.forEach(el => {
+                    const content = el.getAttribute(`data-lang-${lang}`);
+                    if (content) {
+                        if (el.tagName === 'TITLE') {
+                            el.textContent = content;
+                        } else if (el.tagName === 'META') {
+                            el.setAttribute('content', content);
+                        }
+                    }
+                });
+
+                // Update active button state
+                langButtons.forEach(btn => {
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add('active-lang');
+                        btn.classList.remove('bg-tertiary-dark', 'text-tertiary-text');
+                    } else {
+                        btn.classList.remove('active-lang');
+                        btn.classList.add('bg-tertiary-dark', 'text-tertiary-text');
+                    }
+                });
+
+                // Update scroll-to-top button attributes
+                if (scrollToTopBtn) {
+                    const scrollToTopText = lang === 'es' ? 'Volver arriba' : 'Back to Top';
+                    scrollToTopBtn.setAttribute('aria-label', scrollToTopText);
+                    scrollToTopBtn.setAttribute('title', scrollToTopText);
+                }
+
+                // Update form placeholders based on selected language
+                document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
+                    const placeholder = el.getAttribute(`data-placeholder-${lang}`);
+                    if (placeholder) {
+                        el.setAttribute('placeholder', placeholder);
+                    }
+                });
+            }
+
+            // Handle language selection
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedLang = button.dataset.lang;
+                    updateLang(selectedLang);
+                });
+            });
+
+            // Initial language setup (default to Spanish)
+            updateLang('es');
+
+            // Form handling functionality
+            const manifestoForm = document.getElementById('manifesto-form');
+            if (manifestoForm) {
+                manifestoForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    
+                    const email = document.getElementById('manifesto-email').value.trim();
+                    const name = document.getElementById('manifesto-name').value.trim();
+                    
+                    if (!email) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa tu email.' : 'Please enter your email.');
+                        return;
+                    }
+                    
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa un email válido.' : 'Please enter a valid email.');
+                        return;
+                    }
+                    
+                    // Show success message
+                    const button = manifestoForm.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = body.lang === 'es' ? 
+                        '✅ ¡Enviado! Revisa tu email' : 
+                        '✅ Sent! Check your email';
+                    button.disabled = true;
+                    
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        manifestoForm.reset();
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        
+                        // Show download message
+                        alert(body.lang === 'es' ? 
+                            '¡Gracias! En un proyecto real, recibirías "El Manifiesto de Maia" por email inmediatamente.' :
+                            'Thank you! In a real project, you would receive "Maia\'s Manifesto" by email immediately.');
+                    }, 3000);
+                });
+            }
+
+            // Initialize Journey Animation
+            initializeJourneyAnimation();
+        });
+    </script>
+</body>
+</html>
