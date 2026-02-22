@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo - Dog Studio Audio System | La Academia Maia Kode</title>
+    
+    <!-- Load styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/audio-visual-sync.css">
+    <link rel="stylesheet" href="css/parallax-layers.css">
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        .demo-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .demo-section {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 199, 119, 0.3);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .demo-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(88, 166, 255, 0.3);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-card:hover {
+            border-color: #FFC777;
+            box-shadow: 0 10px 30px rgba(255, 199, 119, 0.2);
+        }
+        
+        .demo-button {
+            background: linear-gradient(135deg, #FFC777, #58A6FF);
+            border: none;
+            border-radius: 8px;
+            padding: 12px 24px;
+            color: #000;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 10px 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 199, 119, 0.4);
+        }
+        
+        .frequency-demo {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+        
+        .freq-indicator {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: #000;
+        }
+        
+        .freq-bass { background: #58A6FF; }
+        .freq-mid { background: #FFC777; }
+        .freq-treble { background: #C792EA; }
+    </style>
+</head>
+<body class="bg-primary-dark text-primary-text">
+    
+    <div class="demo-container">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold title-gradient mb-4 audio-reactive-text beat-reactive" 
+                data-audio-reactive="true" data-audio-frequency="all" data-beat-reactive="true">
+                🎵 Dog Studio Audio System Demo
+            </h1>
+            <p class="text-xl text-secondary-text audio-reactive" 
+               data-audio-reactive="true" data-audio-frequency="mid">
+                Experience the immersive audiovisual system for La Academia Maia Kode
+            </p>
+        </header>
+
+        <!-- Audio Controls Demo -->
+        <section class="demo-section audio-reactive beat-reactive" 
+                 data-parallax="0.3" data-audio-reactive="true" data-audio-frequency="bass" data-beat-reactive="true">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 audio-reactive-text">🎮 Audio Controls</h2>
+            <div class="demo-grid">
+                <div class="demo-card audio-hover-feedback">
+                    <h3 class="text-lg font-semibold mb-4 text-accent-blue">Music Control</h3>
+                    <button class="demo-button" onclick="window.maiaControls?.toggleMusic()">
+                        Toggle Music
+                    </button>
+                    <p class="text-sm text-secondary-text mt-2">Start/stop ambient music</p>
+                </div>
+                
+                <div class="demo-card audio-hover-feedback">
+                    <h3 class="text-lg font-semibold mb-4 text-accent-blue">Parallax Effects</h3>
+                    <button class="demo-button" onclick="window.maiaIntegration?.toggleParallax()">
+                        Toggle Parallax
+                    </button>
+                    <p class="text-sm text-secondary-text mt-2">Enable/disable parallax sync</p>
+                </div>
+                
+                <div class="demo-card audio-hover-feedback">
+                    <h3 class="text-lg font-semibold mb-4 text-accent-blue">Audio Reactivity</h3>
+                    <button class="demo-button" onclick="window.maiaControls?.toggleAudioReactivity()">
+                        Toggle Reactivity
+                    </button>
+                    <p class="text-sm text-secondary-text mt-2">Turn visual reactions on/off</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Frequency Demonstration -->
+        <section class="demo-section">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 audio-reactive-text">🎼 Frequency Separation Demo</h2>
+            <div class="frequency-demo">
+                <div class="freq-indicator freq-bass audio-reactive bass-nebula" 
+                     data-audio-reactive="true" data-audio-frequency="bass">
+                    BASS
+                </div>
+                <div class="freq-indicator freq-mid audio-reactive mid-particles" 
+                     data-audio-reactive="true" data-audio-frequency="mid">
+                    MID
+                </div>
+                <div class="freq-indicator freq-treble audio-reactive treble-stars" 
+                     data-audio-reactive="true" data-audio-frequency="treble">
+                    TREBLE
+                </div>
+            </div>
+            <p class="text-center text-secondary-text">
+                Watch the indicators react to different frequency ranges in real-time
+            </p>
+        </section>
+
+        <!-- Interactive Elements Demo -->
+        <section class="demo-section">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 audio-reactive-text">✨ Interactive Elements</h2>
+            <div class="demo-grid">
+                <div class="demo-card beat-reactive" data-beat-reactive="true">
+                    <h3 class="text-lg font-semibold mb-4 text-mystic-violet">Beat Reactive Card</h3>
+                    <p class="text-sm text-secondary-text">This card responds to beat detection</p>
+                </div>
+                
+                <div class="demo-card audio-reactive dynamic-glow" 
+                     data-audio-reactive="true" data-audio-frequency="all">
+                    <h3 class="text-lg font-semibold mb-4 text-cosmos-blue">Audio Reactive Card</h3>
+                    <p class="text-sm text-secondary-text">This card glows with audio intensity</p>
+                </div>
+                
+                <div class="demo-card audio-hover-feedback">
+                    <h3 class="text-lg font-semibold mb-4 text-aurora-gold">Hover Effects</h3>
+                    <p class="text-sm text-secondary-text">Move your cursor over this card</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sound Test Buttons -->
+        <section class="demo-section">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 audio-reactive-text">🔊 Maia Sound Tests</h2>
+            <div class="demo-grid">
+                <button class="demo-button" onclick="playMaiaSound('correct')">
+                    ✅ Correct Answer
+                </button>
+                <button class="demo-button" onclick="playMaiaSound('hint')">
+                    💡 Hint Sound
+                </button>
+                <button class="demo-button" onclick="playMaiaSound('progress')">
+                    📈 Progress Sound
+                </button>
+                <button class="demo-button" onclick="playMaiaSound('completion')">
+                    🎉 Completion
+                </button>
+            </div>
+        </section>
+
+        <!-- Aurora Dorada Showcase -->
+        <section class="demo-section">
+            <h2 class="text-3xl font-bold text-accent-gold mb-6 audio-reactive-text">🌅 Aurora Dorada Palette</h2>
+            <div class="demo-grid">
+                <div class="demo-card" style="border-color: #FFC777;">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full" style="background: #FFC777;"></div>
+                    <h3 class="font-semibold text-accent-gold">Dorado Aurora</h3>
+                    <p class="text-sm text-secondary-text">#FFC777</p>
+                </div>
+                <div class="demo-card" style="border-color: #58A6FF;">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full" style="background: #58A6FF;"></div>
+                    <h3 class="font-semibold text-accent-blue">Azul Cosmos</h3>
+                    <p class="text-sm text-secondary-text">#58A6FF</p>
+                </div>
+                <div class="demo-card" style="border-color: #C792EA;">
+                    <div class="w-16 h-16 mx-auto mb-4 rounded-full" style="background: #C792EA;"></div>
+                    <h3 class="font-semibold" style="color: #C792EA;">Violeta Místico</h3>
+                    <p class="text-sm text-secondary-text">#C792EA</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Audio Controls (from main page) -->
+    <div class="maia-audio-controls">
+        <button id="audioToggle" class="audio-control-btn" title="Toggle Music" aria-label="Toggle Music">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+            </svg>
+        </button>
+        <button id="parallaxToggle" class="audio-control-btn" title="Toggle Parallax" aria-label="Toggle Parallax">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+        </button>
+        <div class="volume-control" title="Volume">
+            <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="70">
+        </div>
+    </div>
+
+    <!-- Audio Status Indicator -->
+    <div id="audioStatus" class="audio-status">
+        <span id="statusText">🎵 Demo Mode - Click to activate audio</span>
+    </div>
+
+    <!-- Load Scripts -->
+    <script defer src="js/audio-system.js"></script>
+    <script defer src="js/audio-parallax-sync.js"></script>
+    <script defer src="js/dog-studio-interactions.js"></script>
+    <script defer src="js/maia-sounds.js"></script>
+    <script defer src="js/maia-audio-integration.js"></script>
+
+    <script>
+        // Demo-specific functions
+        function playMaiaSound(type) {
+            if (window.maiaIntegration && window.maiaIntegration.maiaSounds) {
+                window.maiaIntegration.playEducationalFeedback(type);
+                console.log(`🔊 Playing ${type} sound`);
+            } else {
+                console.log('🔊 Audio system not ready - click anywhere to activate');
+            }
+        }
+
+        // Show demo instructions
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const status = document.getElementById('audioStatus');
+                if (status) {
+                    status.classList.add('visible');
+                }
+            }, 1000);
+        });
+
+        // Add some demo interactivity
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('.demo-card, .demo-button')) {
+                // Create a visual ripple effect
+                const ripple = document.createElement('div');
+                ripple.className = 'beat-expansion-ring';
+                ripple.style.left = e.clientX + 'px';
+                ripple.style.top = e.clientY + 'px';
+                document.body.appendChild(ripple);
+                
+                setTimeout(() => {
+                    document.body.removeChild(ripple);
+                }, 800);
+            }
+        });
+    </script>
+</body>
+</html>

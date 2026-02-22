@@ -1,0 +1,11 @@
+# Documentación del Proyecto: Génesis de Maia Kode
+
+**Versión:** 1.0 (Informe Interactivo de Investigación)
+**Autor:** Jon Efe
+**Fecha de Documentación:** 2025-08-19
+
+## Introducción
+
+Este documento detalla la creación de una aplicación web interactiva diseñada como el **informe de investigación y conceptualización para la futura influencer de IA, Maia Kode.** La plataforma web sirve como un estudio detallado, analizando 16 perfiles de referencia en los campos de la ciencia y la tecnología. Utiliza herramientas de IA para explorar datos y destilar los rasgos de personalidad, estética y contenido que sentarán las bases para el desarrollo de Maia Kode.
+
+Este proyecto, por lo tanto, no es la IA en sí, sino la **demostración del proceso de creación de su persona digital.**

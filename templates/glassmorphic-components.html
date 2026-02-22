@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Maia Kode - Brand Component Library</title>
+    <style>
+        :root {
+            --primary-dark: #0A0A0C;
+            --accent-gold: #FFC777;
+            --accent-blue: #4CC9F0;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-blur: 20px;
+        }
+
+        body {
+            background: var(--primary-dark);
+            color: white;
+            font-family: sans-serif;
+            padding: 50px;
+        }
+
+        .component-label {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.3em;
+            margin-bottom: 20px;
+            color: var(--accent-gold);
+        }
+
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        /* REUSABLE CLASSES */
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+            transition: all 0.5s ease;
+        }
+
+        .glass-card:hover {
+            border-color: rgba(255, 199, 119, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .title-gradient {
+            background: linear-gradient(135deg, #FFF 0%, #FFC777 50%, #4CC9F0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+        }
+
+        .btn-aurora {
+            background: linear-gradient(135deg, #FFC777, #FF8C42);
+            color: black;
+            padding: 1rem 2rem;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            font-weight: 800;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .btn-aurora:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="title-gradient" style="font-size: 3rem;">Maia Kode UI Kit</h1>
+    <p style="opacity: 0.6; margin-bottom: 50px;">Componentes de alta fidelidad para la identidad "Clarity in
+        Complexity".</p>
+
+    <div class="component-label">Tarjeta Glassmorphic (Estándar)</div>
+    <div class="grid-demo">
+        <div class="glass-card">
+            <h3 style="color: var(--accent-gold);">Título de Ejemplo</h3>
+            <p style="opacity: 0.8;">Este es el contenedor principal para problemas, métodos y beneficios. Usa un
+                desenfoque de 20px para una sensación de profundidad premium.</p>
+        </div>
+        <div class="glass-card" style="border-color: rgba(76, 201, 240, 0.2);">
+            <h3 style="color: var(--accent-blue);">Variante Cobalt</h3>
+            <p style="opacity: 0.8;">Ideal para secciones técnicas o informativas vinculadas a la claridad del método.
+            </p>
+        </div>
+    </div>
+
+    <div class="component-label">Botones y Call to Action</div>
+    <div>
+        <a href="#" class="btn-aurora">Descargar Manifiesto</a>
+        <a href="#"
+            style="background: transparent; color: white; border: 1px solid var(--accent-gold); padding: 1rem 2rem; border-radius: 0.75rem; margin-left: 20px; font-weight: 800;">Saber
+            más</a>
+    </div>
+</body>
+
+</html>

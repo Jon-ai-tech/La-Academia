@@ -1,0 +1,104 @@
+.accordion-content.expanded {
+    overflow-y: visible;
+    max-height: fit-content;
+}
+
+body {
+    background-color: #ffffff;
+    color: #0f172a;
+    /* slate-900 */
+}
+
+.title-gradient {
+    background: linear-gradient(135deg, #E879F9 0%, #A855F7 33%, #58A6FF 66%, #FFC777 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: block;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+
+    /* Fix for centering inline-block in block parent */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    /* Fix for clipping descenders */
+    padding-bottom: 0.25em;
+    line-height: 1.35 !important;
+}
+
+.btn-gradient-4color {
+    background: linear-gradient(45deg, #E879F9, #A855F7, #58A6FF, #FFC777);
+    background-size: 200% 200%;
+    animation: gradient-move 5s ease infinite;
+    color: white !important;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
+    border-radius: 9999px;
+    /* Pill shape for Apple aesthetic */
+    font-weight: 800;
+}
+
+@keyframes gradient-move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 24px;
+    box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.04);
+}
+
+.glass-navbar {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+section {
+    scroll-margin-top: 100px;
+}
+
+/* MARQUEE ANIMATION FOR CAROUSEL */
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 60s linear infinite;
+    /* width value is handled by flex container */
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+/* Mask to fade edges of carousel */
+.mask-fade-inner-sides {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}

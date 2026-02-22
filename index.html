@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title data-lang-es="La Academia Maia Kode - Formación Práctica en IA"
+        data-lang-en="Maia Kode Academy - Practical AI Training"></title>
+
+    <meta name="description"
+        data-lang-es="Deja de acumular tutoriales. Construye tu futuro en IA con metodología práctica y mentoría de Maia. Descarga El Manifiesto y únete a la lista."
+        data-lang-en="Stop accumulating tutorials. Build your AI future with practical methodology and Maia's mentorship. Download The Manifesto and join the list.">
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <!-- PERFORMANCE OPTIMIZATION: Google Fonts Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts for Clean minimalist Typography -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font preloading for critical fonts -->
+    <link rel="preload"
+        href="https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mPbF4YW9aKk6Ls5W6w.woff2" as="font"
+        type="font/woff2" crossorigin>
+
+    <!-- Fallback self-hosted fonts -->
+    <link rel="preload" href="./fonts/space-grotesk/SpaceGrotesk-VariableFont_wght.woff2" as="font" type="font/woff2"
+        crossorigin>
+    <link rel="preload" href="./fonts/ibm-plex-serif/IBMPlexSerif-Regular.woff2" as="font" type="font/woff2"
+        crossorigin>
+
+    <meta property="og:title" data-lang-es="La Academia Maia Kode - Formación Práctica en IA"
+        data-lang-en="Maia Kode Academy - Practical AI Training">
+    <meta property="og:description"
+        data-lang-es="Primera formación online que combina metodología práctica con mentoría de IA. Construye tu portafolio profesional en IA. Descarga el manifiesto gratuito."
+        data-lang-en="First online training combining practical methodology with AI mentorship. Build your professional AI portfolio. Download the free manifesto.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.tudominio.com">
+    <meta property="og:image" content="https://www.tudominio.com/maia-preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" data-lang-es="La Academia Maia Kode - Formación Práctica en IA"
+        data-lang-en="Maia Kode Academy - Practical AI Training">
+    <meta name="twitter:description"
+        data-lang-es="Primera formación online que combina metodología práctica con mentoría de IA. Construye tu portafolio profesional en IA. Descarga el manifiesto gratuito."
+        data-lang-en="First online training combining practical methodology with AI mentorship. Build your professional AI portfolio. Download the free manifesto.">
+    <meta name="twitter:image" content="https://www.tudominio.com/maia-preview.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary-dark': '#0D1117',
+                        'secondary-dark': '#161B22',
+                        'tertiary-dark': '#21262D',
+                        'accent-gold': '#FFC777',
+                        'accent-gold-hover': '#FFD700',
+                        'accent-blue': '#58A6FF',
+                        'accent-violet': '#A855F7',
+                        'accent-magenta': '#E879F9',
+                        'border-color': '#30363D',
+                    },
+                    boxShadow: {
+                        'glow-gold': '0 0 20px rgba(255, 199, 119, 0.3)',
+                    },
+                    fontFamily: {
+                        'space': ['Space Grotesk', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/css/locomotive-styles.min.css">
+    <style>
+        .lang-button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid #FFC777;
+            /* Inactive: Gold Border */
+            background-color: transparent;
+            /* Inactive: Transparent BG */
+            color: #FFC777;
+            /* Inactive: Gold Text */
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .lang-button:hover {
+            transform: scale(1.05);
+            background-color: rgba(255, 199, 119, 0.1);
+        }
+
+        .lang-button:active {
+            transform: scale(0.95);
+        }
+
+        .active-lang {
+            background: linear-gradient(45deg, #E879F9, #A855F7, #58A6FF, #FFC777);
+            background-size: 200% 200%;
+            animation: gradient-move 5s ease infinite;
+            color: white;
+            border: none;
+            /* Active: No border */
+            box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
+        }
+
+        .active-lang:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(168, 85, 247, 0.4);
+            color: white;
+        }
+    </style>
+
+    <!-- GSAP and ScrollTrigger for Maia Genesis Animation (Local Minimal Version) -->
+    <script src="/js/gsap-minimal.js"></script>
+
+    <!-- Student Journey Animation -->
+    <script src="/js/student-journey-animation.js"></script>
+</head>
+
+<body class="bg-white text-slate-900 selection:bg-accent-gold/30">
+
+    <!-- Skip to content for accessibility -->
+    <a href="#main-content" class="skip-to-content">
+        <span class="lang-es">Ir al contenido principal</span>
+        <span class="lang-en hidden">Skip to main content</span>
+    </a>
+
+    <!-- Sticky Navigation Menu: Clean Apple-like Style -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-slate-200/50 shadow-sm transition-all duration-300"
+        id="main-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo/Brand -->
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold text-slate-900 tracking-tight">Maia<span
+                            class="text-accent-gold">Kode</span></span>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#hero" class="text-slate-600 hover:text-accent-gold font-medium transition-colors">
+                        <span class="lang-es">Inicio</span>
+                        <span class="lang-en hidden">Home</span>
+                    </a>
+                    <a href="#problema" class="text-slate-600 hover:text-accent-gold font-medium transition-colors">
+                        <span class="lang-es">El Problema</span>
+                        <span class="lang-en hidden">The Problem</span>
+                    </a>
+                    <a href="#viaje"
+                        class="nav-link text-slate-600 hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Viaje</span>
+                        <span class="lang-en hidden">The Journey</span>
+                    </a>
+                    <a href="#metodo"
+                        class="nav-link text-slate-600 hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Método</span>
+                        <span class="lang-en hidden">Method</span>
+                    </a>
+                    <a href="#manifiesto" class="text-slate-600 hover:text-accent-gold font-medium transition-colors">
+                        <span class="lang-es">Manifiesto</span>
+                        <span class="lang-en hidden">Manifesto</span>
+                    </a>
+                    <a href="#conversion"
+                        class="bg-accent-gold text-black px-6 py-2 rounded-full font-bold hover:shadow-lg transition-all">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+
+                <!-- Language toggle and Mobile menu -->
+                <div class="flex items-center space-x-2">
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="es" class="decorative-btn-circle lang-button active-lang">ES</button>
+                    </div>
+                    <div class="decorative-btn-container-circle">
+                        <button data-lang="en" class="decorative-btn-circle lang-button">EN</button>
+                    </div>
+
+                    <!-- Mobile menu button (Sharp) -->
+                    <button id="mobile-menu-btn"
+                        class="md:hidden text-secondary-text hover:text-accent-gold border border-white/10 p-2">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="md:hidden hidden bg-secondary-dark"
+                style="border-top: 1px solid var(--border-color);">
+                <div class="px-2 pt-2 pb-3 space-y-1">
+                    <a href="#problema"
+                        class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Problema</span>
+                        <span class="lang-en hidden">The Problem</span>
+                    </a>
+                    <a href="#viaje"
+                        class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Viaje</span>
+                        <span class="lang-en hidden">The Journey</span>
+                    </a>
+                    <a href="#metodo"
+                        class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">Método</span>
+                        <span class="lang-en hidden">Method</span>
+                    </a>
+                    <a href="#manifiesto"
+                        class="mobile-nav-link block px-3 py-2 text-secondary-text hover:text-accent-gold transition-colors duration-200">
+                        <span class="lang-es">El Manifiesto</span>
+                        <span class="lang-en hidden">The Manifesto</span>
+                    </a>
+                    <a href="#conversion"
+                        class="mobile-nav-link block px-3 py-2 btn-gradient-4color text-white rounded-lg transition-all duration-200">
+                        <span class="lang-es">Únete</span>
+                        <span class="lang-en hidden">Join</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO SECTION: PREMIUM WORLD-CLASS DESIGN -->
+    <header id="hero"
+        class="min-h-screen flex items-center justify-center bg-white relative overflow-hidden pt-32 pb-20">
+        <!-- Organic Ambient Shapes (No Grid) -->
+        <div
+            class="absolute top-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#FFC777]/10 blur-[120px] rounded-full mix-blend-multiply opacity-70 animate-pulse-slow">
+        </div>
+        <div
+            class="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] bg-[#4CC9F0]/10 blur-[120px] rounded-full mix-blend-multiply opacity-70 animate-pulse-slow animation-delay-2000">
+        </div>
+        <div
+            class="absolute top-[20%] left-[15%] w-[300px] h-[300px] bg-[#E879F9]/5 blur-[80px] rounded-full mix-blend-multiply opacity-50">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 flex flex-col items-center">
+
+            <!-- Badge: "Beta Access" or specific status -->
+            <div
+                class="inline-flex items-center space-x-2 bg-slate-50 border border-slate-100 rounded-full px-4 py-1.5 mb-8 shadow-sm hover:shadow-md transition-shadow cursor-default">
+                <span class="w-2 h-2 rounded-full bg-accent-gold animate-pulse"></span>
+                <span class="text-sm font-medium text-slate-600 tracking-wide uppercase text-[10px]">Maia Kode Academy
+                    v1.0</span>
+            </div>
+
+            <h1
+                class="text-6xl sm:text-8xl lg:text-9xl font-black text-slate-900 leading-tight tracking-tighter mb-8 max-w-5xl mx-auto text-center">
+                <span class="block mb-2">
+                    <span class="lang-es">Construye tu</span>
+                    <span class="lang-en hidden">Build your</span>
+                </span>
+                <span class="title-gradient block">
+                    <span class="lang-es">Futuro con IA</span>
+                    <span class="lang-en hidden">Future with AI</span>
+                </span>
+            </h1>
+
+            <p class="text-xl sm:text-2xl text-slate-500 mb-12 max-w-3xl mx-auto leading-relaxed font-light">
+                <span class="lang-es">La academia definitiva para desarrolladores que quieren dominar la Inteligencia
+                    Artificial. <strong class="text-slate-900 font-medium">Sin teoría vacía. Solo construcción
+                        real.</strong></span>
+                <span class="lang-en hidden">The definitive academy for developers who want to master Artificial
+                    Intelligence. <strong class="text-slate-900 font-medium">No empty theory. Just real
+                        building.</strong></span>
+            </p>
+
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6 w-full sm:w-auto">
+                <a href="#manifiesto"
+                    class="btn-gradient-4color py-5 px-10 text-lg sm:text-xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 w-full sm:w-auto flex items-center justify-center group">
+                    <span class="lang-es">Unirme a la Lista</span>
+                    <span class="lang-en hidden">Join the List</span>
+                </a>
+
+                <a href="#metodo"
+                    class="group flex items-center justify-center space-x-2 py-5 px-10 rounded-full border border-slate-200 hover:border-accent-gold/50 bg-white text-slate-600 hover:text-accent-gold transition-all duration-300 w-full sm:w-auto shadow-sm hover:shadow-md">
+                    <span
+                        class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center group-hover:bg-accent-gold/10 transition-colors">
+                        <svg class="w-4 h-4 text-slate-900 group-hover:text-accent-gold ml-0.5" fill="currentColor"
+                            viewBox="0 0 20 20">
+                            <path
+                                d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z">
+                            </path>
+                        </svg>
+                    </span>
+                    <span class="font-medium text-lg">
+                        <span class="lang-es">Ver el Método</span>
+                        <span class="lang-en hidden">See Method</span>
+                    </span>
+                </a>
+            </div>
+
+            <!-- Social Proof / Trusted By (Optional Placeholder) -->
+            <div
+                class="mt-16 pt-8 border-t border-slate-100 w-full max-w-4xl mx-auto opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <p class="text-sm text-slate-400 font-medium uppercase tracking-widest mb-6">
+                    <span class="lang-es">Inspirado en la excelencia de</span>
+                    <span class="lang-en hidden">Inspired by the excellence of</span>
+                </p>
+                <div class="flex flex-wrap justify-center items-center gap-8 sm:gap-16">
+                    <!-- Simple Text Placeholders for Logos to keep it clean -->
+                    <span class="font-bold text-slate-300 text-xl font-heading">Google DeepMind</span>
+                    <span class="font-bold text-slate-300 text-xl font-heading">OpenAI</span>
+                    <span class="font-bold text-slate-300 text-xl font-heading">Anthropic</span>
+                    <span class="font-bold text-slate-300 text-xl font-heading">Midjourney</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+
+        <!-- 2. EL PROBLEMA SECTION: THE GAP -->
+        <section id="problema" class="py-32 relative bg-slate-50/50">
+            <!-- Decorative background element -->
+            <div
+                class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9IiNjY2MiIG9wYWNpdHk9IjAuMiIvPjwvc3ZnPg==')] opacity-20">
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto mb-20">
+                    <h2
+                        class="text-4xl sm:text-5xl font-black text-slate-900 mb-6 tracking-tight leading-tight text-center">
+                        <span class="lang-es">Aprender IA no debería sentirse como un laberinto sin salida</span>
+                        <span class="lang-en hidden">Learning AI shouldn't feel like a maze with no exit</span>
+                    </h2>
+                    <p class="text-xl text-slate-500 font-light">
+                        <span class="lang-es">La mayoría de los desarrolladores se estancan en la teoría. Nosotros
+                            cerramos la brecha hacia la práctica profesional.</span>
+                        <span class="lang-en hidden">Most developers get stuck in theory. We bridge the gap to
+                            professional practice.</span>
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8 mb-16">
+                    <!-- Problema 1: Sobrecarga -->
+                    <div
+                        class="bg-white p-10 rounded-[2rem] shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 group hover:-translate-y-1">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-blue-50 flex items-center justify-center mb-8 group-hover:bg-accent-blue/10 transition-colors">
+                            <span class="text-3xl">🌊</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                            <span class="lang-es">Sobrecarga de Información</span>
+                            <span class="lang-en hidden">Information Overload</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            <span class="lang-es">Tutoriales dispersos y obsoletos que prometen mucho pero entregan
+                                conocimiento fragmentado sin contexto real.</span>
+                            <span class="lang-en hidden">Scattered and outdated tutorials that promise a lot but deliver
+                                fragmented knowledge without real context.</span>
+                        </p>
+                    </div>
+
+                    <!-- Problema 2: Brecha Teórica -->
+                    <div
+                        class="bg-white p-10 rounded-[2rem] shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 group hover:-translate-y-1">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-amber-50 flex items-center justify-center mb-8 group-hover:bg-accent-gold/10 transition-colors">
+                            <span class="text-3xl">🧩</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">
+                            <span class="lang-es">Teoría vs. Realidad</span>
+                            <span class="lang-en hidden">Theory vs. Reality</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            <span class="lang-es">Sabes cómo funcionan los LLMs en teoría, pero te paralizas al intentar
+                                integrar uno en un producto real y escalable.</span>
+                            <span class="lang-en hidden">You know how LLMs work in theory, but you freeze when trying to
+                                integrate one into a real, scalable product.</span>
+                        </p>
+                    </div>
+
+                    <!-- Problema 3: Síndrome del Impostor -->
+                    <div
+                        class="bg-white p-10 rounded-[2rem] shadow-sm hover:shadow-xl border border-slate-100 transition-all duration-300 group hover:-translate-y-1 relative overflow-hidden">
+                        <div
+                            class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-[4rem] -mr-4 -mt-4 opacity-50">
+                        </div>
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-purple-50 flex items-center justify-center mb-8 group-hover:bg-purple-100 transition-colors relative z-10">
+                            <span class="text-3xl">🎭</span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4 relative z-10">
+                            <span class="lang-es">Síndrome del Impostor</span>
+                            <span class="lang-en hidden">Imposter Syndrome</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed relative z-10">
+                            <span class="lang-es">La velocidad de la IA te hace sentir que nunca sabes lo suficiente.
+                                Necesitas una ruta clara y validada.</span>
+                            <span class="lang-en hidden">The speed of AI makes you feel like you never know enough. You
+                                need a clear and validated path.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-lg text-slate-600 mb-8 font-medium">
+                        <span class="lang-es">Aquí entra <strong class="text-slate-900">el Método Maia Kode</strong>.
+                            Construcción real, no memorización.</span>
+                        <span class="lang-en hidden">Enter <strong class="text-slate-900">the Maia Kode Method</strong>.
+                            Real building, not memorization.</span>
+                    </p>
+                    <a href="#viaje"
+                        class="btn-gradient-4color text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 flex items-center justify-center group mx-auto">
+                        <span class="lang-es">Descubre la Solución</span>
+                        <span class="lang-en hidden">Discover the Solution</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. EL VIAJE DEL ESTUDIANTE (Apple-like GSAP Animation) -->
+        <section id="viaje" class="container">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-center mb-16 text-4xl font-bold title-gradient">
+                    <span class="lang-es">De la Confusión a la Competencia: Este es tu Viaje</span>
+                    <span class="lang-en hidden">From Confusion to Competence: This is your Journey</span>
+                </h2>
+
+                <!-- Premium Journey Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Act I: El Caos -->
+                    <div id="act1-confusion"
+                        class="glass-card p-10 bg-white border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                        <div
+                            class="absolute -right-4 -top-4 text-7xl opacity-5 transform group-hover:rotate-12 transition-transform">
+                            🌪️</div>
+                        <div
+                            class="w-16 h-16 bg-slate-100 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-slate-200 transition-colors">
+                            ❌
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 tracking-tighter">
+                            <span class="lang-es">Acto I: El Caos del Autoaprendizaje</span>
+                            <span class="lang-en hidden">Act I: The Chaos of Self-Learning</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            <span class="lang-es">Tutoriales infinitos, recursos dispersos y la sensación constante de
+                                estar perdiendo el tiempo sin avanzar realmente.</span>
+                            <span class="lang-en hidden">Infinite tutorials, scattered resources and the constant
+                                feeling of wasting time without really advancing.</span>
+                        </p>
+                    </div>
+
+                    <!-- Act II: La Brújula -->
+                    <div id="act2-discovery"
+                        class="glass-card p-10 bg-white border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                        <div
+                            class="absolute -right-4 -top-4 text-7xl opacity-5 transform group-hover:rotate-12 transition-transform">
+                            🧭</div>
+                        <div
+                            class="w-16 h-16 bg-accent-gold/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-accent-gold/20 transition-colors">
+                            🧭
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 tracking-tighter">
+                            <span class="lang-es">Acto II: Maia Trae la Claridad</span>
+                            <span class="lang-en hidden">Act II: Maia Brings Clarity</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            <span class="lang-es">Maia entra en escena como tu guía, orquestando una ruta lógica y
+                                filtrando el ruido para que sepas exactamente qué construir.</span>
+                            <span class="lang-en hidden">Maia enters the scene as your guide, orchestrating a logical
+                                route and filtering the noise so you know exactly what to build.</span>
+                        </p>
+                    </div>
+
+                    <!-- Act III: La Forja -->
+                    <div id="act3-transformation"
+                        class="glass-card p-10 bg-white border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden">
+                        <div
+                            class="absolute -right-4 -top-4 text-7xl opacity-5 transform group-hover:rotate-12 transition-transform">
+                            🛠️</div>
+                        <div
+                            class="w-16 h-16 bg-accent-blue/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-accent-blue/20 transition-colors">
+                            🛠️
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 tracking-tighter">
+                            <span class="lang-es">Acto III: Construyendo Juntos</span>
+                            <span class="lang-en hidden">Act III: Building Together</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            <span class="lang-es">Ensúciate las manos con el código. Construyes agentes reales paso a
+                                paso, transformando la teoría en activos tangibles y potentes.</span>
+                            <span class="lang-en hidden">Get your hands dirty with code. You build real agents step by
+                                step, transforming theory into tangible and powerful assets.</span>
+                        </p>
+                    </div>
+
+                    <!-- Act IV: La Maestría -->
+                    <div id="act4-mastery"
+                        class="glass-card p-10 bg-white border-slate-100 shadow-sm hover:shadow-xl transition-all duration-500 group relative overflow-hidden border-b-4 border-b-accent-gold">
+                        <div
+                            class="absolute -right-4 -top-4 text-7xl opacity-5 transform group-hover:rotate-12 transition-transform">
+                            🏆</div>
+                        <div
+                            class="w-16 h-16 bg-accent-violet/10 rounded-2xl flex items-center justify-center text-3xl mb-8 group-hover:bg-accent-violet/20 transition-colors">
+                            🚀
+                        </div>
+                        <h3 class="text-2xl font-black text-slate-900 mb-4 tracking-tighter">
+                            <span class="lang-es">Acto IV: El Resultado Profesional</span>
+                            <span class="lang-en hidden">Act IV: The Professional Result</span>
+                        </h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            <span class="lang-es">Sales con un portafolio de impacto y una mentalidad de constructor.
+                                Estás listo para liderar el mercado de la IA con autoridad.</span>
+                            <span class="lang-en hidden">You come out with a high-impact portfolio and a builder
+                                mindset. You are ready to lead the AI market with authority.</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-20 text-center">
+                    <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto">
+                        <span class="lang-es">Este es el viaje que hemos diseñado para ti. ¿Estás listo para dar el
+                            primer paso?</span>
+                        <span class="lang-en hidden">This is the journey we've designed for you. Are you ready to take
+                            the first step?</span>
+                    </p>
+                    <a href="#metodo"
+                        class="btn-gradient-4color text-white font-bold py-5 px-12 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-block text-lg">
+                        <span class="lang-es">Conoce el Método</span>
+                        <span class="lang-en hidden">Learn the Method</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. ECOSISTEMA DE AGENTES -->
+        <section id="ecosistema" class="py-32 bg-white relative border-t border-slate-100">
+            <div class="container mx-auto px-4">
+                <div
+                    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[30%] bg-[#FFC777]/5 blur-[100px] rounded-full -z-10">
+                </div>
+
+                <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-20 text-center tracking-tighter pb-4">
+                    <span class="lang-es">Ecosistema de Agentes</span>
+                    <span class="lang-en hidden">Agent Ecosystem</span>
+                </h2>
+
+                <div class="grid md:grid-cols-4 gap-8">
+                    <!-- Updated cards with more consistent brand accents -->
+                    <!-- Antigravity -->
+                    <div
+                        class="glass-card p-8 text-center group border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-500 bg-white shadow-sm hover:shadow-md">
+                        <div
+                            class="text-5xl mb-6 filter drop-shadow-[0_0_10px_rgba(76,201,240,0.3)] group-hover:scale-110 transition-transform">
+                            🧠</div>
+                        <h4 class="text-2xl font-black text-[#4CC9F0] mb-3">Antigravity</h4>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mb-6 opacity-70">
+                            <span class="lang-es">El Cerebro</span>
+                            <span class="lang-en hidden">The Brain</span>
+                        </p>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            <span class="lang-es">Orquestación central e IDE avanzado.</span>
+                            <span class="lang-en hidden">Central orchestration and advanced IDE.</span>
+                        </p>
+                    </div>
+
+                    <!-- Stitch -->
+                    <div
+                        class="glass-card p-8 text-center group border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-500 bg-white shadow-sm hover:shadow-md">
+                        <div
+                            class="text-5xl mb-6 filter drop-shadow-[0_0_10px_rgba(255,199,119,0.3)] group-hover:scale-110 transition-transform">
+                            🎨</div>
+                        <h4 class="text-2xl font-black text-[#FFC777] mb-3">Stitch</h4>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mb-6 opacity-70">
+                            <span class="lang-es">El Diseñador</span>
+                            <span class="lang-en hidden">The Designer</span>
+                        </p>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-es">Interfaces UI premium vía lenguaje natural.</span>
+                            <span class="lang-en hidden">Premium UI interfaces via natural language.</span>
+                        </p>
+                    </div>
+
+                    <!-- n8n -->
+                    <div
+                        class="glass-card p-8 text-center group border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-500 bg-white shadow-sm hover:shadow-md">
+                        <div
+                            class="text-5xl mb-6 filter drop-shadow-[0_0_10px_rgba(76,201,240,0.3)] group-hover:scale-110 transition-transform">
+                            ⚙️</div>
+                        <h4 class="text-2xl font-black text-[#4CC9F0] mb-3">n8n</h4>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mb-6 opacity-70">
+                            <span class="lang-es">El Músculo</span>
+                            <span class="lang-en hidden">The Muscle</span>
+                        </p>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-es">Automatización de flujos y lógica de negocio.</span>
+                            <span class="lang-en hidden">Workflow automation and business logic.</span>
+                        </p>
+                    </div>
+
+                    <!-- Manus -->
+                    <div
+                        class="glass-card p-8 text-center group border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-500 bg-white shadow-sm hover:shadow-md">
+                        <div
+                            class="text-5xl mb-6 filter drop-shadow-[0_0_10px_rgba(255,199,119,0.3)] group-hover:scale-110 transition-transform">
+                            🚀</div>
+                        <h4 class="text-2xl font-black text-[#FFC777] mb-3">Manus</h4>
+                        <p class="text-[10px] text-slate-400 uppercase tracking-[0.3em] mb-6 opacity-70">
+                            <span class="lang-es">El Ejecutor</span>
+                            <span class="lang-en hidden">The Executor</span>
+                        </p>
+                        <p class="text-sm text-slate-600">
+                            <span class="lang-es">Agente autónomo para tareas complejas.</span>
+                            <span class="lang-en hidden">Autonomous agent for complex tasks.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. MÉTODO MAIA KODE + VIDEO -->
+        <section id="metodo" class="py-32 bg-white text-slate-900 border-t border-slate-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-20 text-center tracking-tighter pb-4">
+                    <span class="lang-es">El Método Maia Kode</span>
+                    <span class="lang-en hidden">The Maia Kode Method</span>
+                </h2>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-start mb-16">
+                    <!-- Columna 1: Metodología "Ausbildung-IA" -->
+                    <div class="glass-card p-10 bg-white border-slate-200 shadow-md">
+                        <h3 class="text-3xl font-black text-slate-800 mb-6 leading-tight text-center">
+                            <span class="lang-es">Un Currículo para Construir, no para Memorizar</span>
+                            <span class="lang-en hidden">A Curriculum to Build, not to Memorize</span>
+                        </h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            <span class="lang-es">Inspirados en el riguroso sistema dual alemán, nuestra metodología se
+                                centra en el Aprendizaje Basado en Proyectos. No aprenderás teoría aislada; aplicarás
+                                cada
+                                concepto en la construcción de soluciones reales, culminando en un portafolio de trabajo
+                                que
+                                demuestra tu competencia y te prepara para el mercado laboral.</span>
+                            <span class="lang-en hidden">Inspired by the rigorous German dual system, our methodology
+                                focuses on Project-Based Learning. You won't learn isolated theory; you'll apply every
+                                concept in building real solutions, culminating in a work portfolio that demonstrates
+                                your
+                                competence and prepares you for the job market.</span>
+                        </p>
+                        <div class="space-y-3">
+                            <div class="flex items-start">
+                                <span class="text-accent-gold font-bold text-lg mr-3">🏗️</span>
+                                <div>
+                                    <p class="text-slate-900 font-semibold">
+                                        <span class="lang-es">Metodología "Ausbildung-IA"</span>
+                                        <span class="lang-en hidden">"Ausbildung-AI" Methodology</span>
+                                    </p>
+                                    <p class="text-slate-500 text-sm">
+                                        <span class="lang-es">Sistema dual: teoría + práctica simultánea</span>
+                                        <span class="lang-en hidden">Dual system: theory + simultaneous practice</span>
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="flex items-start">
+                                <span class="text-accent-gold font-bold text-lg mr-3">📋</span>
+                                <div>
+                                    <p class="text-slate-900 font-semibold">
+                                        <span class="lang-es">Aprendizaje Basado en Proyectos</span>
+                                        <span class="lang-en hidden">Project-Based Learning</span>
+                                    </p>
+                                    <p class="text-slate-500 text-sm">
+                                        <span class="lang-es">Construyes mientras aprendes</span>
+                                        <span class="lang-en hidden">You build while you learn</span>
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <span class="text-accent-gold font-bold text-lg mr-3">💼</span>
+                                <div>
+                                    <p class="text-slate-900 font-semibold">
+                                        <span class="lang-es">Portafolio Profesional</span>
+                                        <span class="lang-en hidden">Professional Portfolio</span>
+                                    </p>
+                                    <p class="text-slate-500 text-sm">
+                                        <span class="lang-es">Resultados tangibles que demuestran competencia</span>
+                                        <span class="lang-en hidden">Tangible results that demonstrate competence</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna 2: La Mentora Maia Kode -->
+                    <div class="glass-card p-10 bg-white border-slate-200 shadow-md">
+                        <h3 class="text-3xl font-black text-slate-800 mb-6 leading-tight text-center">
+                            <span class="lang-es">Tu Guía IA, Diseñada para Enseñar</span>
+                            <span class="lang-en hidden">Your AI Guide, Designed to Teach</span>
+                        </h3>
+                        <p class="text-lg text-slate-600 leading-relaxed mb-6">
+                            <span class="lang-es">La mejor forma de conocer a tu mentora es escuchándola
+                                directamente.</span>
+                            <span class="lang-en hidden">The best way to meet your mentor is to hear her
+                                directly.</span>
+                        </p>
+
+                        <!-- Apple-like Cinematographic Video Placeholder -->
+                        <div
+                            class="maia-video-container relative rounded-2xl overflow-hidden shadow-2xl mb-6 group cursor-pointer border border-slate-200">
+                            <!-- 16:9 Aspect Ratio Container -->
+                            <div class="aspect-video relative bg-slate-900">
+                                <!-- Subtle radial gradient overlay -->
+                                <div
+                                    class="absolute inset-0 bg-gradient-radial from-transparent via-black/20 to-black/40">
+                                </div>
+
+                                <!-- Maia avatar/preview -->
+                                <div class="absolute inset-0 flex items-center justify-center">
+                                    <div class="text-center z-10">
+                                        <!-- Elegant Play Button -->
+                                        <div
+                                            class="play-button-container mb-6 transform transition-all duration-300 group-hover:scale-110">
+                                            <div
+                                                class="w-20 h-20 mx-auto bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center border border-white/20 shadow-2xl">
+                                                <div
+                                                    class="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-lg transform transition-transform duration-300 group-hover:scale-105">
+                                                    <svg class="w-8 h-8 text-gray-900 ml-1" fill="currentColor"
+                                                        viewBox="0 0 20 20">
+                                                        <path d="M8 5v10l7-5z" />
+                                                    </svg>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Video Info -->
+                                        <div class="text-white">
+                                            <h4
+                                                class="text-xl font-semibold mb-2 group-hover:text-accent-gold transition-colors duration-300 text-center">
+                                                <span class="lang-es">Conoce a tu Mentora IA</span>
+                                                <span class="lang-en hidden">Meet your AI Mentor</span>
+                                            </h4>
+                                            <p class="text-sm opacity-80 mb-4">
+                                                <span class="lang-es">45 segundos que cambiarán tu perspectiva</span>
+                                                <span class="lang-en hidden">45 seconds that will change your
+                                                    perspective</span>
+                                            </p>
+                                            <div class="flex items-center justify-center space-x-2 text-xs opacity-60">
+                                                <div class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></div>
+                                                <span class="lang-es">Disponible próximamente</span>
+                                                <span class="lang-en hidden">Coming soon</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Subtle background pattern -->
+                                    <div class="absolute inset-0 opacity-5">
+                                        <div
+                                            class="absolute top-1/4 left-1/4 w-32 h-32 border border-white/20 rounded-full">
+                                        </div>
+                                        <div
+                                            class="absolute bottom-1/4 right-1/4 w-24 h-24 border border-white/20 rounded-full">
+                                        </div>
+                                        <div
+                                            class="absolute top-1/3 right-1/3 w-16 h-16 border border-white/20 rounded-full">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Hover overlay -->
+                                <div
+                                    class="absolute inset-0 bg-accent-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                </div>
+                            </div>
+
+                            <!-- Video metadata bar -->
+                            <div class="absolute bottom-0 left-0 right-0 bg-black/80 backdrop-blur-sm p-4">
+                                <div class="flex items-center justify-between text-white text-sm">
+                                    <div class="flex items-center space-x-3">
+                                        <div
+                                            class="w-6 h-6 bg-accent-gold rounded-full flex items-center justify-center text-black font-bold mr-6 text-xs flex-shrink-0">
+                                            M</div>
+                                        <span class="text-accent-gold">Maia Kode</span>
+                                    </div>
+                                    <div class="flex items-center space-x-2">
+                                        <span>00:45</span>
+                                        <div class="w-2 h-1 bg-white/20 rounded-full">
+                                            <div class="w-0 h-full bg-accent-gold rounded-full"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="text-slate-500 text-center italic mb-4">
+                            <span class="lang-es">"La misión de Maia es simple: transformar la teoría en acción y
+                                guiarte,
+                                paso a paso, en la construcción de un portafolio profesional que hable por ti."</span>
+                            <span class="lang-en hidden">"Maia's mission is simple: transform theory into action and
+                                guide
+                                you, step by step, in building a professional portfolio that speaks for you."</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-xl text-slate-600 mb-8">
+                        <span class="lang-es">¿Quieres conocer más sobre el método y comenzar tu transformación?</span>
+                        <span class="lang-en hidden">Want to know more about the method and start your
+                            transformation?</span>
+                    </p>
+                    <a href="#manifiesto"
+                        class="inline-block btn-gradient-4color text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-105 text-lg">
+                        <span class="lang-es">Descarga El Manifiesto</span>
+                        <span class="lang-en hidden">Download The Manifesto</span>
+                    </a>
+                </div>
+        </section>
+
+        <!-- 6. LEAD MAGNET "EL MANIFIESTO DE MAIA" -->
+        <section id="manifiesto" class="py-32 bg-slate-50 border-t border-slate-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-20 text-center tracking-tighter pb-4">
+                    <span class="lang-es">Empieza a Construir</span>
+                    <span class="lang-en hidden">Start Building</span>
+                </h2>
+
+                <div class="text-center mb-8">
+                    <p class="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                        <span class="lang-es">El Manifiesto de Maia es un informe estratégico en PDF donde descubrirás
+                            las
+                            10 claves que usan los comunicadores y tecnólogos más inspiradores para transformar ideas
+                            complejas en proyectos de impacto. Es tu primer paso para aprender a construir con claridad
+                            y
+                            poder.</span>
+                        <span class="lang-en hidden">Maia's Manifesto is a strategic PDF report where you'll discover
+                            the
+                            10 keys used by the most inspiring communicators and technologists to transform complex
+                            ideas
+                            into impactful projects. It's your first step to learning to build with clarity and
+                            power.</span>
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-[45%_55%] gap-20 items-center">
+                    <!-- Book Preview -->
+                    <div class="text-center lg:text-left order-2 lg:order-1 lg:pr-12">
+                        <div class="relative group">
+                            <!-- Subtle glow effect -->
+                            <div
+                                class="absolute inset-0 bg-accent-gold/10 blur-3xl rounded-full transform scale-75 group-hover:scale-100 transition-transform duration-700">
+                            </div>
+                            <div class="relative transform hover:scale-110 transition-transform duration-500">
+                                <img src="images/Libro-Maia-Kode.png" alt="El Manifiesto de Maia"
+                                    class="w-full h-auto drop-shadow-2xl">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lead Capture Form -->
+                    <div class="space-y-8">
+                        <div class="p-8 sm:p-12 rounded-[1.4rem] bg-white shadow-xl border border-slate-100">
+                            <h3 class="text-3xl font-black text-slate-900 mb-6 text-center">
+                                <span class="lang-es">Metodología Génesis</span>
+                                <span class="lang-en hidden">Genesis Methodology</span>
+                            </h3>
+                            <ul class="space-y-3 text-lg text-secondary-text">
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-3">✓</span>
+                                    <span class="lang-es"><strong>Tu Hoja de Ruta al Mercado</strong>: Cómo posicionarte
+                                        como un experto en IA en tiempo récord</span>
+                                    <span class="lang-en hidden"><strong>Your Market Roadmap</strong>: How to position
+                                        yourself as an AI expert in record time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-3">✓</span>
+                                    <span class="lang-es"><strong>Blueprint de Construcción</strong>: El proceso exacto
+                                        para pasar de la idea a un agente funcional</span>
+                                    <span class="lang-en hidden"><strong>Construction Blueprint</strong>: The exact
+                                        process to go from idea to a functional agent</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-3">✓</span>
+                                    <span class="lang-es"><strong>Optimización de Procesos</strong>: Cómo usar la IA
+                                        para liberar el 70% de tu tiempo creativo</span>
+                                    <span class="lang-en hidden"><strong>Process Optimization</strong>: How to use AI to
+                                        free up 70% of your creative time</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <span class="text-accent-gold mr-3">✓</span>
+                                    <span class="lang-es"><strong>Acceso Preferente</strong>: Sé el primero en entrar a
+                                        la Academia con beneficios de fundador</span>
+                                    <span class="lang-en hidden"><strong>Founder Access</strong>: Be the first to join
+                                        the Academy with exclusive founder benefits</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Email Capture Form: Premium Light Style -->
+                        <div class="bg-slate-50 p-8 rounded-2xl shadow-sm border border-slate-100">
+                            <form id="manifesto-form" class="space-y-6">
+                                <div>
+                                    <label for="manifesto-email"
+                                        class="block text-lg font-semibold text-accent-gold mb-3">
+                                        <span class="lang-es">Email</span>
+                                        <span class="lang-en hidden">Email</span>
+                                    </label>
+                                    <input type="email" id="manifesto-email" name="email" required
+                                        class="w-full px-4 py-4 bg-white rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent-gold border border-slate-200 transition-all duration-200 text-lg"
+                                        data-placeholder-es="tu@email.com" data-placeholder-en="your@email.com"
+                                        placeholder="tu@email.com">
+                                </div>
+
+                                <div>
+                                    <label for="manifesto-name"
+                                        class="block text-lg font-semibold text-accent-gold mb-3">
+                                        <span class="lang-es">Nombre (opcional)</span>
+                                        <span class="lang-en hidden">Name (optional)</span>
+                                    </label>
+                                    <input type="text" id="manifesto-name" name="name"
+                                        class="w-full px-4 py-4 bg-white rounded-xl text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-accent-gold border border-slate-200 transition-all duration-200 text-lg"
+                                        data-placeholder-es="Tu nombre" data-placeholder-en="Your name"
+                                        placeholder="Tu nombre">
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full btn-gradient-4color text-white font-black py-5 px-8 rounded-xl transition-all duration-300 transform hover:scale-[1.02] text-xl shadow-2xl">
+                                    <span class="lang-es">¡Quiero el Plan!</span>
+                                    <span class="lang-en hidden">I Want the Plan!</span>
+                                </button>
+                            </form>
+
+                            <p class="text-sm text-secondary-text mt-4 text-center opacity-80">
+                                <span class="lang-es">Recibirás el PDF inmediatamente y serás el primero en saber cuándo
+                                    abramos las puertas de la Academia, con acceso anticipado y contenido
+                                    exclusivo.</span>
+                                <span class="lang-en hidden">You'll receive the PDF immediately and be the first to know
+                                    when we open the Academy doors, with early access and exclusive content.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. ADN DEL MÉTODO: INSPIRACIÓN CIENTÍFICA -->
+        <section id="adn-metodo" class="py-32 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-96 h-96 bg-[#FFC777]/5 blur-[120px] rounded-full"></div>
+            <div class="absolute bottom-0 left-0 w-64 h-64 bg-[#4CC9F0]/5 blur-[100px] rounded-full"></div>
+
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-20">
+                    <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-8 tracking-tighter">
+                        <span class="lang-es">El ADN de Maia</span>
+                        <span class="lang-en hidden">Maia's DNA</span>
+                    </h2>
+                    <p class="text-2xl text-slate-600 max-w-4xl mx-auto font-light leading-relaxed">
+                        <span class="lang-es">Maia no nació del vacío. Su personalidad y rigor didáctico están
+                            inspirados en las mentes más brillantes de la comunicación científica actual.</span>
+                        <span class="lang-en hidden">Maia was not born from a vacuum. Her personality and didactic rigor
+                            are inspired by the most brilliant minds in scientific communication today.</span>
+                    </p>
+                </div>
+
+                <!-- Infinite Carousel Container -->
+                <div class="relative w-full overflow-hidden mask-fade-inner-sides py-8">
+                    <!-- Track (Width depends on content, handled by flex) -->
+                    <div class="flex animate-marquee hover:pause whitespace-nowrap gap-8 w-max">
+
+                        <!-- SET 1: Original + New Additions -->
+                        <!-- 1. Alba Moreno -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Alba-Moreno.jpg" alt="Alba Moreno"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Alba Moreno</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Física &
+                                    Divulgadora</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">La física explicada con pasión, claridad y un toque viral que
+                                        conecta con todos.</span>
+                                    <span class="lang-en hidden">Physics explained with passion, clarity, and a viral
+                                        touch that connects with everyone.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 2. Cleo Abram -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4CC9F0] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Cleo-Abram.jpg" alt="Cleo Abram"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Cleo Abram</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Periodista Tech</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Periodismo tecnológico optimista que nos invita a construir un
+                                        futuro mejor.</span>
+                                    <span class="lang-en hidden">Optimistic tech journalism that invites us to build a
+                                        better future.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 3. Dianna Cowern -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#E879F9]/10 hover:border-[#E879F9]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E879F9] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Dianna-Cowern.jpg" alt="Dianna Cowern"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Dianna Cowern</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Physics
+                                    Girl</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Experimentos tangibles que despiertan la curiosidad científica
+                                        en cada vídeo.</span>
+                                    <span class="lang-en hidden">Tangible experiments that spark scientific curiosity in
+                                        every video.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 4. Emily Calandrelli -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Emily-Calandrelli.jpeg" alt="Emily Calandrelli"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Emily Calandrelli</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">The
+                                    Space Gal</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">La ciencia del espacio acercada a la tierra con entusiasmo y
+                                        rigor.</span>
+                                    <span class="lang-en hidden">Space science brought down to earth with enthusiasm and
+                                        rigor.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 5. Simone Giertz -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4CC9F0] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Simone-Giertz.jpg" alt="Simone Giertz"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Simone Giertz</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Queen of
+                                    Robotics</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Perder el miedo a crear y fallar a través de la invención
+                                        robótica divertida.</span>
+                                    <span class="lang-en hidden">Losing the fear of creating and failing through fun
+                                        robotic invention.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 6. Estefannie -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#E879F9]/10 hover:border-[#E879F9]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E879F9] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Estefannie-Explains-It-All.jpg" alt="Estefannie"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Estefannie</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Ingeniería & Maker</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Ingeniería, programación y creatividad maker con un estilo
+                                        único y audaz.</span>
+                                    <span class="lang-en hidden">Engineering, programming, and maker creativity with a
+                                        unique and bold style.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 7. Mayuko Inoue -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Mayuko-Inoue.jpeg" alt="Mayuko Inoue"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Mayuko Inoue</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Software
+                                    Engineer</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Una mirada honesta y directa a la vida de la ingeniería de
+                                        software en Silicon Valley.</span>
+                                    <span class="lang-en hidden">An honest and direct look at software engineering life
+                                        in Silicon Valley.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 8. Xyla Foxlin -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4CC9F0] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Xyla-Foxlin.jpg" alt="Xyla Foxlin"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Xyla Foxlin</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Ingeniera Mecatrónica</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Mecatrónica visualmente impactante que fusiona arte y
+                                        tecnología técnica.</span>
+                                    <span class="lang-en hidden">Visually striking mechatronics that fuse art and
+                                        technical technology.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 9. Rocio Vidal -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#E879F9]/10 hover:border-[#E879F9]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E879F9] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Rocio-Vidal.jpg" alt="Rocio Vidal"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Rocío Vidal</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">La
+                                    Gata
+                                    de Schrödinger</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Pensamiento crítico y divulgación científica rigurosa contra
+                                        la desinformación.</span>
+                                    <span class="lang-en hidden">Critical thinking and rigorous scientific communication
+                                        against misinformation.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- 10. Sandra Ortonobes -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Sandra-Ortonobes.jpg" alt="Sandra Ortonobes"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Sandra Ortonobes</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">La
+                                    Hiperactina</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Biomedicina explicada con ritmo y claridad para entender el
+                                        cuerpo humano.</span>
+                                    <span class="lang-en hidden">Biomedicine explained with rhythm and clarity to
+                                        understand the human body.</span>
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- SET FOR INFINITE LOOP -->
+                        <!-- 1. Alba (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Alba-Moreno.jpg" alt="Alba Moreno"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Alba Moreno</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Física &
+                                    Divulgadora</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">La física explicada con pasión, claridad y un toque viral que
+                                        conecta con todos.</span>
+                                    <span class="lang-en hidden">Physics explained with passion, clarity, and a viral
+                                        touch that connects with everyone.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- ... (Reduced duplicates for brevity in this specific call, assumed browser will render enough or I'll add more in a real setting. I'll add 3 more duplicates to ensure smooth loop for screens) -->
+                        <!-- 2. Cleo (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4CC9F0] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Cleo-Abram.jpg" alt="Cleo Abram"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Cleo Abram</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Periodista Tech</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Periodismo tecnológico optimista que nos invita a construir un
+                                        futuro mejor.</span>
+                                    <span class="lang-en hidden">Optimistic tech journalism that invites us to build a
+                                        better future.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 3. Dianna (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#E879F9]/10 hover:border-[#E879F9]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E879F9] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Dianna-Cowern.jpg" alt="Dianna Cowern"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Dianna Cowern</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Physics
+                                    Girl</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Experimentos tangibles que despiertan la curiosidad científica
+                                        en cada vídeo.</span>
+                                    <span class="lang-en hidden">Tangible experiments that spark scientific curiosity in
+                                        every video.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 4. Emily (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Emily-Calandrelli.jpeg" alt="Emily Calandrelli"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Emily Calandrelli</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">The
+                                    Space Gal</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">La ciencia del espacio acercada a la tierra con entusiasmo y
+                                        rigor.</span>
+                                    <span class="lang-en hidden">Space science brought down to earth with enthusiasm and
+                                        rigor.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 5. Simone (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4CC9F0] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Simone-Giertz.jpg" alt="Simone Giertz"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Simone Giertz</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Queen of
+                                    Robotics</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Perder el miedo a crear y fallar a través de la invención
+                                        robótica divertida.</span>
+                                    <span class="lang-en hidden">Losing the fear of creating and failing through fun
+                                        robotic invention.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 6. Estefannie (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#E879F9]/10 hover:border-[#E879F9]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E879F9] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Estefannie-Explains-It-All.jpg" alt="Estefannie"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Estefannie</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Ingeniería & Maker</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Ingeniería, programación y creatividad maker con un estilo
+                                        único y audaz.</span>
+                                    <span class="lang-en hidden">Engineering, programming, and maker creativity with a
+                                        unique and bold style.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 7. Mayuko (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Mayuko-Inoue.jpeg" alt="Mayuko Inoue"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Mayuko Inoue</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Software
+                                    Engineer</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Una mirada honesta y directa a la vida de la ingeniería de
+                                        software en Silicon Valley.</span>
+                                    <span class="lang-en hidden">An honest and direct look at software engineering life
+                                        in Silicon Valley.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 8. Xyla (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#4CC9F0]/10 hover:border-[#4CC9F0]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#4CC9F0] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Xyla-Foxlin.jpg" alt="Xyla Foxlin"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Xyla Foxlin</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">
+                                    Ingeniera Mecatrónica</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Meccatrónica visualmente impactante que fusiona arte y
+                                        tecnología técnica.</span>
+                                    <span class="lang-en hidden">Visually striking mechatronics that fuse art and
+                                        technical technology.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 9. Rocio (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#E879F9]/10 hover:border-[#E879F9]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#E879F9] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Rocio-Vidal.jpg" alt="Rocio Vidal"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Rocío Vidal</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">La
+                                    Gata
+                                    de Schrödinger</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Pensamiento crítico y divulgación científica rigurosa contra
+                                        la desinformación.</span>
+                                    <span class="lang-en hidden">Critical thinking and rigorous scientific communication
+                                        against misinformation.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!-- 10. Sandra (Dup) -->
+                        <div
+                            class="glass-card p-6 w-[350px] flex-shrink-0 border-[#FFC777]/10 hover:border-[#FFC777]/30 transition-all duration-300 group">
+                            <div class="flex flex-col items-center text-center whitespace-normal">
+                                <div
+                                    class="w-20 h-20 rounded-full overflow-hidden border-2 border-[#FFC777] shadow-md mb-4 group-hover:scale-110 transition-transform duration-500">
+                                    <img src="images/Sandra-Ortonobes.jpg" alt="Sandra Ortonobes"
+                                        class="w-full h-full object-cover">
+                                </div>
+                                <h4 class="text-xl font-bold text-slate-800">Sandra Ortonobes</h4>
+                                <p class="text-[10px] text-secondary-text uppercase tracking-widest opacity-70 mb-3">La
+                                    Hiperactina</p>
+                                <p class="text-xs text-slate-500 leading-relaxed opacity-90">
+                                    <span class="lang-es">Biomedicina explicada con ritmo y claridad para entender el
+                                        cuerpo humano.</span>
+                                    <span class="lang-en hidden">Biomedicine explained with rhythm and clarity to
+                                        understand the human body.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. FAQ SECTION: CLARIDAD TOTAL -->
+        <section id="faq" class="py-32 bg-white relative">
+            <div class="container mx-auto px-4 max-w-4xl relative z-10">
+                <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-20 text-center tracking-tighter">
+                    <span class="lang-es">Despeja tus Dudas</span>
+                    <span class="lang-en hidden">Clear your Doubts</span>
+                </h2>
+
+                <div class="space-y-4">
+                    <!-- FAQ items: Premium Light Style -->
+                    <div class="glass-card p-8 cursor-pointer group hover:bg-slate-50 transition-all border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl font-bold text-slate-900 group-hover:text-accent-gold transition-colors">
+                                <span class="lang-es">¿Necesito conocimientos previos de programación?</span>
+                                <span class="lang-en hidden">Do I need prior programming knowledge?</span>
+                            </h4>
+                            <span
+                                class="faq-icon text-accent-gold text-2xl transition-transform group-hover:rotate-45">+</span>
+                        </div>
+                        <p class="mt-6 text-secondary-text leading-relaxed hidden group-[.active]:block">
+                            <span class="lang-es">No es indispensable, pero ayuda. Maia Kode Academy está diseñada para
+                                guiarte desde los fundamentos hasta la construcción de agentes complejos, apoyándote en
+                                herramientas de IA para acelerar tu aprendizaje técnico.</span>
+                            <span class="lang-en hidden">It's not essential, but it helps. Maia Kode Academy is designed
+                                to guide you from the fundamentals to building complex agents, supporting you with AI
+                                tools to accelerate your technical learning.</span>
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 cursor-pointer group hover:bg-slate-50 transition-all border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl font-bold text-slate-900 group-hover:text-accent-gold transition-colors">
+                                <span class="lang-es">¿Qué herramientas aprenderé a usar exactamente?</span>
+                                <span class="lang-en hidden">What tools exactly will I learn to use?</span>
+                            </h4>
+                            <span
+                                class="faq-icon text-accent-gold text-2xl transition-transform group-hover:rotate-45">+</span>
+                        </div>
+                        <p class="mt-6 text-slate-600 leading-relaxed hidden group-[.active]:block">
+                            <span class="lang-es">Dominarás el ecosistema de vanguardia: Antigravity para orquestación,
+                                Stitch para diseño de interfaces, n8n para automatizaciones y Manus para ejecución
+                                autónoma de tareas.</span>
+                            <span class="lang-en hidden">You will master the state-of-the-art ecosystem: Antigravity for
+                                orchestration, Stitch for interface design, n8n for automations, and Manus for
+                                autonomous task execution.</span>
+                        </p>
+                    </div>
+                    <div class="glass-card p-8 cursor-pointer group hover:bg-slate-50 transition-all border-slate-100">
+                        <div class="flex justify-between items-center">
+                            <h4 class="text-xl font-bold text-slate-900 group-hover:text-accent-gold transition-colors">
+                                <span class="lang-es">¿El acceso es realmente de por vida?</span>
+                                <span class="lang-en hidden">Is access really for life?</span>
+                            </h4>
+                            <span
+                                class="faq-icon text-accent-gold text-2xl transition-transform group-hover:rotate-45">+</span>
+                        </div>
+                        <p class="mt-6 text-slate-600 leading-relaxed hidden group-[.active]:block">
+                            <span class="lang-es">Sí. Una vez que te unes, tienes acceso a todas las actualizaciones
+                                futuras de la metodología y del ecosistema de agentes sin pagos adicionales.</span>
+                            <span class="lang-en hidden">Yes. Once you join, you have access to all future updates of
+                                the methodology and the agent ecosystem without additional payments.</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. PRICING SECTION: EL CAMINO AL ÉXITO -->
+        <section id="conversion" class="py-32 relative overflow-hidden bg-white">
+            <div class="absolute top-1/2 left-0 w-96 h-96 bg-[#4CC9F0]/5 blur-[120px] rounded-full -translate-y-1/2">
+            </div>
+            <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#FFC777]/5 blur-[150px] rounded-full"></div>
+
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="text-center mb-24">
+                    <h2 class="text-5xl sm:text-8xl font-black title-gradient mb-8 tracking-tighter">
+                        <span class="lang-es">Tu Inversión en el Futuro</span>
+                        <span class="lang-en hidden">Your Investment in the Future</span>
+                    </h2>
+                    <p class="text-2xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+                        <span class="lang-es">No es solo un curso, es el ecosistema donde transformas la teoría en
+                            proyectos reales con mentoría constante.</span>
+                        <span class="lang-en hidden">It's not just a course, it's the ecosystem where you transform
+                            theory into real projects with constant mentorship.</span>
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto pt-24">
+                    <div class="glass-card p-1 text-center relative group shadow-2xl">
+                        <!-- Recommended Badge (Clean Pill) -->
+                        <div
+                            class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-accent-gold text-black px-8 py-3 rounded-full font-black text-sm uppercase tracking-widest shadow-lg z-30">
+                            <span class="lang-es">Acceso Total</span>
+                            <span class="lang-en hidden">Full Access</span>
+                        </div>
+
+                        <div class="p-8 sm:p-20 rounded-[1.4rem] bg-white border border-slate-100 shadow-xl">
+                            <div class="mb-12">
+                                <h3 class="text-3xl font-black text-slate-900 mb-4">Maia Kode Academy</h3>
+                                <div class="flex items-center justify-center">
+                                    <span class="text-3xl text-slate-400 mr-2">$</span>
+                                    <span
+                                        class="text-6xl sm:text-8xl font-black text-slate-900 tracking-tighter">497</span>
+                                    <span class="text-xl text-slate-400 ml-4 font-light">USD</span>
+                                </div>
+                                <p class="text-accent-gold text-sm mt-4 tracking-widest uppercase font-bold">
+                                    <span class="lang-es">Pago Único • Acceso de por Vida • Sin mensualidades</span>
+                                    <span class="lang-en hidden">One-Time Payment • Lifetime Access • No monthly
+                                        fees</span>
+                                </p>
+                            </div>
+
+                            <ul class="text-left space-y-6 max-w-md mx-auto mb-16 border-y border-slate-100 py-12">
+                                <li class="flex items-center text-lg text-slate-600">
+                                    <span
+                                        class="w-6 h-6 bg-accent-gold rounded-full flex items-center justify-center text-black font-bold mr-6 text-xs flex-shrink-0">✓</span>
+                                    <span class="lang-es">Mentoría 1:1 con Maia Kode (IA)</span>
+                                    <span class="lang-en hidden">1:1 Mentorship with Maia Kode (AI)</span>
+                                </li>
+                                <li class="flex items-center text-lg text-slate-600">
+                                    <span
+                                        class="w-6 h-6 bg-accent-blue rounded-full flex items-center justify-center text-black font-bold mr-6 text-xs flex-shrink-0">✓</span>
+                                    <span class="lang-es">Acceso a Antigravity & Stitch IDE</span>
+                                    <span class="lang-en hidden">Access to Antigravity & Stitch IDE</span>
+                                </li>
+                                <li class="flex items-center text-lg text-slate-600">
+                                    <span
+                                        class="w-6 h-6 bg-accent-magenta rounded-full flex items-center justify-center text-black font-bold mr-6 text-xs flex-shrink-0">✓</span>
+                                    <span class="lang-es">Ecosistema de Automatización n8n</span>
+                                    <span class="lang-en hidden">n8n Automation Ecosystem</span>
+                                </li>
+                                <li class="flex items-center text-lg text-slate-600">
+                                    <span
+                                        class="w-6 h-6 bg-slate-900 rounded-full flex items-center justify-center text-white font-bold mr-6 text-xs flex-shrink-0">✓</span>
+                                    <span class="lang-es">Comunidad Exclusiva de Constructores</span>
+                                    <span class="lang-en hidden">Exclusive Builders Community</span>
+                                </li>
+                            </ul>
+
+                            <a href="#"
+                                class="btn-gradient-4color inline-block w-full py-6 text-xl font-black transition-all hover:scale-[1.02]">
+                                <span class="lang-es">Empezar Ahora</span>
+                                <span class="lang-en hidden">Start Now</span>
+                            </a>
+                            <p class="text-tertiary-text text-sm mt-8 opacity-60">
+                                <span class="lang-es">Garantía de satisfacción total durante 14 días. Sin
+                                    riesgos.</span>
+                                <span class="lang-en hidden">14-day total satisfaction guarantee. Risk-free.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. SOBRE LOS CREADORES -->
+        <section id="creadores" class="py-32 bg-slate-50 relative">
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-20 text-center tracking-tighter">
+                    <span class="lang-es">Un Proyecto Híbrido</span>
+                    <span class="lang-en hidden">A Hybrid Project</span>
+                </h2>
+
+                <div class="text-center mb-12">
+                    <p class="text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+                        <span class="lang-es">La Academia Maia Kode es una creación de Jon Efe y José Aluz. Combinamos
+                            nuestra experiencia en negocios digitales, automatización y desarrollo de IA para construir
+                            la
+                            plataforma de aprendizaje que siempre quisimos tener. Maia es nuestra creación más avanzada,
+                            pero la estrategia, el rigor pedagógico y la validación de cada pieza de conocimiento están
+                            supervisados por nosotros.</span>
+                        <span class="lang-en hidden">Maia Kode Academy is a creation of Jon Efe and José Aluz. We
+                            combine
+                            our experience in digital business, automation and AI development to build the learning
+                            platform
+                            we always wanted to have. Maia is our most advanced creation, but the strategy, pedagogical
+                            rigor and validation of each piece of knowledge are supervised by us.</span>
+                    </p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                    <!-- Jon Efe -->
+                    <div class="glass-card p-10 bg-white border-slate-100 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-center">
+                            <div
+                                class="w-40 h-40 rounded-full overflow-hidden border-4 border-accent-gold bg-slate-100 flex-shrink-0 mx-auto md:mx-0">
+                                <img src="images/Jon-Efe.png" alt="Jon Efe"
+                                    class="w-full h-full object-cover object-[center_15%]">
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">Jon Efe</h3>
+                                <p class="text-lg text-accent-blue mb-4">
+                                    <span class="lang-es">Cofundador y Arquitecto Jefe de IA</span>
+                                    <span class="lang-en hidden">Co-founder & Chief AI Architect</span>
+                                </p>
+                                <p class="text-slate-500 leading-relaxed text-sm md:text-base">
+                                    <span class="lang-es">El motor técnico y visionario detrás de la Academia. Creador
+                                        de las plataformas web, de la metodología Génesis y del sistema MAPAX-A, Jon ha
+                                        orquestado las arquitecturas de IA que dan vida a Maia Kode para transformar la
+                                        complejidad técnica en herramientas de poder.</span>
+                                    <span class="lang-en hidden">The technical and visionary engine behind the Academy.
+                                        Creator of the web platforms, the Genesis methodology and the MAPAX-A system,
+                                        Jon has orchestrated the AI architectures that bring Maia Kode to life to
+                                        transform technical complexity into power tools.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- José Aluz -->
+                    <div class="glass-card p-10 bg-white border-slate-100 shadow-sm hover:shadow-md transition-all">
+                        <div class="flex flex-col md:flex-row items-center gap-8 text-center md:text-center">
+                            <div
+                                class="w-40 h-40 rounded-full overflow-hidden border-4 border-accent-gold bg-slate-100 flex-shrink-0 mx-auto md:mx-0">
+                                <div
+                                    class="w-full h-full flex items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200">
+                                    <div class="text-slate-400 text-4xl">👨‍🔬</div>
+                                </div>
+                            </div>
+                            <div>
+                                <h3 class="text-2xl font-bold text-slate-900 mb-2">José Aluz</h3>
+                                <p class="text-lg text-accent-blue mb-4">
+                                    <span class="lang-es">Cofundador y Estratega de Negocios</span>
+                                    <span class="lang-en hidden">Co-founder & Business Strategist</span>
+                                </p>
+                                <p class="text-slate-500 leading-relaxed text-sm md:text-base">
+                                    <span class="lang-es">Socio estratégico fundamental en la fase fundacional del
+                                        proyecto. Aporta su visión en estrategia de marca y optimización de operaciones,
+                                        asegurando que Maia Kode sea una solución empresarial de alto impacto.</span>
+                                    <span class="lang-en hidden">Fundamental strategic partner in the foundational phase
+                                        of the project. He brings his vision in brand strategy and operations
+                                        optimization, ensuring that Maia Kode is a high-impact business solution.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Maia Kode en el centro -->
+                <div
+                    class="text-center glass-card p-16 border-accent-gold/20 relative overflow-hidden group bg-white shadow-lg">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-[#FFC777]/5 to-[#4CC9F0]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+                    </div>
+
+                    <div
+                        class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-[#FFC777] mb-8 shadow-glow-gold relative z-10 scale-110">
+                        <img src="images/Maia Kode.jpeg" alt="Maia Kode"
+                            class="w-full h-full object-cover object-[center_15%]">
+                    </div>
+                    <h3 class="text-5xl font-black text-slate-900 mb-6 relative z-10 tracking-tighter">Maia Kode</h3>
+                    <p
+                        class="text-2xl text-slate-600 opacity-90 max-w-3xl mx-auto leading-relaxed font-light relative z-10">
+                        <span class="lang-es">Tu mentora de IA, diseñada para transformar conceptos complejos en
+                            proyectos
+                            tangibles que construyes paso a paso.</span>
+                        <span class="lang-en hidden">Your AI mentor, designed to transform complex concepts into
+                            tangible
+                            projects that you build step by step.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="conversion" class="py-24">
+            <div class="glass-card p-16 text-center border-accent-gold/20 shadow-glow-gold">
+                <h2 class="text-5xl sm:text-7xl font-black title-gradient mb-8 leading-tight tracking-tighter">
+                    <span class="lang-es">¿Listo para Dejar Atrás los Tutoriales y Construir tu Futuro en IA?</span>
+                    <span class="lang-en hidden">Ready to Leave Tutorials Behind and Build your AI Future?</span>
+                </h2>
+                <p class="text-xl text-white opacity-90 mb-12 max-w-4xl mx-auto leading-relaxed">
+                    <span class="lang-es">Únete a la primera formación que te enseña IA de forma práctica, con mentoría
+                        personalizada y un enfoque en construir el portafolio que te abrirá las puertas del mercado
+                        laboral.</span>
+                    <span class="lang-en hidden">Join the first training that teaches AI in a practical way, with
+                        personalized mentorship and a focus on building the portfolio that will open doors to the job
+                        market.</span>
+                </p>
+                <a href="#manifiesto"
+                    class="btn btn-gradient-4color text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 inline-block">
+                    <span class="lang-es">🚀 Descarga El Manifiesto y Únete a la Lista</span>
+                    <span class="lang-en hidden">🚀 Download The Manifesto and Join the List</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER: WORLD-CLASS MINIMALIST -->
+    <footer class="bg-white border-t border-slate-100 pt-20 pb-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <!-- Brand Column -->
+                <div class="col-span-1 md:col-span-1">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <span
+                            class="w-8 h-8 rounded-full bg-gradient-to-br from-[#FFC777] to-[#4CC9F0] opacity-80"></span>
+                        <span class="font-bold text-slate-900 text-lg tracking-tight">Maia Kode</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        <span class="lang-es">La academia para constructores de IA. Sin relleno. Solo código.</span>
+                        <span class="lang-en hidden">The academy for AI builders. No fluff. Just code.</span>
+                    </p>
+                </div>
+
+                <!-- Links Column 1 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-6 text-xs uppercase tracking-widest">
+                        <span class="lang-es">Explora</span>
+                        <span class="lang-en hidden">Explore</span>
+                    </h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="#hero" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">Inicio</span>
+                                <span class="lang-en hidden">Home</span>
+                            </a></li>
+                        <li><a href="#problema" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">El Problema</span>
+                                <span class="lang-en hidden">The Problem</span>
+                            </a></li>
+                        <li><a href="#viaje" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">El Viaje</span>
+                                <span class="lang-en hidden">The Journey</span>
+                            </a></li>
+                    </ul>
+                </div>
+
+                <!-- Links Column 2 -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-6 text-xs uppercase tracking-widest">
+                        <span class="lang-es">Método</span>
+                        <span class="lang-en hidden">Method</span>
+                    </h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="#metodo" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">El Método</span>
+                                <span class="lang-en hidden">The Method</span>
+                            </a></li>
+                        <li><a href="#manifiesto" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">Manifiesto</span>
+                                <span class="lang-en hidden">Manifesto</span>
+                            </a></li>
+                        <li><a href="#faq" class="hover:text-[#FFC777] transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal Column -->
+                <div>
+                    <h4 class="font-bold text-slate-900 mb-6 text-xs uppercase tracking-widest">Legal</h4>
+                    <ul class="space-y-4 text-sm text-slate-500">
+                        <li><a href="#" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">Privacidad</span>
+                                <span class="lang-en hidden">Privacy</span>
+                            </a></li>
+                        <li><a href="#" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">Términos</span>
+                                <span class="lang-en hidden">Terms</span>
+                            </a></li>
+                        <li><a href="mailto:hola@maiakode.com" class="hover:text-[#FFC777] transition-colors">
+                                <span class="lang-es">Contacto</span>
+                                <span class="lang-en hidden">Contact</span>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-slate-50 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
+                <p>
+                    <span class="lang-es">&copy; 2025 Maia Kode Academy. <span class="hidden md:inline">|</span>
+                        Educación en IA de Clase Mundial.</span>
+                    <span class="lang-en hidden">&copy; 2025 Maia Kode Academy. <span class="hidden md:inline">|</span>
+                        World-Class AI Education.</span>
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="https://twitter.com/maiakode" class="hover:text-slate-900 transition-colors">X
+                        (Twitter)</a>
+                    <a href="https://linkedin.com/company/maiakode"
+                        class="hover:text-slate-900 transition-colors">LinkedIn</a>
+                    <a href="https://github.com/maiakode" class="hover:text-slate-900 transition-colors">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- Simplified scripts for language system and navigation only -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Language system functionality
+            const langButtons = document.querySelectorAll('.lang-button');
+            const langElements = document.querySelectorAll('[data-lang-es], [data-lang-en]');
+            const body = document.body;
+
+
+
+            // Smooth scroll navigation functionality
+            document.querySelectorAll('.nav-link, .mobile-nav-link, .scroll-link, a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetId = link.getAttribute('href');
+                    if (targetId && targetId.startsWith('#') && targetId !== '#') {
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            const navElement = document.querySelector('nav');
+                            const navHeight = navElement ? navElement.offsetHeight : 0;
+                            const offsetPosition = targetElement.offsetTop - navHeight - 20;
+
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+
+                            // Close mobile menu if open
+                            const mobileMenu = document.getElementById('mobile-menu');
+                            if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                                mobileMenu.classList.add('hidden');
+                            }
+                        }
+                    }
+                });
+            });
+
+            // Mobile menu toggle functionality
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (mobileMenu && mobileMenuBtn && !mobileMenu.classList.contains('hidden')) {
+                    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+
+            // Function to update the displayed language and active state
+            function updateLang(lang) {
+                const isEs = lang === 'es';
+                document.querySelectorAll('.lang-es').forEach(el => el.classList.toggle('hidden', !isEs));
+                document.querySelectorAll('.lang-en').forEach(el => el.classList.toggle('hidden', isEs));
+                body.lang = lang;
+
+                // Update meta tags and title for SEO
+                langElements.forEach(el => {
+                    const content = el.getAttribute(`data-lang-${lang}`);
+                    if (content) {
+                        if (el.tagName === 'TITLE') {
+                            el.textContent = content;
+                        } else if (el.tagName === 'META') {
+                            el.setAttribute('content', content);
+                        }
+                    }
+                });
+
+                // Update active button state
+                langButtons.forEach(btn => {
+                    if (btn.dataset.lang === lang) {
+                        btn.classList.add('active-lang');
+                    } else {
+                        btn.classList.remove('active-lang');
+                    }
+                });
+
+
+
+                // Update form placeholders based on selected language
+                document.querySelectorAll('[data-placeholder-es][data-placeholder-en]').forEach(el => {
+                    const placeholder = el.getAttribute(`data-placeholder-${lang}`);
+                    if (placeholder) {
+                        el.setAttribute('placeholder', placeholder);
+                    }
+                });
+            }
+
+            // Handle language selection
+            langButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const selectedLang = button.dataset.lang;
+                    updateLang(selectedLang);
+                });
+            });
+
+            // Initial language setup (default to Spanish)
+            updateLang('es');
+
+            // Form handling functionality
+            const manifestoForm = document.getElementById('manifesto-form');
+            if (manifestoForm) {
+                manifestoForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const email = document.getElementById('manifesto-email').value.trim();
+                    const name = document.getElementById('manifesto-name').value.trim();
+
+                    if (!email) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa tu email.' : 'Please enter your email.');
+                        return;
+                    }
+
+                    // Simple email validation
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(email)) {
+                        alert(body.lang === 'es' ? 'Por favor, ingresa un email válido.' : 'Please enter a valid email.');
+                        return;
+                    }
+
+                    // Show success message
+                    const button = manifestoForm.querySelector('button[type="submit"]');
+                    const originalText = button.innerHTML;
+                    button.innerHTML = body.lang === 'es' ?
+                        '✅ ¡Enviado! Revisa tu email' :
+                        '✅ Sent! Check your email';
+                    button.disabled = true;
+
+                    // Reset form after 3 seconds
+                    setTimeout(() => {
+                        manifestoForm.reset();
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+
+                        // Show download message
+                        alert(body.lang === 'es' ?
+                            '¡Gracias! En un proyecto real, recibirías "El Manifiesto de Maia" por email inmediatamente.' :
+                            'Thank you! In a real project, you would receive "Maia\'s Manifesto" by email immediately.');
+                    }, 3000);
+                });
+            }
+
+            // FAQ Toggle Functionality
+            document.querySelectorAll('#faq .glass-card').forEach(item => {
+                item.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+
+                    // Close all other items
+                    document.querySelectorAll('#faq .glass-card').forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        const icon = otherItem.querySelector('.faq-icon');
+                        if (icon) icon.textContent = '+';
+                    });
+
+                    // Toggle current item
+                    if (!isActive) {
+                        item.classList.add('active');
+                        const icon = item.querySelector('.faq-icon');
+                        if (icon) icon.textContent = '×';
+                    }
+                });
+            });
+
+            // Navigation scroll effect
+            const mainNav = document.getElementById('main-nav');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 20) {
+                    mainNav.classList.add('bg-white/95', 'py-2', 'shadow-md');
+                    mainNav.classList.remove('bg-white/80', 'py-0', 'shadow-sm');
+                } else {
+                    mainNav.classList.remove('bg-white/95', 'py-2', 'shadow-md');
+                    mainNav.classList.add('bg-white/80', 'py-0', 'shadow-sm');
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>
